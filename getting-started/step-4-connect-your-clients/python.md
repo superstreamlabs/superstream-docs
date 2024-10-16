@@ -92,7 +92,7 @@ The Superstream package will function as a standard confluent-kafka package in t
 
 ### Step 3: Validation
 - Option 1: Through Superstream console. Go to Connected clusters -> Cluster X -> Clients
-- Option 2: Turn on DEBUG MODE. A 
+- Option 2: Turn on DEBUG MODE.
 
 ### Basic Producer Example
 
