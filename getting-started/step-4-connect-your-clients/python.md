@@ -3,6 +3,7 @@
 - Superstream Python package is a replacement for [confluent-kafka](https://github.com/confluentinc/confluent-kafka-python) package.
 - Your app can only use one of the packages at a time. Adding both to the same app will cause the Superstream package to be ignored.
 - To use the Superstream package in your app, it must be the sole package in use.
+- Always use the [latest release](https://github.com/superstreamlabs/confluent-kafka-python/releases/).
 
 ## Installation
 ### Step 1: Package installation
@@ -90,7 +91,8 @@ The Superstream package will function as a standard confluent-kafka package in t
 | `SUPERSTREAM_RESPONSE_TIMEOUT`       | 3000            | Yes       | No        | Set this variable to specify a timeout in milliseconds to wait for the Superstream service response.         |
 
 ### Step 3: Validation
-
+- Option 1: Through Superstream console. Go to Connected clusters -> Cluster X -> Clients
+- Option 2: Turn on DEBUG MODE. A 
 
 ### Basic Producer Example
 
@@ -152,12 +154,3 @@ while True:
 
 c.close()
 ```
-
-## Developer Notes
-
-Instructions on building and testing confluent-kafka-python can be found [here](DEVELOPER.md).
-
-
-## Confluent Cloud
-
-For a step-by-step guide on using the Python client with Confluent Cloud see [Getting Started with Apache Kafka and Python](https://developer.confluent.io/get-started/python/) on [Confluent Developer](https://developer.confluent.io/). 
