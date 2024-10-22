@@ -16,6 +16,7 @@ please use [this procedure](../procedures/engine-deployment-related/superstream-
 ### The Superstream chart will deploy the following pods:
 
 * 2 Superstream engines
+* 2 Superstream auto-scaler instances
 * 3 NATS brokers
 * 1 Superstream syslog adapter
 * 1 Telegraf agent for monitoring
