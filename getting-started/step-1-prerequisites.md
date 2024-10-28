@@ -1,7 +1,5 @@
 # Step 1: Prerequisites
 
-Prerequisites before deploying a Superstream engine
-
 ### **1. Create a user and/or a Vendor API key**
 
 Superstream platform is compatible with all Kafka authentication methods, such as:
@@ -11,7 +9,6 @@ Superstream platform is compatible with all Kafka authentication methods, such a
 * SASL/PLAIN
 * ACL
 * RBAC
-* IAM Role
 
 {% tabs %}
 {% tab title="Confluent Cloud" %}
@@ -64,7 +61,7 @@ For connecting Confluent Cloud clusters to Superstream, two types of API keys ar
 
 ### Vendor key
 
-1. **Main menu** -> **API Keys** -> "**+ Add API key**"
+1. Head over to **Main menu** -> **API Keys** -> "**+ Add API key**" and perform the following:
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-06 at 20.36.31.png" alt="" width="375"><figcaption></figcaption></figure>
 
@@ -75,6 +72,8 @@ For connecting Confluent Cloud clusters to Superstream, two types of API keys ar
 ***
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-15 at 14.10.00.png" alt="" width="375"><figcaption></figcaption></figure>
+
+***
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-06 at 20.39.28.png" alt="" width="375"><figcaption></figcaption></figure>
 {% endtab %}
