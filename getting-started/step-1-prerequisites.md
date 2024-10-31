@@ -281,8 +281,6 @@ Attach the following policy
 }
 ```
 {% endcode %}
-
-#### Using IAM User
 {% endtab %}
 {% endtabs %}
 
