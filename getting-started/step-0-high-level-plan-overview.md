@@ -16,7 +16,7 @@ Upon receiving an email from Superstream, head over to the [SSM Console](https:/
 
 Connect at least one Kafka cluster through an API key and/or an Engine
 
-### Step 3: Clients
+### _<mark style="color:purple;">Optional</mark>_. Step 3: Clients
 
 Replace client packages with the equivalent SSM package.
 
@@ -25,7 +25,7 @@ Replace client packages with the equivalent SSM package.
 * Engine deployment is healthy and monitored
 * Clusters are connected properly
 * Optimizations are being identified and highlighted
-* Client properties are retrieved and can be updated
+* _<mark style="color:purple;">Optional</mark>._ Client properties are retrieved and can be updated
 
 </details>
 
