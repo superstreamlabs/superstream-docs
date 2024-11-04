@@ -16,8 +16,6 @@ For connecting Confluent Cloud clusters to Superstream, two types of API keys ar
 
 ### Cluster connectivity key
 
-#### Create one using REST calls:
-
 #### Create one using Confluent Console:
 
 1. Home -> Environments -> \<environment name> -> \<cluster name> -> API Keys

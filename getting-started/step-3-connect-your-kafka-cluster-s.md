@@ -125,53 +125,276 @@ Here's how to do it if you didn't set it up during the initial client connection
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-05-23 at 16.06.03.png" alt=""><figcaption></figcaption></figure>
 
-**Step 2:**  Fill in the form with your key information
-
 {% tabs %}
-{% tab title="Confluent" %}
-1. Head over to your **Confluent Console -> Right-side Menu -> API Keys**
-2. On the right-top corner, click on **"**[**+ Add API key**](https://confluent.cloud/settings/api-keys/create)**"**
-   1. Choose **"My Account"**
-   2. The scope should be **"Cloud resource management"**
-   3. Give the new key a name of your choice
-3. **Paste** the generated credentials in the **Superstream Console**
+{% tab title="Confluent Cloud" %}
+For connecting Confluent Cloud clusters to Superstream, two types of API keys are required to be created:&#x20;
+
+### Cluster connectivity key
+
+#### Create one using Confluent Console:
+
+1. Home -> Environments -> \<environment name> -> \<cluster name> -> API Keys
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-15 at 13.42.03.png" alt="" width="172"><figcaption></figcaption></figure>
+
+2.  Click on "+ Add key"
+
+    <figure><img src="../.gitbook/assets/Screenshot 2024-10-15 at 13.43.29.png" alt="" width="375"><figcaption></figcaption></figure>
+3. In the opened walkthrough:
+   1. Choose "**Service account**"
+   2. "**Create a new one**" named `Superstream`
+   3. Define the following rules:
+      1. Cluster
+         1. `ALTER_CONFIGS`: ALLOW
+         2. `DESCRIBE`: ALLOW
+         3. `DESCRIBE_CONFIGS`: ALLOW
+      2. Consumer Group (For all "\*")
+         1. LITERAL, DESCRIBE, ALLOW
+         2. LITERAL, READ, ALLOW
+   4. "Create" **and save the newly created creds**.
+   5. Main menu -> Accounts & access -> Service accounts -> Superstream
+      1.  Add the following role assignments:
+
+          **For each designated organization:**
+
+          * `BillingAdmin`
+
+          **For each designated environment (Environment level):**
+
+          * M`etricsViewer`
+          * `DataDiscovery`
+          * `Operator`
+
+          **For each designated cluster (Cluster level):**
+
+          * `CloudClusterAdmin`
+      2. For each designated **cluster** -> **Topics**
+         1. `DeveloperRead`: All topics
+         2. `DeveloperManage`: All topics
+
+### Kafka vendor API key
+
+1. Head over to **Main menu** -> **API Keys** -> "**+ Add API key**" and perform the following:
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-06 at 20.36.31.png" alt="" width="375"><figcaption></figcaption></figure>
+
+***
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-06 at 20.37.52.png" alt="" width="375"><figcaption></figcaption></figure>
+
+***
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-15 at 14.10.00.png" alt="" width="375"><figcaption></figcaption></figure>
+
+***
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-06 at 20.39.28.png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% embed url="https://youtu.be/d8eNgxFkc4M" %}
 {% endtab %}
 
-{% tab title="AWS MSK" %}
-**AWS MSK** users, please create a programmable user using this IAM policy:
+{% tab title="Apache Kafka" %}
+For effective functioning, a user or token requires the following permissions:
 
-{% code lineNumbers="true" %}
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "Stmt1716722017278",
-      "Action": [
-        "billing:GetBillingData",
-        "billing:GetBillingDetails",
-        "kafka:ListClustersV2",
-        "ce:GetCostAndUsageWithResources",
-        "ce:GetCostAndUsage"
-      ],
-      "Effect": "Allow",
-      "Resource": "*"
-    }
-  ]
-}
+* Cluster-level:
+  * Describe all topics, List all topics, Describe configs, Describe cluster
+* Topic-level:
+  * Read: All topics
+  * Alter: All topics
+  * Delete: All topics
+  * Describe: All topics
+  * Alter: All topics
+  * AlterConfigs: All topics
+  * DescribeConfigs: All topics
+  * <mark style="color:red;">**Read, Create, and Write: single topic named**</mark>** `superstream.metadata`** (A dedicated Superstream topic with infinite retention and a single partition).
+* Consumer group-level:
+  * Describe
+  * List Consumer Groups
+
+ACL statement that grants `read` access to a user named Superstream for `all topics` in the Kafka cluster:
+
+{% code overflow="wrap" %}
+```bash
+kafka-acls --bootstrap-server : -add --allow-principal User:Superstream --operation read --topic '' --group '' --command-config <PATH_TO_CRED_FILE>
+```
+{% endcode %}
+
+ACL statement that grants `describe` access to a user named Superstream for `all topics` in the Kafka cluster:
+
+{% code overflow="wrap" %}
+```bash
+kafka-acls --bootstrap-server : -add --allow-principal User:Superstream --operation Describe --topic '*' --command-config <PATH_TO_CRED_FILE>
+```
+{% endcode %}
+
+ACL statement that grants `DescribeConfigs` access to a user named Superstream for `all topics` in the Kafka cluster:
+
+{% code overflow="wrap" %}
+```bash
+kafka-acls --bootstrap-server <URL>:<PORT>  -add --allow-principal User:Superstream --operation DescribeConfigs --topic '*' --command-config <PATH_TO_CRED_FILE>
 ```
 {% endcode %}
 {% endtab %}
 
-{% tab title="Aiven" %}
-To create an authentication token on the [Aiven Console](https://console.aiven.io/):
+{% tab title="AWS MSK " %}
+### Kafka vendor API key
 
-1. Click the **User information** icon in the top right and select **Tokens**.
-2. Click **Generate token** to open the creation modal.
-3. Click **Generate token**.
-4. **Copy** and save your token in the modal opened in step 2.
-5. Attach the key to one or more Kafka clusters by selecting them in the "**Connections**" select box
+#### Using IAM Role
+
+Log in to the AWS Console and navigate to the **IAM** section to **create a new policy** with the permissions below:
+
+{% code lineNumbers="true" %}
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kafka:*",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeVpcs",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeRouteTables",
+                "ec2:DescribeVpcEndpoints",
+                "ec2:DescribeVpcAttribute",
+                "kms:DescribeKey",
+                "kms:CreateGrant",
+                "logs:CreateLogDelivery",
+                "logs:GetLogDelivery",
+                "logs:UpdateLogDelivery",
+                "logs:DeleteLogDelivery",
+                "logs:ListLogDeliveries",
+                "logs:PutResourcePolicy",
+                "logs:DescribeResourcePolicies",
+                "logs:DescribeLogGroups",
+                "S3:GetBucketPolicy",
+                "firehose:TagDeliveryStream"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateVpcEndpoint"
+            ],
+            "Resource": [
+                "arn:*:ec2:*:*:vpc/*",
+                "arn:*:ec2:*:*:subnet/*",
+                "arn:*:ec2:*:*:security-group/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateVpcEndpoint"
+            ],
+            "Resource": [
+                "arn:*:ec2:*:*:vpc-endpoint/*"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestTag/AWSMSKManaged": "true"
+                },
+                "StringLike": {
+                    "aws:RequestTag/ClusterArn": "*"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateTags"
+            ],
+            "Resource": "arn:*:ec2:*:*:vpc-endpoint/*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:CreateAction": "CreateVpcEndpoint"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DeleteVpcEndpoints"
+            ],
+            "Resource": "arn:*:ec2:*:*:vpc-endpoint/*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/AWSMSKManaged": "true"
+                },
+                "StringLike": {
+                    "ec2:ResourceTag/ClusterArn": "*"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "iam:PassedToService": "kafka.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:CreateServiceLinkedRole",
+            "Resource": "arn:aws:iam::*:role/aws-service-role/kafka.amazonaws.com/AWSServiceRoleForKafka*",
+            "Condition": {
+                "StringEquals": {
+                    "iam:AWSServiceName": "kafka.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:CreateServiceLinkedRole",
+            "Resource": "arn:aws:iam::*:role/aws-service-role/delivery.logs.amazonaws.com/AWSServiceRoleForLogDelivery*",
+            "Condition": {
+                "StringEquals": {
+                    "iam:AWSServiceName": "delivery.logs.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ce:GetCostAndUsageWithResources",
+                "ce:GetCostAndUsage",
+                "cloudwatch:ListMetrics"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+{% endcode %}
+
+**Create a new role** with a trusted entity type: `AWS account`\
+Please use the **Superstream AWS** **account ID** (Will be given by the Superstream team)
+
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+Attach the following policy
+
+{% code lineNumbers="true" %}
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::XXXXXXXXXXXXX:root"
+            },
+            "Action": "sts:AssumeRole",
+            "Condition": {}
+        }
+    ]
+}
+```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
