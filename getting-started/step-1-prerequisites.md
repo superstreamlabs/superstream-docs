@@ -128,137 +128,6 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
 
 {% code lineNumbers="true" %}
 ```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "kafka:*",
-                "ec2:DescribeSubnets",
-                "ec2:DescribeVpcs",
-                "ec2:DescribeSecurityGroups",
-                "ec2:DescribeRouteTables",
-                "ec2:DescribeVpcEndpoints",
-                "ec2:DescribeVpcAttribute",
-                "kms:DescribeKey",
-                "kms:CreateGrant",
-                "logs:CreateLogDelivery",
-                "logs:GetLogDelivery",
-                "logs:UpdateLogDelivery",
-                "logs:DeleteLogDelivery",
-                "logs:ListLogDeliveries",
-                "logs:PutResourcePolicy",
-                "logs:DescribeResourcePolicies",
-                "logs:DescribeLogGroups",
-                "S3:GetBucketPolicy",
-                "firehose:TagDeliveryStream"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "kafka-cluster:*"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:CreateVpcEndpoint"
-            ],
-            "Resource": [
-                "arn:*:ec2:*:*:vpc/*",
-                "arn:*:ec2:*:*:subnet/*",
-                "arn:*:ec2:*:*:security-group/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:CreateVpcEndpoint"
-            ],
-            "Resource": [
-                "arn:*:ec2:*:*:vpc-endpoint/*"
-            ],
-            "Condition": {
-                "StringEquals": {
-                    "aws:RequestTag/AWSMSKManaged": "true"
-                },
-                "StringLike": {
-                    "aws:RequestTag/ClusterArn": "*"
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:CreateTags"
-            ],
-            "Resource": "arn:*:ec2:*:*:vpc-endpoint/*",
-            "Condition": {
-                "StringEquals": {
-                    "ec2:CreateAction": "CreateVpcEndpoint"
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:DeleteVpcEndpoints"
-            ],
-            "Resource": "arn:*:ec2:*:*:vpc-endpoint/*",
-            "Condition": {
-                "StringEquals": {
-                    "ec2:ResourceTag/AWSMSKManaged": "true"
-                },
-                "StringLike": {
-                    "ec2:ResourceTag/ClusterArn": "*"
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": "iam:PassRole",
-            "Resource": "*",
-            "Condition": {
-                "StringEquals": {
-                    "iam:PassedToService": "kafka.amazonaws.com"
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": "iam:CreateServiceLinkedRole",
-            "Resource": "arn:aws:iam::*:role/aws-service-role/kafka.amazonaws.com/AWSServiceRoleForKafka*",
-            "Condition": {
-                "StringEquals": {
-                    "iam:AWSServiceName": "kafka.amazonaws.com"
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": "iam:CreateServiceLinkedRole",
-            "Resource": "arn:aws:iam::*:role/aws-service-role/delivery.logs.amazonaws.com/AWSServiceRoleForLogDelivery*",
-            "Condition": {
-                "StringEquals": {
-                    "iam:AWSServiceName": "delivery.logs.amazonaws.com"
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ce:GetCostAndUsageWithResources",
-                "ce:GetCostAndUsage",
-                "cloudwatch:ListMetrics"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
 ```
 {% endcode %}
 
@@ -275,12 +144,172 @@ Attach the following policy
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Sid": "EC2VpcEndpoint1",
             "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::XXXXXXXXXXXXX:root"
-            },
-            "Action": "sts:AssumeRole",
-            "Condition": {}
+            "Action": "ec2:CreateVpcEndpoint",
+            "Resource": "arn:*:ec2:*:*:vpc-endpoint/*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestTag/AWSMSKManaged": "true"
+                },
+                "StringLike": {
+                    "aws:RequestTag/ClusterArn": "*"
+                }
+            }
+        },
+        {
+            "Sid": "EC2VpcEndpoint2",
+            "Effect": "Allow",
+            "Action": "ec2:CreateTags",
+            "Resource": "arn:*:ec2:*:*:vpc-endpoint/*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:CreateAction": "CreateVpcEndpoint"
+                }
+            }
+        },
+        {
+            "Sid": "EC2VpcEndpoint3",
+            "Effect": "Allow",
+            "Action": "ec2:DeleteVpcEndpoints",
+            "Resource": "arn:*:ec2:*:*:vpc-endpoint/*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/AWSMSKManaged": "true"
+                },
+                "StringLike": {
+                    "ec2:ResourceTag/ClusterArn": "*"
+                }
+            }
+        },
+        {
+            "Sid": "EC2VpcEndpoint4",
+            "Effect": "Allow",
+            "Action": "ec2:CreateVpcEndpoint",
+            "Resource": [
+                "arn:*:ec2:*:*:vpc/*",
+                "arn:*:ec2:*:*:security-group/*",
+                "arn:*:ec2:*:*:subnet/*"
+            ]
+        },
+        {
+            "Sid": "IAM1",
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "iam:PassedToService": "kafka.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Sid": "IAM2",
+            "Effect": "Allow",
+            "Action": "iam:CreateServiceLinkedRole",
+            "Resource": "arn:aws:iam::*:role/aws-service-role/kafka.amazonaws.com/AWSServiceRoleForKafka*",
+            "Condition": {
+                "StringEquals": {
+                    "iam:AWSServiceName": "kafka.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Sid": "IAM3",
+            "Effect": "Allow",
+            "Action": "iam:CreateServiceLinkedRole",
+            "Resource": "arn:aws:iam::*:role/aws-service-role/delivery.logs.amazonaws.com/AWSServiceRoleForLogDelivery*",
+            "Condition": {
+                "StringEquals": {
+                    "iam:AWSServiceName": "delivery.logs.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Sid": "Kafka",
+            "Effect": "Allow",
+            "Action": [
+                "kafka:UpdateBrokerCount",
+                "kafka:DescribeConfiguration",
+                "kafka:ListScramSecrets",
+                "kafka:ListKafkaVersions",
+                "kafka:GetBootstrapBrokers",
+                "kafka:ListClientVpcConnections",
+                "kafka:UpdateBrokerType",
+                "kafka:DescribeCluster",
+                "kafka:ListClustersV2",
+                "kafka:DescribeClusterOperation",
+                "kafka:ListNodes",
+                "kafka:ListClusterOperationsV2",
+                "kafka:UpdateClusterConfiguration",
+                "kafka:ListClusters",
+                "kafka:GetClusterPolicy",
+                "kafka:DescribeClusterOperationV2",
+                "kafka:DescribeClusterV2",
+                "kafka:ListReplicators",
+                "kafka:ListConfigurationRevisions",
+                "kafka:ListVpcConnections",
+                "kafka:ListTagsForResource",
+                "kafka:GetCompatibleKafkaVersions",
+                "kafka:DescribeConfigurationRevision",
+                "kafka:UpdateConfiguration",
+                "kafka:ListConfigurations",
+                "kafka:ListClusterOperations"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "KafkaCluster",
+            "Effect": "Allow",
+            "Action": [
+                "kafka-cluster:DescribeTransactionalId",
+                "kafka-cluster:CreateTopic",
+                "kafka-cluster:AlterCluster",
+                "kafka-cluster:Connect",
+                "kafka-cluster:DeleteTopic",
+                "kafka-cluster:ReadData",
+                "kafka-cluster:DescribeTopicDynamicConfiguration",
+                "kafka-cluster:AlterTopicDynamicConfiguration",
+                "kafka-cluster:AlterGroup",
+                "kafka-cluster:AlterClusterDynamicConfiguration",
+                "kafka-cluster:DescribeGroup",
+                "kafka-cluster:DescribeClusterDynamicConfiguration",
+                "kafka-cluster:DeleteGroup",
+                "kafka-cluster:DescribeCluster",
+                "kafka-cluster:AlterTopic",
+                "kafka-cluster:DescribeTopic",
+                "kafka-cluster:WriteData"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "Others",
+            "Effect": "Allow",
+            "Action": [
+                "logs:ListLogDeliveries",
+                "ec2:DescribeRouteTables",
+                "logs:CreateLogDelivery",
+                "logs:PutResourcePolicy",
+                "logs:UpdateLogDelivery",
+                "ec2:DescribeVpcEndpoints",
+                "ec2:DescribeSubnets",
+                "cloudwatch:GetMetricData",
+                "ce:GetCostAndUsage",
+                "ec2:DescribeVpcAttribute",
+                "cloudwatch:ListMetrics",
+                "logs:GetLogDelivery",
+                "kms:DescribeKey",
+                "logs:DeleteLogDelivery",
+                "firehose:TagDeliveryStream",
+                "kms:CreateGrant",
+                "logs:DescribeResourcePolicies",
+                "S3:GetBucketPolicy",
+                "logs:DescribeLogGroups",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeVpcs",
+                "ce:GetCostAndUsageWithResources"
+            ],
+            "Resource": "*"
         }
     ]
 }
