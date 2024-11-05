@@ -159,20 +159,7 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
         {
             "Effect": "Allow",
             "Action": [
-                "kafka-cluster:DescribeTransactionalId",
-                "kafka-cluster:CreateTopic",
-                "kafka-cluster:AlterCluster",
-                "kafka-cluster:Connect",
-                "kafka-cluster:DeleteTopic",
-                "kafka-cluster:ReadData",
-                "kafka-cluster:DescribeTopicDynamicConfiguration",
-                "kafka-cluster:AlterGroup",
-                "kafka-cluster:DescribeGroup",
-                "kafka-cluster:DescribeClusterDynamicConfiguration",
-                "kafka-cluster:DeleteGroup",
-                "kafka-cluster:DescribeCluster",
-                "kafka-cluster:DescribeTopic",
-                "kafka-cluster:WriteData"
+                "kafka-cluster:*"
             ],
             "Resource": "*"
         },
