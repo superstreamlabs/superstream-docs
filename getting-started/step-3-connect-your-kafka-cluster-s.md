@@ -379,22 +379,22 @@ Please use the **Superstream AWS** **account ID** (Will be given by the Superstr
 
 Attach the following policy
 
-{% code lineNumbers="true" %}
-```json
+```
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::XXXXXXXXXXXXX:root"
-            },
-            "Action": "sts:AssumeRole",
-            "Condition": {}
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+	    {
+		"Sid": "Statement1",
+		"Effect": "Allow",
+		"Principal": {
+                	"AWS": "arn:aws:iam::<ACCOUNT_ID>:role/<ROLE_ASSIGNED_TO_NODEGROUP>"
+                },
+		"Action": "sts:AssumeRole"
+	    }
+	]
 }
 ```
-{% endcode %}
+
+
 {% endtab %}
 {% endtabs %}
