@@ -379,7 +379,7 @@ Please use the **Superstream AWS** **account ID** (Will be given by the Superstr
 
 Attach the following policy
 
-```
+```json
 {
 	"Version": "2012-10-17",
 	"Statement": [
