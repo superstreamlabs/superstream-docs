@@ -46,6 +46,7 @@
 
 ## Release notes
 
+* [Nov 1, 2024](release-notes/nov-1-2024.md)
 * [Oct 14, 2024](release-notes/oct-14-2024.md)
 * [Sep 24, 2024](release-notes/sep-24-2024.md)
 * [Sep 10, 2024](release-notes/sep-10-2024.md)
