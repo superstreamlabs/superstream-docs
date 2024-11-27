@@ -120,23 +120,11 @@ kafka-acls --bootstrap-server <URL>:<PORT>  -add --allow-principal User:Superstr
 {% endtab %}
 
 {% tab title="AWS MSK " %}
-### Kafka vendor API key
+#### Kafka vendor API key <a href="#kafka-vendor-api-key-1" id="kafka-vendor-api-key-1"></a>
 
-#### Using IAM Role
+**Create a new Policy**
 
 Log in to the AWS Console and navigate to the **IAM** section to **create a new policy** with the permissions below:
-
-{% code lineNumbers="true" %}
-```json
-```
-{% endcode %}
-
-**Create a new role** with a trusted entity type: `AWS account`\
-Please use the **Superstream AWS** **account ID** (Will be given by the Superstream team)
-
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
-
-Attach the following policy
 
 {% code lineNumbers="true" %}
 ```json
@@ -254,7 +242,11 @@ Attach the following policy
                 "kafka:DescribeConfigurationRevision",
                 "kafka:UpdateConfiguration",
                 "kafka:ListConfigurations",
-                "kafka:ListClusterOperations"
+                "kafka:ListClusterOperations",
+                "kafka:TagResource",
+                "kafka:UntagResource",
+                "kafka:DescribeVpcConnection",
+                "kafka:DescribeReplicator"
             ],
             "Resource": "*"
         },
@@ -264,6 +256,7 @@ Attach the following policy
             "Action": [
                 "kafka-cluster:DescribeTransactionalId",
                 "kafka-cluster:CreateTopic",
+                "kafka-cluster:*Topic*",
                 "kafka-cluster:AlterCluster",
                 "kafka-cluster:Connect",
                 "kafka-cluster:DeleteTopic",
@@ -307,7 +300,13 @@ Attach the following policy
                 "logs:DescribeLogGroups",
                 "ec2:DescribeSecurityGroups",
                 "ec2:DescribeVpcs",
-                "ce:GetCostAndUsageWithResources"
+                "iam:SimulatePrincipalPolicy",
+                "iam:GetUser",
+                "ce:GetCostAndUsageWithResources",
+                "ce:ListTagsForResource",
+                "ce:UpdateCostAllocationTagsStatus",
+                "ce:ListCostAllocationTags",
+                "ce:GetTags"
             ],
             "Resource": "*"
         }
@@ -315,6 +314,38 @@ Attach the following policy
 }
 ```
 {% endcode %}
+
+#### Create API Key using IAM Role <a href="#create-api-key-using-iam-role" id="create-api-key-using-iam-role"></a>
+
+**Create a new role** with a trusted entity type: `Custom trust policy`
+
+<figure><img src="https://docs.superstream.ai/~gitbook/image?url=https%3A%2F%2F2184988900-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fv2riflmHwiTSB6UVhN6P%252Fuploads%252FMLENY4Xrg4wvqq3NZKgt%252Fimage-20240906-122035.png%3Falt%3Dmedia%26token%3D6469e22e-977f-4e88-85c8-f1030f0b15fb&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=8c1f352e&#x26;sv=1" alt=""><figcaption></figcaption></figure>
+
+Attach the following policy:
+
+The exact Principal will be given by the Superstream team
+
+```json
+{
+	"Version": "2012-10-17",
+	"Statement": [
+	    {
+		"Sid": "Statement1",
+		"Effect": "Allow",
+		"Principal": {
+                	"AWS": "arn:aws:iam::<ACCOUNT_ID>:role/<ROLE_ASSIGNED_TO_NODEGROUP>"
+                },
+		"Action": "sts:AssumeRole"
+	    }
+	]
+}
+```
+
+#### Create API Key using IAM User <a href="#create-api-key-using-iam-user" id="create-api-key-using-iam-user"></a>
+
+Attach the new policy to the AWS IAM User and use ACCESS KEY to create the API Key
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
