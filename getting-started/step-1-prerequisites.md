@@ -89,7 +89,7 @@ For effective functioning, a user or token requires the following permissions:
   * Alter: All topics
   * AlterConfigs: All topics
   * DescribeConfigs: All topics
-  * <mark style="color:red;">**Read, Create, and Write: single topic named**</mark>** `superstream.metadata`** (A dedicated Superstream topic with infinite retention and a single partition).
+  * <mark style="color:red;">**Read, Create, and Write: single topic named**</mark>**&#x20;`superstream.metadata`** (A dedicated Superstream topic with infinite retention and a single partition).
 * Consumer group-level:
   * Describe
   * List Consumer Groups

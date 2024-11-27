@@ -4,7 +4,7 @@ description: This page describes how to connect Superstream to one or more Kafka
 
 # Step 3: Connect Your Kafka Cluster/s
 
-## Option 1: Using Superstream Console
+Option 1: Using Superstream Console
 
 ### Step 1: Login to [Superstream Console](https://app.superstrem.ai)
 
@@ -18,104 +18,13 @@ In the upper-right corner, you will find this button:
 
 ### Step 3: Fill in the details
 
-<div align="left">
-
-<figure><img src="../.gitbook/assets/Screenshot 2024-05-01 at 13.14.31.png" alt=""><figcaption></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../.gitbook/assets/Screenshot 2024-05-01 at 13.14.31.png" alt=""><figcaption></figcaption></figure></div>
 
 Please do not close the window until a message is shown.
 
-## Option 2: During Superstream engine deployment
+##
 
-Every Engine is capable of establishing connections with one or several Kafka clusters simultaneously. To determine the optimal strategy for your setup, it is advisable to seek guidance from the Superstream team.
-
-Kafka clusters should be defined in the `config.yaml` file:
-
-```yaml
-connections:
-  - name: <connection_name>
-    type: <connection_type> # available types : confluent_kafka, confluent_cloud_kafka, MSK, apache_kafka
-    hosts: # list of bootstrap servers
-      - <bootstrap_server_1>
-      - <bootstrap_server_2>
-    authentication: # Specify one preferred method for connection
-      method:
-        noAuthentication:
-          enabled: <true_or_false>
-        ssl:
-          enabled: <true_or_false>
-          protocol: SSL
-          ca: "<path_to_ca_cert>"
-          cert: "<path_to_cert>"
-          key: "<path_to_key>"
-          insecureSkipVerify: <true_or_false>
-        sasl:
-          enabled: <true_or_false>
-          mechanism: <sasl_mechanism> # available options: "PLAIN", "SCRAM-SHA-512"
-          protocol: SASL_SSL
-          username: "<username>"
-          password: "<password>"
-          tls:
-            enabled: <true_or_false>
-            ca: "<path_to_ca_cert>"
-            cert: "<path_to_cert>"
-            key: "<path_to_key>"
-            insecureSkipVerify: <true_or_false>
-```
-
-* `name`: A unique name for the connection to be displayed through Superstream GUI.
-* `type`: The type of Kafka. Options include `confluent_kafka`, `confluent_cloud_kafka`, `MSK`, and `apache_kafka`.
-* `hosts`: A list of bootstrap servers for the Kafka cluster.
-
-**Authentication:**
-
-* `noAuthentication`: Set `enabled` to `true` if no authentication is required.
-* `ssl`: For SSL encryption without SASL authentication.
-  * `enabled`: Set to `true` to enable SSL authentication.
-  * `protocol`: Should always be `SSL`.
-  * `ca`, `cert`, `key`: Paths to your CA certificate, client certificate, and client key files.
-  * `insecureSkipVerify`: Set to `true` to bypass server certificate verification (not recommended for production environments).
-* `sasl`: For SASL authentication.
-  * `enabled`: Set to `true` enable SASL authentication.
-  * `mechanism`: The SASL mechanism to use. Options: `PLAIN`, `SCRAM-SHA-512`.
-  * `protocol`: Should be `SASL_SSL` for encrypted connections.
-  * `username` and `password`: Credentials for SASL authentication.
-  * `tls`: Optional TLS configuration for SASL authentication.
-
-If TLS is used with SASL, specify the following:
-
-* `enabled`: Set to `true` to enable TLS.
-* `ca`, `cert`, `key`: Paths to your CA certificate, client certificate, and client key files, if required.
-* `insecureSkipVerify`: Set to `true` to bypass server certificate verification (not recommended for production environments).
-
-#### Example
-
-Below is an example configuration for a SASL\_SSL authenticated connection:
-
-```yaml
-connections:
-  - name: my_kafka_connection
-    type: confluent_cloud_kafka
-    hosts:
-      - kafka.example.com:9092
-    authentication:
-      method:
-        sasl:
-          enabled: true
-          mechanism: PLAIN
-          protocol: SASL_SSL
-          username: "myUsername"
-          password: "myPassword"
-          tls:
-            enabled: false
-```
-
-Replace placeholders (e.g., `<connection_name>`, `<bootstrap_server_1>`) with your actual Kafka connection details. As shown in the examples, Follow the correct indentation and formatting.
-
-For any questions or further assistance, please refer to the official Kafka documentation or reach out to your Kafka provider.
-
-## \*Optional\* Add a vendor API key to gain deeper insights.
+## Optional Add a vendor API key to gain deeper insights.
 
 You can add an API key to gain deeper insights for eligible Kafka vendors such as Confluent, Aiven, Redpanda, and AWS.
 
@@ -123,7 +32,11 @@ Here's how to do it if you didn't set it up during the initial client connection
 
 **Step 1:** Head over to Settings -> "[Keys](https://app.superstream.ai/keys)"
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-05-23 at 16.06.03.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+**Step 2:** Add new key:
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 {% tabs %}
 {% tab title="Confluent Cloud" %}
@@ -206,7 +119,7 @@ For effective functioning, a user or token requires the following permissions:
   * Alter: All topics
   * AlterConfigs: All topics
   * DescribeConfigs: All topics
-  * <mark style="color:red;">**Read, Create, and Write: single topic named**</mark>** `superstream.metadata`** (A dedicated Superstream topic with infinite retention and a single partition).
+  * <mark style="color:red;">**Read, Create, and Write: single topic named**</mark>**&#x20;`superstream.metadata`** (A dedicated Superstream topic with infinite retention and a single partition).
 * Consumer group-level:
   * Describe
   * List Consumer Groups
@@ -239,7 +152,7 @@ kafka-acls --bootstrap-server <URL>:<PORT>  -add --allow-principal User:Superstr
 {% tab title="AWS MSK " %}
 ### Kafka vendor API key
 
-#### Using IAM Role
+#### Create a new Policy
 
 Log in to the AWS Console and navigate to the **IAM** section to **create a new policy** with the permissions below:
 
@@ -249,49 +162,10 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Sid": "EC2VpcEndpoint1",
             "Effect": "Allow",
-            "Action": [
-                "kafka:*",
-                "ec2:DescribeSubnets",
-                "ec2:DescribeVpcs",
-                "ec2:DescribeSecurityGroups",
-                "ec2:DescribeRouteTables",
-                "ec2:DescribeVpcEndpoints",
-                "ec2:DescribeVpcAttribute",
-                "kms:DescribeKey",
-                "kms:CreateGrant",
-                "logs:CreateLogDelivery",
-                "logs:GetLogDelivery",
-                "logs:UpdateLogDelivery",
-                "logs:DeleteLogDelivery",
-                "logs:ListLogDeliveries",
-                "logs:PutResourcePolicy",
-                "logs:DescribeResourcePolicies",
-                "logs:DescribeLogGroups",
-                "S3:GetBucketPolicy",
-                "firehose:TagDeliveryStream"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:CreateVpcEndpoint"
-            ],
-            "Resource": [
-                "arn:*:ec2:*:*:vpc/*",
-                "arn:*:ec2:*:*:subnet/*",
-                "arn:*:ec2:*:*:security-group/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:CreateVpcEndpoint"
-            ],
-            "Resource": [
-                "arn:*:ec2:*:*:vpc-endpoint/*"
-            ],
+            "Action": "ec2:CreateVpcEndpoint",
+            "Resource": "arn:*:ec2:*:*:vpc-endpoint/*",
             "Condition": {
                 "StringEquals": {
                     "aws:RequestTag/AWSMSKManaged": "true"
@@ -302,10 +176,9 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
             }
         },
         {
+            "Sid": "EC2VpcEndpoint2",
             "Effect": "Allow",
-            "Action": [
-                "ec2:CreateTags"
-            ],
+            "Action": "ec2:CreateTags",
             "Resource": "arn:*:ec2:*:*:vpc-endpoint/*",
             "Condition": {
                 "StringEquals": {
@@ -314,10 +187,9 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
             }
         },
         {
+            "Sid": "EC2VpcEndpoint3",
             "Effect": "Allow",
-            "Action": [
-                "ec2:DeleteVpcEndpoints"
-            ],
+            "Action": "ec2:DeleteVpcEndpoints",
             "Resource": "arn:*:ec2:*:*:vpc-endpoint/*",
             "Condition": {
                 "StringEquals": {
@@ -329,6 +201,17 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
             }
         },
         {
+            "Sid": "EC2VpcEndpoint4",
+            "Effect": "Allow",
+            "Action": "ec2:CreateVpcEndpoint",
+            "Resource": [
+                "arn:*:ec2:*:*:vpc/*",
+                "arn:*:ec2:*:*:security-group/*",
+                "arn:*:ec2:*:*:subnet/*"
+            ]
+        },
+        {
+            "Sid": "IAM1",
             "Effect": "Allow",
             "Action": "iam:PassRole",
             "Resource": "*",
@@ -339,6 +222,7 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
             }
         },
         {
+            "Sid": "IAM2",
             "Effect": "Allow",
             "Action": "iam:CreateServiceLinkedRole",
             "Resource": "arn:aws:iam::*:role/aws-service-role/kafka.amazonaws.com/AWSServiceRoleForKafka*",
@@ -349,6 +233,7 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
             }
         },
         {
+            "Sid": "IAM3",
             "Effect": "Allow",
             "Action": "iam:CreateServiceLinkedRole",
             "Resource": "arn:aws:iam::*:role/aws-service-role/delivery.logs.amazonaws.com/AWSServiceRoleForLogDelivery*",
@@ -359,11 +244,99 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
             }
         },
         {
+            "Sid": "Kafka",
             "Effect": "Allow",
             "Action": [
-                "ce:GetCostAndUsageWithResources",
+                "kafka:UpdateBrokerCount",
+                "kafka:DescribeConfiguration",
+                "kafka:ListScramSecrets",
+                "kafka:ListKafkaVersions",
+                "kafka:GetBootstrapBrokers",
+                "kafka:ListClientVpcConnections",
+                "kafka:UpdateBrokerType",
+                "kafka:DescribeCluster",
+                "kafka:ListClustersV2",
+                "kafka:DescribeClusterOperation",
+                "kafka:ListNodes",
+                "kafka:ListClusterOperationsV2",
+                "kafka:UpdateClusterConfiguration",
+                "kafka:ListClusters",
+                "kafka:GetClusterPolicy",
+                "kafka:DescribeClusterOperationV2",
+                "kafka:DescribeClusterV2",
+                "kafka:ListReplicators",
+                "kafka:ListConfigurationRevisions",
+                "kafka:ListVpcConnections",
+                "kafka:ListTagsForResource",
+                "kafka:GetCompatibleKafkaVersions",
+                "kafka:DescribeConfigurationRevision",
+                "kafka:UpdateConfiguration",
+                "kafka:ListConfigurations",
+                "kafka:ListClusterOperations",
+                "kafka:TagResource",
+                "kafka:UntagResource",
+                "kafka:DescribeVpcConnection",
+                "kafka:DescribeReplicator"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "KafkaCluster",
+            "Effect": "Allow",
+            "Action": [
+                "kafka-cluster:DescribeTransactionalId",
+                "kafka-cluster:CreateTopic",
+                "kafka-cluster:*Topic*",
+                "kafka-cluster:AlterCluster",
+                "kafka-cluster:Connect",
+                "kafka-cluster:DeleteTopic",
+                "kafka-cluster:ReadData",
+                "kafka-cluster:DescribeTopicDynamicConfiguration",
+                "kafka-cluster:AlterTopicDynamicConfiguration",
+                "kafka-cluster:AlterGroup",
+                "kafka-cluster:AlterClusterDynamicConfiguration",
+                "kafka-cluster:DescribeGroup",
+                "kafka-cluster:DescribeClusterDynamicConfiguration",
+                "kafka-cluster:DeleteGroup",
+                "kafka-cluster:DescribeCluster",
+                "kafka-cluster:AlterTopic",
+                "kafka-cluster:DescribeTopic",
+                "kafka-cluster:WriteData"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "Others",
+            "Effect": "Allow",
+            "Action": [
+                "logs:ListLogDeliveries",
+                "ec2:DescribeRouteTables",
+                "logs:CreateLogDelivery",
+                "logs:PutResourcePolicy",
+                "logs:UpdateLogDelivery",
+                "ec2:DescribeVpcEndpoints",
+                "ec2:DescribeSubnets",
+                "cloudwatch:GetMetricData",
                 "ce:GetCostAndUsage",
-                "cloudwatch:ListMetrics"
+                "ec2:DescribeVpcAttribute",
+                "cloudwatch:ListMetrics",
+                "logs:GetLogDelivery",
+                "kms:DescribeKey",
+                "logs:DeleteLogDelivery",
+                "firehose:TagDeliveryStream",
+                "kms:CreateGrant",
+                "logs:DescribeResourcePolicies",
+                "S3:GetBucketPolicy",
+                "logs:DescribeLogGroups",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeVpcs",
+                "iam:SimulatePrincipalPolicy",
+                "iam:GetUser",
+                "ce:GetCostAndUsageWithResources",
+                "ce:ListTagsForResource",
+                "ce:UpdateCostAllocationTagsStatus",
+                "ce:ListCostAllocationTags",
+                "ce:GetTags"
             ],
             "Resource": "*"
         }
@@ -372,12 +345,16 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
 ```
 {% endcode %}
 
-**Create a new role** with a trusted entity type: `AWS account`\
-Please use the **Superstream AWS** **account ID** (Will be given by the Superstream team)
+### Create API Key using IAM Role
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+**Create a new role** with a trusted entity type: `Custom trust policy`\
 
-Attach the following policy
+
+<figure><img src="../.gitbook/assets/image-20240906-122035.png" alt=""><figcaption></figcaption></figure>
+
+Attach the following policy:
+
+The exact Principal will be given by the Superstream team
 
 ```json
 {
@@ -395,6 +372,18 @@ Attach the following policy
 }
 ```
 
+### Create API Key using IAM User
 
+Attach the new policy to the AWS IAM User and use ACCESS KEY to create the API Key\
+
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-11-27 at 15.02.44.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
+
+
+
+
+
+
+
