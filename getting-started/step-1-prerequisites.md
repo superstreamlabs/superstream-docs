@@ -349,7 +349,9 @@ Attach the new policy to the AWS IAM User and use ACCESS KEY to create the API K
 {% endtab %}
 {% endtabs %}
 
-### **2.** _For hybrid deployments only._ **Network configuration**
+### <mark style="color:blue;">For local engines (not fully managed) only:</mark>
+
+### **2. Network configuration**
 
 **Ports**: The Superstream engine should be able to communicate with each designated Kafka cluster through the following ports:
 
@@ -357,7 +359,7 @@ Attach the new policy to the AWS IAM User and use ACCESS KEY to create the API K
 * Port 9999 facilitates JMX and monitoring communication between the Superstream controller and the designated Kafka cluster.
 * Port 4222 to enable secure communication for metadata transfer between the on-prem Superstream data plane to the external Superstream control plane
 
-### 3. _For hybrid deployments only._ Engine deployment-related
+### 3. Engine deployment-related
 
 1. Kubernetes Cluster: You need an up-and-running Kubernetes cluster. If you don't have one, you can create a cluster on platforms like Google Kubernetes Engine (GKE), Amazon EKS, Azure AKS, or Minikube for local development.
 2. [kubectl](https://kubernetes.io/docs/tasks/tools/): The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. Install kubectl if you haven't already.
@@ -375,7 +377,7 @@ Attach the new policy to the AWS IAM User and use ACCESS KEY to create the API K
 
 Default Storage Class: A default storage class must be configured and available in the Kubernetes cluster to dynamically provision storage as required by the application.
 
-### 4. _For hybrid deployments only._ Fill out the Environment Readiness Checklist
+### 4. Fill out the Environment Readiness Checklist
 
 The Superstream Environment Readiness Checklist ensures that everything is set up for the successful deployment of the SSM engine with reliability and resilience.
 
