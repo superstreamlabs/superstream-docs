@@ -352,8 +352,6 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
 
 <figure><img src="../.gitbook/assets/image-20240906-122035.png" alt=""><figcaption></figcaption></figure>
 
-Attach the following policy:
-
 The exact Principal will be given by the Superstream team
 
 ```json
@@ -371,6 +369,8 @@ The exact Principal will be given by the Superstream team
 	]
 }
 ```
+
+Attach the policy created above to the role.
 
 ### Create API Key using IAM User
 
