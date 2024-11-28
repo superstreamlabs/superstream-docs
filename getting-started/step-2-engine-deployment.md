@@ -1,14 +1,16 @@
 ---
-description: >-
-  This guide explaines how to deploy a Superstream on-prem engine on a
-  Kubernetes platform.
+description: This guide explaines how to deploy a local Superstream engine.
 ---
 
 # Step 2: Engine deployment
 
 {% hint style="warning" %}
-If your environment is completely isolated from the public internet, \
+If your environment is completely isolated from the external communication, \
 please use [this procedure](../procedures/engine-deployment-related/superstream-engine-deployment-for-environments-with-a-local-container-registry.md).
+{% endhint %}
+
+{% hint style="warning" %}
+This step is only necessary for **local engine deployment** and is not required for fully managed accounts.
 {% endhint %}
 
 ## Overview
@@ -27,9 +29,11 @@ It is highly recommended to deploy one engine per environment (dev, staging, pro
 
 ## Getting started
 
+{% tabs %}
+{% tab title="Without TLS (Default)" %}
 ### 1. Configure Environment Tokens
 
-Create a `custom_values.yaml` file and edit the relevant values (An example can be found [here](https://github.com/superstreamlabs/superstream-engine/blob/master/charts/superstream/custom\_values.yaml))
+Create a `custom_values.yaml` file and edit the relevant values (An example can be found [here](https://github.com/superstreamlabs/superstream-engine/blob/master/charts/superstream/custom_values.yaml))
 
 {% hint style="warning" %}
 {% code title="custom_values.yaml" overflow="wrap" lineNumbers="true" %}
@@ -120,6 +124,12 @@ spec:
     app.kubernetes.io/name: nats
   type: LoadBalancer
 ```
+{% endtab %}
+
+{% tab title="With TLS" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### 4. Enter Superstream Console
 
