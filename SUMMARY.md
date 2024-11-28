@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Superstream](README.md)
+* [Architecture](architecture.md)
 
 ## Getting started
 
