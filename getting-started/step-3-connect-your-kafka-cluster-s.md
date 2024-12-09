@@ -372,12 +372,24 @@ The exact Principal will be given by the Superstream team
 
 Attach the policy created above to the role.
 
+#### Add the following AWS-managed policy to the IAM Role:&#x20;
+
+* **AWSBillingReadOblyAccess**
+
 ### Create API Key using IAM User
 
 Attach the new policy to the AWS IAM User and use ACCESS KEY to create the API Key\
 
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-11-27 at 15.02.44.png" alt=""><figcaption></figcaption></figure>
+
+
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+#### Add the following AWS-managed policy to the IAM  User:&#x20;
+
+* **AWSBillingReadOblyAccess**
 {% endtab %}
 {% endtabs %}
 
