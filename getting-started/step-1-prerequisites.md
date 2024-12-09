@@ -315,13 +315,11 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
 ```
 {% endcode %}
 
-#### Create API Key using IAM Role <a href="#create-api-key-using-iam-role" id="create-api-key-using-iam-role"></a>
+### Create API Key using IAM Role <a href="#create-api-key-using-iam-role" id="create-api-key-using-iam-role"></a>
 
 **Create a new role** with a trusted entity type: `Custom trust policy`
 
 <figure><img src="https://docs.superstream.ai/~gitbook/image?url=https%3A%2F%2F2184988900-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fv2riflmHwiTSB6UVhN6P%252Fuploads%252FMLENY4Xrg4wvqq3NZKgt%252Fimage-20240906-122035.png%3Falt%3Dmedia%26token%3D6469e22e-977f-4e88-85c8-f1030f0b15fb&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=8c1f352e&#x26;sv=1" alt=""><figcaption></figcaption></figure>
-
-Attach the following policy:
 
 The exact Principal will be given by the Superstream team
 
@@ -341,11 +339,21 @@ The exact Principal will be given by the Superstream team
 }
 ```
 
-#### Create API Key using IAM User <a href="#create-api-key-using-iam-user" id="create-api-key-using-iam-user"></a>
+Attach the policy created above to the role.
 
-Attach the new policy to the AWS IAM User and use ACCESS KEY to create the API Key
+#### Add the following AWS-managed policy to the role:&#x20;
+
+* **AWSBillingReadOblyAccess**
+
+### Create API Key using IAM User <a href="#create-api-key-using-iam-user" id="create-api-key-using-iam-user"></a>
+
+Attach the policy created above to the AWS IAM User and use ACCESS KEY to create the API Key
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+#### Add the following AWS-managed policy to the IAM  User:&#x20;
+
+* **AWSBillingReadOblyAccess**
 {% endtab %}
 {% endtabs %}
 
