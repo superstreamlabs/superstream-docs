@@ -341,7 +341,7 @@ The exact Principal will be given by the Superstream team
 
 Attach the policy created above to the role.
 
-#### Add the following AWS-managed policy to the role:&#x20;
+#### Add the following AWS-managed policy to the IAM Role:&#x20;
 
 * **AWSBillingReadOblyAccess**
 
