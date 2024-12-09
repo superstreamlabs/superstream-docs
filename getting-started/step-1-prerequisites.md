@@ -343,7 +343,7 @@ Attach the policy created above to the role.
 
 #### Add the following AWS-managed policy to the IAM Role:&#x20;
 
-* **AWSBillingReadOblyAccess**
+* **AWSBillingReadOnlyAccess**
 
 ### Create API Key using IAM User <a href="#create-api-key-using-iam-user" id="create-api-key-using-iam-user"></a>
 
@@ -353,7 +353,7 @@ Attach the policy created above to the AWS IAM User and use ACCESS KEY to create
 
 #### Add the following AWS-managed policy to the IAM  User:&#x20;
 
-* **AWSBillingReadOblyAccess**
+* **AWSBillingReadOnlyAccess**
 {% endtab %}
 {% endtabs %}
 
