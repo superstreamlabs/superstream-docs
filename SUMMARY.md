@@ -33,6 +33,7 @@
   * [Superstream Platform deployment for Air-Gapped environments](procedures/engine-deployment-related/superstream-platform-deployment-for-air-gapped-environments.md)
 * [Engine upgrade-related](procedures/engine-upgrade-related/README.md)
   * [Upgrading From Helmfile based Deployment to Superstream Helm Chart](procedures/engine-upgrade-related/upgrading-from-helmfile-based-deployment-to-superstream-helm-chart.md)
+* [Notifications Configuration](procedures/notifications-configuration.md)
 
 ## Security & Legal
 
