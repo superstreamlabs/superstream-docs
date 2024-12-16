@@ -35,6 +35,10 @@ It is highly recommended to deploy one engine per environment (dev, staging, pro
 
 Create a `custom_values.yaml` file and edit the relevant values (An example can be found [here](https://github.com/superstreamlabs/superstream-engine/blob/master/charts/superstream/custom_values.yaml))
 
+`superstreamAccountId`: Access it via the SSM Console by selecting your profile icon in the top-right corner.
+
+`superstreamActivationToken`: Access it via the SSM Console by selecting your profile icon in the top-right corner.
+
 {% hint style="warning" %}
 {% code title="custom_values.yaml" overflow="wrap" lineNumbers="true" %}
 ```yaml
@@ -96,7 +100,7 @@ helm list
 ```
 {% endcode %}
 
-### 3. Expose (When Client connectivity is needed. Not a mandatory requirement)
+### 3. <mark style="color:purple;">\*Optional\*</mark> Expose (When Client connectivity is needed. Not a mandatory requirement)
 
 For client connectivity from outside the Kubernetes environment being used, it is necessary to expose the Superstream engine on port 4222 outside of the Kubernetes cluster where Superstream is deployed.
 
