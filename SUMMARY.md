@@ -13,6 +13,10 @@
   * [Java](getting-started/step-4-connect-your-clients/java.md)
   * [Python](getting-started/step-4-connect-your-clients/python.md)
 
+## Optimizations
+
+* [Autoscaler for AWS MSK Provision](optimizations/autoscaler-for-aws-msk-provision.md)
+
 ## Clients configuration management
 
 * [Overview](clients-configuration-management/overview.md)
