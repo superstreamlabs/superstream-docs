@@ -316,6 +316,7 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
                 "logs:UpdateLogDelivery",
                 "ec2:DescribeVpcEndpoints",
                 "ec2:DescribeSubnets",
+                "ec2:DescribeInstanceTypes",
                 "cloudwatch:GetMetricData",
                 "ce:GetCostAndUsage",
                 "ec2:DescribeVpcAttribute",
