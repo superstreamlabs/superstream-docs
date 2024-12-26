@@ -4,27 +4,9 @@ description: This page describes how to connect Superstream to one or more Kafka
 
 # Step 3: Connect Your Kafka Cluster/s
 
-Option 1: Using Superstream Console
+If you are using a <mark style="color:red;">self-hosted Kafka</mark>, please skip to Step 2.
 
-### Step 1: Login to [Superstream Console](https://app.superstrem.ai)
-
-If this is your first login, please use the link included in your welcome email.
-
-### Step 2: Add a new connection
-
-In the upper-right corner, you will find this button:
-
-### &#x20;![](<../.gitbook/assets/Screenshot 2024-05-01 at 13.12.41.png>)
-
-### Step 3: Fill in the details
-
-<div align="left"><figure><img src="../.gitbook/assets/Screenshot 2024-05-01 at 13.14.31.png" alt=""><figcaption></figcaption></figure></div>
-
-Please do not close the window until a message is shown.
-
-##
-
-## Optional Add a vendor API key to gain deeper insights.
+### Step 1: Add a vendor API key
 
 You can add an API key to gain deeper insights for eligible Kafka vendors such as Confluent, Aiven, Redpanda, and AWS.
 
@@ -35,8 +17,6 @@ Here's how to do it if you didn't set it up during the initial client connection
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 **Step 2:** Add new key:
-
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 {% tabs %}
 {% tab title="Confluent Cloud" %}
@@ -152,7 +132,7 @@ kafka-acls --bootstrap-server <URL>:<PORT>  -add --allow-principal User:Superstr
 {% tab title="AWS MSK " %}
 ### Kafka vendor API key
 
-#### Create a new Policy
+#### Create a new policy
 
 Log in to the AWS Console and navigate to the **IAM** section to **create a new policy** with the permissions below:
 
@@ -346,14 +326,13 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
 ```
 {% endcode %}
 
-### Create API Key using IAM Role
+### If you are using an IAM Role:
 
-**Create a new role** with a trusted entity type: `Custom trust policy`\
-
+1. **Create a new role** with a trusted entity type: `Custom trust policy`
 
 <figure><img src="../.gitbook/assets/image-20240906-122035.png" alt=""><figcaption></figcaption></figure>
 
-The exact Principal will be given by the Superstream team
+If you are using a fully managed Superstream - the exact "Principal" will be given by Superstream team
 
 ```json
 {
@@ -371,32 +350,21 @@ The exact Principal will be given by the Superstream team
 }
 ```
 
-Attach the policy created above to the role.
+2. Attach the policy created above to the role.
 
-#### Add the following AWS-managed policy to the IAM Role:&#x20;
+3\. Add the following AWS-managed policy to the IAM Role: `AWSBillingReadOnlyAccess`
 
-* **AWSBillingReadOnlyAccess**
+### If you are using an IAM User:
 
-### Create API Key using IAM User
-
-Attach the new policy to the AWS IAM User and use ACCESS KEY to create the API Key\
+1. Attach the new policy to the AWS IAM User and use ACCESS KEY to create the API Key\
 
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-11-27 at 15.02.44.png" alt=""><figcaption></figcaption></figure>
 
-
-
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
-
-#### Add the following AWS-managed policy to the IAM  User:&#x20;
-
-* **AWSBillingReadOnlyAccess**
+2. Add the following AWS-managed policy to the IAM  User: `AWSBillingReadOnlyAccess`
 {% endtab %}
 {% endtabs %}
 
+### Step 2: Head to "Kafka Clusters" -> "Add new Kafka"
 
-
-
-
-
-
+### Step 3: Fill in the needed information
