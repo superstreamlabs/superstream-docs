@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Superstream](README.md)
-* [Architecture](architecture.md)
 
 ## Getting started
 
@@ -39,6 +38,7 @@
 
 * [Processed data](security-and-legal/processed-data.md)
 * [Compliance](security-and-legal/compliance.md)
+* [Firewall rules](security-and-legal/firewall-rules.md)
 
 ## Solution briefs
 

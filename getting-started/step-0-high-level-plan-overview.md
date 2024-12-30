@@ -60,4 +60,10 @@ We make sure the entire deployment is resilient and works as expected:
 * Optimizations are being identified and highlighted
 * Client properties are retrieved and can be updated
 
+### Architecture
+
+<img src="../.gitbook/assets/image (7).png" alt="" data-size="original">
+
+### Firewall rules can be found [here](../security-and-legal/firewall-rules.md)
+
 </details>
