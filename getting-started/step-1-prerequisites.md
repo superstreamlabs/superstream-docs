@@ -11,120 +11,10 @@ Superstream platform is compatible with all Kafka authentication methods, such a
 * RBAC
 
 {% tabs %}
-{% tab title="Confluent Cloud" %}
-For connecting Confluent Cloud clusters to Superstream, two types of API keys are required to be created:&#x20;
-
-### Cluster connectivity key
-
-#### Create one using Confluent Console:
-
-1. Home -> Environments -> \<environment name> -> \<cluster name> -> API Keys
-
-<figure><img src="../.gitbook/assets/Screenshot 2024-10-15 at 13.42.03.png" alt="" width="172"><figcaption></figcaption></figure>
-
-2.  Click on "+ Add key"
-
-    <figure><img src="../.gitbook/assets/Screenshot 2024-10-15 at 13.43.29.png" alt="" width="375"><figcaption></figcaption></figure>
-3. In the opened walkthrough:
-   1. Choose "**Service account**"
-   2. "**Create a new one**" named `Superstream`
-   3. Define the following rules:
-      1. Cluster
-         1. `ALTER_CONFIGS`: ALLOW
-         2. `DESCRIBE`: ALLOW
-         3. `DESCRIBE_CONFIGS`: ALLOW
-      2. Consumer Group (For all "\*")
-         1. LITERAL, DESCRIBE, ALLOW
-         2. LITERAL, READ, ALLOW
-   4. "Create" **and save the newly created creds**.
-   5. Main menu -> Accounts & access -> Service accounts -> Superstream
-      1.  Add the following role assignments:
-
-          **For each designated organization:**
-
-          * `BillingAdmin`
-
-          **For each designated environment (Environment level):**
-
-          * M`etricsViewer`
-          * `DataDiscovery`
-          * `Operator`
-
-          **For each designated cluster (Cluster level):**
-
-          * `CloudClusterAdmin`
-      2. For each designated **cluster** -> **Topics**
-         1. `DeveloperRead`: All topics
-         2. `DeveloperManage`: All topics
-
-### Kafka vendor API key
-
-1. Head over to **Main menu** -> **API Keys** -> "**+ Add API key**" and perform the following:
-
-<figure><img src="../.gitbook/assets/Screenshot 2024-10-06 at 20.36.31.png" alt="" width="375"><figcaption></figcaption></figure>
-
-***
-
-<figure><img src="../.gitbook/assets/Screenshot 2024-10-06 at 20.37.52.png" alt="" width="375"><figcaption></figcaption></figure>
-
-***
-
-<figure><img src="../.gitbook/assets/Screenshot 2024-10-15 at 14.10.00.png" alt="" width="375"><figcaption></figcaption></figure>
-
-***
-
-<figure><img src="../.gitbook/assets/Screenshot 2024-10-06 at 20.39.28.png" alt="" width="375"><figcaption></figcaption></figure>
-{% endtab %}
-
-{% tab title="Apache Kafka" %}
-For effective functioning, a user or token requires the following permissions:
-
-* Cluster-level:
-  * Describe all topics, List all topics, Describe configs, Describe cluster
-* Topic-level:
-  * Read: All topics
-  * Alter: All topics
-  * Delete: All topics
-  * Describe: All topics
-  * Alter: All topics
-  * AlterConfigs: All topics
-  * DescribeConfigs: All topics
-  * <mark style="color:red;">**Read, Create, and Write: single topic named**</mark>**&#x20;`superstream.metadata`** (A dedicated Superstream topic with infinite retention and a single partition).
-* Consumer group-level:
-  * Describe
-  * List Consumer Groups
-
-ACL statement that grants `read` access to a user named Superstream for `all topics` in the Kafka cluster:
-
-{% code overflow="wrap" %}
-```bash
-kafka-acls --bootstrap-server : -add --allow-principal User:Superstream --operation read --topic '' --group '' --command-config <PATH_TO_CRED_FILE>
-```
-{% endcode %}
-
-ACL statement that grants `describe` access to a user named Superstream for `all topics` in the Kafka cluster:
-
-{% code overflow="wrap" %}
-```bash
-kafka-acls --bootstrap-server : -add --allow-principal User:Superstream --operation Describe --topic '*' --command-config <PATH_TO_CRED_FILE>
-```
-{% endcode %}
-
-ACL statement that grants `DescribeConfigs` access to a user named Superstream for `all topics` in the Kafka cluster:
-
-{% code overflow="wrap" %}
-```bash
-kafka-acls --bootstrap-server <URL>:<PORT>  -add --allow-principal User:Superstream --operation DescribeConfigs --topic '*' --command-config <PATH_TO_CRED_FILE>
-```
-{% endcode %}
-{% endtab %}
-
 {% tab title="AWS MSK " %}
-#### Kafka vendor API key <a href="#kafka-vendor-api-key-1" id="kafka-vendor-api-key-1"></a>
+**Step 1: Create a new policy**
 
-**Create a new Policy**
-
-Log in to the AWS Console and navigate to the **IAM** section to **create a new policy** with the permissions below:
+Log in to the AWS Console and navigate to the **IAM** section to **create a new policy** with the permissions below: (Copy and paste)
 
 {% code lineNumbers="true" %}
 ```json
@@ -316,13 +206,13 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
 ```
 {% endcode %}
 
-### Create API Key using IAM Role <a href="#create-api-key-using-iam-role" id="create-api-key-using-iam-role"></a>
+#### Step 2: If you are using an IAM Role <a href="#create-api-key-using-iam-role" id="create-api-key-using-iam-role"></a>
 
-**Create a new role** with a trusted entity type: `Custom trust policy`
+Create a new role with a trusted entity type: `Custom trust policy`
 
 <figure><img src="https://docs.superstream.ai/~gitbook/image?url=https%3A%2F%2F2184988900-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fv2riflmHwiTSB6UVhN6P%252Fuploads%252FMLENY4Xrg4wvqq3NZKgt%252Fimage-20240906-122035.png%3Falt%3Dmedia%26token%3D6469e22e-977f-4e88-85c8-f1030f0b15fb&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=8c1f352e&#x26;sv=1" alt=""><figcaption></figcaption></figure>
 
-The exact Principal will be given by the Superstream team
+The "Principal" value will be provided by the Superstream team
 
 ```json
 {
@@ -340,21 +230,129 @@ The exact Principal will be given by the Superstream team
 }
 ```
 
-Attach the policy created above to the role.
+#### Step 3: Attach the policy created above to the role.
 
-#### Add the following AWS-managed policy to the IAM Role:&#x20;
+#### Step 4: Add the following AWS-managed policy to the IAM Role:&#x20;
 
-* **AWSBillingReadOnlyAccess**
+* `AWSBillingReadOnlyAccess`
 
-### Create API Key using IAM User <a href="#create-api-key-using-iam-user" id="create-api-key-using-iam-user"></a>
+#### Step 2: If you are using an IAM User <a href="#create-api-key-using-iam-user" id="create-api-key-using-iam-user"></a>
 
 Attach the policy created above to the AWS IAM User and use ACCESS KEY to create the API Key
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-#### Add the following AWS-managed policy to the IAM  User:&#x20;
+#### Step 3: Add the following AWS-managed policy to the IAM  User:&#x20;
 
-* **AWSBillingReadOnlyAccess**
+* `AWSBillingReadOnlyAccess`
+{% endtab %}
+
+{% tab title="Confluent Cloud" %}
+For connecting Confluent Cloud clusters to Superstream, two types of API keys are required to be created:&#x20;
+
+### Cluster connectivity key
+
+#### Create one using Confluent Console:
+
+1. Home -> Environments -> \<environment name> -> \<cluster name> -> API Keys
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-15 at 13.42.03.png" alt="" width="172"><figcaption></figcaption></figure>
+
+2.  Click on "+ Add key"
+
+    <figure><img src="../.gitbook/assets/Screenshot 2024-10-15 at 13.43.29.png" alt="" width="375"><figcaption></figcaption></figure>
+3. In the opened walkthrough:
+   1. Choose "**Service account**"
+   2. "**Create a new one**" named `Superstream`
+   3. Define the following rules:
+      1. Cluster
+         1. `ALTER_CONFIGS`: ALLOW
+         2. `DESCRIBE`: ALLOW
+         3. `DESCRIBE_CONFIGS`: ALLOW
+      2. Consumer Group (For all "\*")
+         1. LITERAL, DESCRIBE, ALLOW
+         2. LITERAL, READ, ALLOW
+   4. "Create" **and save the newly created creds**.
+   5. Main menu -> Accounts & access -> Service accounts -> Superstream
+      1.  Add the following role assignments:
+
+          **For each designated organization:**
+
+          * `BillingAdmin`
+
+          **For each designated environment (Environment level):**
+
+          * M`etricsViewer`
+          * `DataDiscovery`
+          * `Operator`
+
+          **For each designated cluster (Cluster level):**
+
+          * `CloudClusterAdmin`
+      2. For each designated **cluster** -> **Topics**
+         1. `DeveloperRead`: All topics
+         2. `DeveloperManage`: All topics
+
+### Kafka vendor API key
+
+1. Head over to **Main menu** -> **API Keys** -> "**+ Add API key**" and perform the following:
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-06 at 20.36.31.png" alt="" width="375"><figcaption></figcaption></figure>
+
+***
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-06 at 20.37.52.png" alt="" width="375"><figcaption></figcaption></figure>
+
+***
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-15 at 14.10.00.png" alt="" width="375"><figcaption></figcaption></figure>
+
+***
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-10-06 at 20.39.28.png" alt="" width="375"><figcaption></figcaption></figure>
+{% endtab %}
+
+{% tab title="Apache Kafka" %}
+For effective functioning, a user or token requires the following permissions:
+
+* Cluster-level:
+  * Describe all topics, List all topics, Describe configs, Describe cluster
+* Topic-level:
+  * Read: All topics
+  * Alter: All topics
+  * Delete: All topics
+  * Describe: All topics
+  * Alter: All topics
+  * AlterConfigs: All topics
+  * DescribeConfigs: All topics
+  * <mark style="color:red;">**Read, Create, and Write: single topic named**</mark>**&#x20;`superstream.metadata`** (A dedicated Superstream topic with infinite retention and a single partition).
+* Consumer group-level:
+  * Describe
+  * List Consumer Groups
+
+ACL statement that grants `read` access to a user named Superstream for `all topics` in the Kafka cluster:
+
+{% code overflow="wrap" %}
+```bash
+kafka-acls --bootstrap-server : -add --allow-principal User:Superstream --operation read --topic '' --group '' --command-config <PATH_TO_CRED_FILE>
+```
+{% endcode %}
+
+ACL statement that grants `describe` access to a user named Superstream for `all topics` in the Kafka cluster:
+
+{% code overflow="wrap" %}
+```bash
+kafka-acls --bootstrap-server : -add --allow-principal User:Superstream --operation Describe --topic '*' --command-config <PATH_TO_CRED_FILE>
+```
+{% endcode %}
+
+ACL statement that grants `DescribeConfigs` access to a user named Superstream for `all topics` in the Kafka cluster:
+
+{% code overflow="wrap" %}
+```bash
+kafka-acls --bootstrap-server <URL>:<PORT>  -add --allow-principal User:Superstream --operation DescribeConfigs --topic '*' --command-config <PATH_TO_CRED_FILE>
+```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
