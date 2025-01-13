@@ -346,6 +346,11 @@ superstreamEngine:
   - key: "app"
     value: "connectors"
     effect: "NoExecute"
+autoScaler:
+  tolerations:
+  - key: "app"
+    value: "connectors"
+    effect: "NoExecute"
 syslog:
   tolerations:
   - key: "app"
