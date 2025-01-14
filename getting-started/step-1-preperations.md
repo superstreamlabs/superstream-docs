@@ -1,4 +1,4 @@
-# Step 1: Prerequisites
+# Step 1: Preperations
 
 **1. Create a user and/or a Vendor API key**
 
@@ -419,7 +419,7 @@ kafka-acls --bootstrap-server <URL>:<PORT>  -add --allow-principal User:Superstr
 1. Kubernetes Cluster: You need an up-and-running Kubernetes cluster. If you don't have one, you can create a cluster on platforms like Google Kubernetes Engine (GKE), Amazon EKS, Azure AKS, or Minikube for local development.
 2. [kubectl](https://kubernetes.io/docs/tasks/tools/): The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. Install kubectl if you haven't already.
 3. [Helm](https://helm.sh/docs/intro/install/): Helm is a package manager for Kubernetes that facilitates the deployment and management of applications. Install Helm if it's not already set up.
-4. A defined default storage class. In case you can't define one, please use this [appendix](step-1-prerequisites.md#appendix-d-custom-changes-to-the-helmfile)
+4. A defined default storage class. In case you can't define one, please use this [appendix](step-1-preperations.md#appendix-d-custom-changes-to-the-helmfile)
 5. `Account ID` and `Activation Token`. To be received by the Superstream team.
 6. Fill in the "[Environment readiness](https://docs.google.com/spreadsheets/d/1z-IRt6jBhMpL-T9XhL0k1hoPHgAZnlSoPh0ay2ymses/edit?usp=sharing)" checklist
 

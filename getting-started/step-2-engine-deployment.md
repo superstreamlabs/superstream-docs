@@ -4,18 +4,16 @@ description: This guide explaines how to connect Superstream to your Kafka clust
 
 # Step 2: Connect your Kafka
 
-{% hint style="warning" %}
-If your environment is completely isolated from the external communication, \
-please use [this procedure](../procedures/engine-deployment-related/superstream-engine-deployment-for-environments-with-a-local-container-registry.md).
-{% endhint %}
+**At this point, you should have:**
 
-{% hint style="warning" %}
-This step is only necessary for **local engine deployment** and is not required for fully managed accounts.
-{% endhint %}
+1. Needed keys and/or users for your Kafka and vendor (If you are using a managed Kafka), as described in [Step 1: Preperations](step-1-preperations.md)
+2. An account invitation via email to you or to another account owner in the organization
+
+**Next:**
 
 <details>
 
-<summary>Start here if you are using a local engine</summary>
+<summary>Start with this step, if you are using a local engine</summary>
 
 ## Overview
 
@@ -371,6 +369,7 @@ Connecting your Development/Staging Kafka Clusters to Superstream is recommended
 
 </details>
 
-### Enter Superstream Console
+#### Login to [Superstream Console](https://app.superstream.ai)
 
-Superstream Console can be found here: [https://app.superstream.ai](https://app.superstream.ai)
+<figure><img src="../.gitbook/assets/Screenshot 2025-01-14 at 11.45.21.png" alt=""><figcaption></figcaption></figure>
+
