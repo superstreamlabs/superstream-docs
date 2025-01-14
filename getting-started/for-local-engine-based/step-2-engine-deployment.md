@@ -6,7 +6,7 @@ description: This guide explaines how to deploy a local Superstream engine.
 
 {% hint style="warning" %}
 If your environment is completely isolated from the external communication, \
-please use [this procedure](../procedures/engine-deployment-related/superstream-engine-deployment-for-environments-with-a-local-container-registry.md).
+please use [this procedure](../../procedures/engine-deployment-related/superstream-engine-deployment-for-environments-with-a-local-container-registry.md).
 {% endhint %}
 
 {% hint style="warning" %}

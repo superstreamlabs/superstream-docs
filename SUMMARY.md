@@ -6,7 +6,9 @@
 
 * [Step 0: High-level plan overview](getting-started/step-0-high-level-plan-overview.md)
 * [Step 1: Prerequisites](getting-started/step-1-prerequisites.md)
-* [Step 2: Engine deployment](getting-started/step-2-engine-deployment.md)
+* [For local engine-based](getting-started/for-local-engine-based/README.md)
+  * [Step 2: Engine deployment](getting-started/for-local-engine-based/step-2-engine-deployment.md)
+* [For fully managed](getting-started/for-fully-managed.md)
 * [Step 3: Connect Your Kafka Cluster/s](getting-started/step-3-connect-your-kafka-cluster-s.md)
 * [Step 4: Connect Your Clients](getting-started/step-4-connect-your-clients/README.md)
   * [Java](getting-started/step-4-connect-your-clients/java.md)
