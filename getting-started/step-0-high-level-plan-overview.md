@@ -39,7 +39,7 @@ Please complete the [following checklist](https://docs.google.com/spreadsheets/d
 
 ### Step 2: Deploy the SSM engine
 
-Deploy at least one SSM engine following the [step-by-step](for-local-engine-based/step-2-engine-deployment.md) guide provided on the documentation site.
+Deploy at least one SSM engine following the [step-by-step](step-2-engine-deployment.md) guide provided on the documentation site.
 
 ### Step 3: Head over to the SSM Console
 

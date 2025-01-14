@@ -1,17 +1,21 @@
 ---
-description: This guide explaines how to deploy a local Superstream engine.
+description: This guide explaines how to connect Superstream to your Kafka cluster/s
 ---
 
-# Step 2: Engine deployment
+# Step 2: Connect your Kafka
 
 {% hint style="warning" %}
 If your environment is completely isolated from the external communication, \
-please use [this procedure](../../procedures/engine-deployment-related/superstream-engine-deployment-for-environments-with-a-local-container-registry.md).
+please use [this procedure](../procedures/engine-deployment-related/superstream-engine-deployment-for-environments-with-a-local-container-registry.md).
 {% endhint %}
 
 {% hint style="warning" %}
 This step is only necessary for **local engine deployment** and is not required for fully managed accounts.
 {% endhint %}
+
+<details>
+
+<summary>Start here if you are using a local engine</summary>
 
 ## Overview
 
@@ -23,15 +27,11 @@ This step is only necessary for **local engine deployment** and is not required 
 * 1 Superstream syslog adapter
 * 1 Telegraf agent for monitoring
 
-{% hint style="info" %}
-It is highly recommended to deploy one engine per environment (dev, staging, prod)
-{% endhint %}
+\*It is highly recommended to deploy one engine per environment (dev, staging, prod)\*
 
-## Getting started
+### Engine deployment without TLS (Default)
 
-{% tabs %}
-{% tab title="Without TLS (Default)" %}
-### 1. Configure Environment Tokens
+#### 1. Configure Environment Tokens
 
 Create a `custom_values.yaml` file and edit the relevant values (An example can be found [here](https://github.com/superstreamlabs/superstream-engine/blob/master/charts/superstream/custom_values.yaml))
 
@@ -80,7 +80,7 @@ autoScaler:
   enabled: true
 ```
 
-### 2. Deploy
+#### 2. Deploy
 
 1. Go to the `custom_values.yaml` directory and run:
 
@@ -98,7 +98,7 @@ helm list
 ```
 {% endcode %}
 
-### 3. <mark style="color:purple;">\*Optional\*</mark> Expose (When Client connectivity is needed. Not a mandatory requirement)
+#### 3. <mark style="color:purple;">\*Optional\*</mark> Expose (When Client connectivity is needed. Not a mandatory requirement)
 
 For client connectivity from outside the Kubernetes environment being used, it is necessary to expose the Superstream engine on port 4222 outside of the Kubernetes cluster where Superstream is deployed.
 
@@ -126,9 +126,9 @@ spec:
     app.kubernetes.io/name: nats
   type: LoadBalancer
 ```
-{% endtab %}
 
-{% tab title="With TLS" %}
+### Engine deployment with TLS
+
 This guide provides step-by-step instructions for deploying the Superstream Engine with TLS-enabled NATS. The setup includes creating necessary secrets, configuring trust for CA certificates, and aligning Helm chart values for deployment.
 
 **Prerequisites**
@@ -219,12 +219,6 @@ helm repo add superstream https://k8s.superstream.ai/ --force-update && helm upg
 * Ensure the `tls.crt` and `tls.key` files are valid and signed by a trusted CA.
 * The `ca-certificates.crt` file should include all necessary trusted CA certificates for the data plane applications.
 * Align the secret names in `custom_values.yaml` with the names created in the Kubernetes namespace.
-{% endtab %}
-{% endtabs %}
-
-### 4. Enter Superstream Console
-
-Superstream Console can be found here: [https://app.superstream.ai](https://app.superstream.ai)
 
 ## Appendixes
 
@@ -374,3 +368,9 @@ nats:
 ### Dev / Staging environments
 
 Connecting your Development/Staging Kafka Clusters to Superstream is recommended. This can be done using either one or more dedicated Superstream engines (data planes) for each environment or the same engine connected to the production clusters.
+
+</details>
+
+### Enter Superstream Console
+
+Superstream Console can be found here: [https://app.superstream.ai](https://app.superstream.ai)
