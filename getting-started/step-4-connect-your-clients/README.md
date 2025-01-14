@@ -22,7 +22,7 @@ Superstream client is a supplement for your existing Kafka library.
 
 ### Step 0: Confirm that the `superstream.metadata` topic has been created
 
-As described in the [prerequisites](../step-1-preperations.md#id-1.-a-user-for-superstream-per-kafka-cluster) page, a topic named `superstream.metadata` has to be created with the following permissions: Read, Create, and Write.
+As described in the [prerequisites](../step-1-preparations.md#id-1.-a-user-for-superstream-per-kafka-cluster) page, a topic named `superstream.metadata` has to be created with the following permissions: Read, Create, and Write.
 
 ### Step 1: Set environment variable
 

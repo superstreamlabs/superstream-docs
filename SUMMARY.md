@@ -5,8 +5,9 @@
 ## Getting started
 
 * [Step 0: High-level plan overview](getting-started/step-0-high-level-plan-overview.md)
-* [Step 1: Preperations](getting-started/step-1-preperations.md)
-* [Step 2: Connect your Kafka](getting-started/step-2-engine-deployment.md)
+* [Step 1: Preparations](getting-started/step-1-preparations.md)
+* [Step 2: Connect your Kafka cluster/s](getting-started/step-2-engine-deployment.md)
+* [Step 3: Activate](getting-started/step-3-activate.md)
 * [Step 4: Connect Your Clients](getting-started/step-4-connect-your-clients/README.md)
   * [Java](getting-started/step-4-connect-your-clients/java.md)
   * [Python](getting-started/step-4-connect-your-clients/python.md)

@@ -2,11 +2,11 @@
 description: This guide explaines how to connect Superstream to your Kafka cluster/s
 ---
 
-# Step 2: Connect your Kafka
+# Step 2: Connect your Kafka cluster/s
 
 **At this point, you should have:**
 
-1. Needed keys and/or users for your Kafka and vendor (If you are using a managed Kafka), as described in [Step 1: Preperations](step-1-preperations.md)
+1. Needed keys and/or users for your Kafka and vendor (If you are using a managed Kafka), as described in [Step 1: Preparations](step-1-preparations.md)
 2. An account invitation via email to you or to another account owner in the organization
 
 **Next:**
@@ -373,3 +373,4 @@ Connecting your Development/Staging Kafka Clusters to Superstream is recommended
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-01-14 at 11.45.21.png" alt=""><figcaption></figcaption></figure>
 
+#### Start your journey by clicking on the centered button "Start here"
