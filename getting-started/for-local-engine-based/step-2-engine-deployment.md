@@ -39,8 +39,8 @@ Create a `custom_values.yaml` file and edit the relevant values (An example can 
 
 `superstreamActivationToken`: Access it via the SSM Console by selecting your profile icon in the top-right corner.
 
-{% hint style="warning" %}
-{% code title="custom_values.yaml" overflow="wrap" lineNumbers="true" %}
+Example `custom_values.yaml` file:
+
 ```yaml
 ############################################################
 # GLOBAL configuration for Superstream Engine
@@ -79,8 +79,6 @@ nats:
 autoScaler:
   enabled: true
 ```
-{% endcode %}
-{% endhint %}
 
 ### 2. Deploy
 
