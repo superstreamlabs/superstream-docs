@@ -23,4 +23,4 @@ Immediate outcome with zero efforts:
 * Decrease end-to-end latency by 6X, and improve throughput by 10X
 * Enforce client-level governance and policies
 
-<figure><img src=".gitbook/assets/Screenshot 2024-07-24 at 8.51.05.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2025-01-15 at 8.56.51.png" alt=""><figcaption></figcaption></figure>
