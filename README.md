@@ -6,6 +6,10 @@ description: Improve And Optimize Your Kafka In Literally Minutes
 
 ## Welcome aboard!
 
+Superstream is an autonomous platform designed to optimize data infrastructure for cost reduction and reduced operations.
+
+### Superstream for Kafka
+
 Kafka needs to be cheaper, faster, and more reliable to process a greater volume of data in the near future.
 
 Achieving these benefits usually requires replacing the existing Kafka with a managed one or a different vendor, which is a time-consuming, expensive, and painful process.
