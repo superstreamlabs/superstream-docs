@@ -1,14 +1,6 @@
 # Step 1: Preparations
 
-**1. Create a user and/or a Vendor API key**
-
-Superstream platform is compatible with all Kafka authentication methods, such as:
-
-* SASL/SCRAM
-* SASL/GSSAPI
-* SASL/PLAIN
-* ACL
-* RBAC
+### **Create a user**
 
 {% tabs %}
 {% tab title="AWS MSK " %}
@@ -253,7 +245,7 @@ Attach the policy created above to the AWS IAM User and use ACCESS KEY to create
 {% tab title="Confluent Cloud" %}
 For connecting Confluent Cloud clusters to Superstream, two types of API keys are required to be created:&#x20;
 
-### Step 1: Create a new Confluent service account
+#### Step 1: Create a new Confluent service account
 
 In Confluent Console: Top-right menu -> Accounts & access -> Accounts -> Service Accounts -> **"Add service account"**
 
@@ -275,7 +267,7 @@ In the "Add service account" wizard:
       2. For each designated **cluster** -> **Consumer Groups**
          1. Read all `Consumer groups`
 
-### Step 2: Create a Confluent Cloud Resource Management Key
+#### Step 2: Create a Confluent Cloud Resource Management Key
 
 In Confluent Console: Top-right menu -> API Keys -> + Add API key
 
@@ -289,7 +281,7 @@ Follow the following steps:
 
 Create <mark style="color:red;">**and save the newly created credentials using the cluster name**</mark><mark style="color:red;">.</mark>
 
-### Step 3: Create a dedicated API key per cluster
+#### Step 3: Create a dedicated API key per cluster
 
 In Confluent Console: Left menu -> Home -> Environments -> `<environment name>` -> `<cluster name>` -> API Keys
 
