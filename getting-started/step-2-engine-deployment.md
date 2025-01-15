@@ -13,7 +13,7 @@ description: This guide explaines how to connect Superstream to your Kafka clust
 
 <details>
 
-<summary>Start with this step, if you are using a local engine</summary>
+<summary>Start here, if you are using a local engine</summary>
 
 ## Overview
 
