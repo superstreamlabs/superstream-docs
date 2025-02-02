@@ -52,10 +52,12 @@
 
 ## Release notes
 
-* [Jan 11, 2024](release-notes/jan-11-2024.md)
-* [Dec 5, 2024](release-notes/dec-5-2024.md)
-* [Nov 1, 2024](release-notes/nov-1-2024.md)
-* [Oct 14, 2024](release-notes/oct-14-2024.md)
-* [Sep 24, 2024](release-notes/sep-24-2024.md)
-* [Sep 10, 2024](release-notes/sep-10-2024.md)
-* [August 26, 2024](release-notes/august-26-2024.md)
+* [Changelog](release-notes/changelog/README.md)
+  * [Feb 2, 2025](release-notes/changelog/feb-2-2025.md)
+  * [Jan 11, 2025](release-notes/changelog/jan-11-2025.md)
+  * [Dec 5, 2024](release-notes/changelog/dec-5-2024.md)
+  * [Nov 1, 2024](release-notes/changelog/nov-1-2024.md)
+  * [Oct 14, 2024](release-notes/changelog/oct-14-2024.md)
+  * [Sep 24, 2024](release-notes/changelog/sep-24-2024.md)
+  * [Sep 10, 2024](release-notes/changelog/sep-10-2024.md)
+  * [August 26, 2024](release-notes/changelog/august-26-2024.md)
