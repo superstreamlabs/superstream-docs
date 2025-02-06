@@ -44,3 +44,5 @@ Achieving a high standard of reliability in Kafka involves three key components:
 3. **Anomaly detection:** Superstream will continuously learn your workloads and patterns, and alert when there is significant change in traditional patterns across clients and clusters.
 
 [![Superstream](https://i.ibb.co/J9bjj0N/CTA.png)](https://app.superstream.ai/signup)
+
+<a href="https://ibb.co/Gq1QQBX"><img src="https://i.ibb.co/J9bjj0N/CTA.png" alt="CTA" border="0"></a>
