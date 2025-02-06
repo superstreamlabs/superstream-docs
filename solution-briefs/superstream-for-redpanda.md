@@ -1,5 +1,13 @@
 # Superstream for Redpanda
 
+
+
+
+
+
+
+
+
 Superstream is an autonomous platform designed to optimize and improve Kafka of all types to reduce costs, reduce operations, and increase reliability.
 
 Superstream enhances the experience of Redpanda Cloud users in numerous ways, including significant cost reduction and increased visibility.
@@ -43,5 +51,5 @@ Achieving a high standard of reliability in Kafka involves three key components:
 2. **Reactive Measures:** If a client or user can still commit a violation, Superstream will identify it in its continuous scanning and quickly notify the operators.
 3. **Anomaly detection:** Superstream will continuously learn your workloads and patterns, and alert when there is significant change in traditional patterns across clients and clusters.
 
-<div data-full-width="true"><figure><img src="../.gitbook/assets/CTA (1).png" alt=""><figcaption></figcaption></figure></div>
+<figure><img src="../.gitbook/assets/CTA (4).png" alt=""><figcaption></figcaption></figure>
 
