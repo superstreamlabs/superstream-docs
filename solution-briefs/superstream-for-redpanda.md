@@ -43,6 +43,4 @@ Achieving a high standard of reliability in Kafka involves three key components:
 2. **Reactive Measures:** If a client or user can still commit a violation, Superstream will identify it in its continuous scanning and quickly notify the operators.
 3. **Anomaly detection:** Superstream will continuously learn your workloads and patterns, and alert when there is significant change in traditional patterns across clients and clusters.
 
-<a link="https://app.superstream.ai/signup"><figure><img src="../.gitbook/assets/CTA (4).png" alt=""><figcaption></figcaption></figure></a>
-
-![../.gitbook/assets/CTA (4).png](https://app.superstream.ai/signup)
+[![Superstream](https://i.ibb.co/J9bjj0N/CTA.png)](https://app.superstream.ai/signup)
