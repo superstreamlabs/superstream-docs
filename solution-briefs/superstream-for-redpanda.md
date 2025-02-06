@@ -45,4 +45,5 @@ Achieving a high standard of reliability in Kafka involves three key components:
 
 <figure><img src="../.gitbook/assets/CTA (4).png" alt=""><figcaption></figcaption></figure>
 
-![../.gitbook/assets/CTA (4).png](https://codecademy.com)
+
+[![Superstream](https://i.ibb.co/J9bjj0N/CTA.png)](https://app.superstream.ai/signup)
