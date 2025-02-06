@@ -25,7 +25,7 @@ By optimizing resource usage, Superstream ensures that Redpanda users not only s
 5. **Identify your heavy requester:** Quickly identify how many requests each client performs and ways to reduce that.
 6. **Optimize Non-Binary Payloads:** Superstream identifies producers writing non-binary payloads and activates payload reduction techniques, ensuring no disruption to the existing workflow.
 
-The entire identification process is fully configurable to accommodate various business logic while continuously self-improving through reinforcement learning.&#x20;
+The entire identification process is fully configurable to accommodate various business logic while continuously self-improving through reinforcement learning.
 
 Although certain environments may not support all actions, implementing even a small portion can significantly reduce the monthly bill.
 
@@ -43,6 +43,7 @@ Achieving a high standard of reliability in Kafka involves three key components:
 2. **Reactive Measures:** If a client or user can still commit a violation, Superstream will identify it in its continuous scanning and quickly notify the operators.
 3. **Anomaly detection:** Superstream will continuously learn your workloads and patterns, and alert when there is significant change in traditional patterns across clients and clusters.
 
-[![Superstream](https://i.ibb.co/J9bjj0N/CTA.png)](https://app.superstream.ai/signup)
+{% embed url="https://app.superstream.ai/signup" %}
 
-<a href="https://ibb.co/Gq1QQBX"><img src="https://i.ibb.co/J9bjj0N/CTA.png" width="100%" height="100%" alt="CTA" border="0"></a>
+<figure><img src="../.gitbook/assets/CTA (4).png" alt=""><figcaption></figcaption></figure>
+
