@@ -353,6 +353,8 @@ Click on "**+ Add key**"
 {% endtab %}
 
 {% tab title="Apache Kafka" %}
+### Step 1: Create a dedicated Kafka user for Superstream
+
 For effective functioning, a user or token requires the following permissions:
 
 * Cluster-level:
@@ -365,33 +367,48 @@ For effective functioning, a user or token requires the following permissions:
   * Alter: All topics
   * AlterConfigs: All topics
   * DescribeConfigs: All topics
-  * <mark style="color:red;">**Read, Create, and Write: single topic named**</mark>**&#x20;`superstream.metadata`** (A dedicated Superstream topic with infinite retention and a single partition).
 * Consumer group-level:
   * Describe
   * List Consumer Groups
 
-ACL statement that grants `read` access to a user named Superstream for `all topics` in the Kafka cluster:
+ACL statements examples:
 
-{% code overflow="wrap" %}
+{% code lineNumbers="true" %}
 ```bash
-kafka-acls --bootstrap-server : -add --allow-principal User:Superstream --operation read --topic '' --group '' --command-config <PATH_TO_CRED_FILE>
+# Cluster-level permissions
+kafka-acls --authorizer-properties zookeeper.connect=<ZK_HOST:PORT> --add --allow-principal User:<USER> --operation Describe --cluster
+kafka-acls --authorizer-properties zookeeper.connect=<ZK_HOST:PORT> --add --allow-principal User:<USER> --operation DescribeConfigs --cluster
+kafka-acls --authorizer-properties zookeeper.connect=<ZK_HOST:PORT> --add --allow-principal User:<USER> --operation Describe --topic '*'
+kafka-acls --authorizer-properties zookeeper.connect=<ZK_HOST:PORT> --add --allow-principal User:<USER> --operation List --topic '*'
+
+# Topic-level permissions
+kafka-acls --authorizer-properties zookeeper.connect=<ZK_HOST:PORT> --add --allow-principal User:<USER> --operation Read --topic '*'
+kafka-acls --authorizer-properties zookeeper.connect=<ZK_HOST:PORT> --add --allow-principal User:<USER> --operation Alter --topic '*'
+kafka-acls --authorizer-properties zookeeper.connect=<ZK_HOST:PORT> --add --allow-principal User:<USER> --operation Delete --topic '*'
+kafka-acls --authorizer-properties zookeeper.connect=<ZK_HOST:PORT> --add --allow-principal User:<USER> --operation Describe --topic '*'
+kafka-acls --authorizer-properties zookeeper.connect=<ZK_HOST:PORT> --add --allow-principal User:<USER> --operation AlterConfigs --topic '*'
+kafka-acls --authorizer-properties zookeeper.connect=<ZK_HOST:PORT> --add --allow-principal User:<USER> --operation DescribeConfigs --topic '*'
+
+# Consumer group-level permissions
+kafka-acls --authorizer-properties zookeeper.connect=<ZK_HOST:PORT> --add --allow-principal User:<USER> --operation Describe --group '*'
+kafka-acls --authorizer-properties zookeeper.connect=<ZK_HOST:PORT> --add --allow-principal User:<USER> --operation List --group '*'
 ```
 {% endcode %}
 
-ACL statement that grants `describe` access to a user named Superstream for `all topics` in the Kafka cluster:
+### Step 2: Connection information per cluster
 
-{% code overflow="wrap" %}
-```bash
-kafka-acls --bootstrap-server : -add --allow-principal User:Superstream --operation Describe --topic '*' --command-config <PATH_TO_CRED_FILE>
-```
-{% endcode %}
+The following information will be required for each cluster:
 
-ACL statement that grants `DescribeConfigs` access to a user named Superstream for `all topics` in the Kafka cluster:
+* Bootstrap servers (Kafka URL)
+* Authentication security protocol (No auth / SSL / SASL\_SSL)
+  * SSL with validation "on" would require a `key.pem`,`cert.pem`, and `ca.pem`&#x20;
+* JMX port and token
 
-{% code overflow="wrap" %}
-```bash
-kafka-acls --bootstrap-server <URL>:<PORT>  -add --allow-principal User:Superstream --operation DescribeConfigs --topic '*' --command-config <PATH_TO_CRED_FILE>
-```
-{% endcode %}
+<figure><img src="../.gitbook/assets/Screenshot 2025-02-14 at 12.54.54.png" alt="" width="375"><figcaption></figcaption></figure>
+
+
 {% endtab %}
 {% endtabs %}
+
+
+
