@@ -39,6 +39,7 @@
 * [Processed data](security-and-legal/processed-data.md)
 * [Compliance](security-and-legal/compliance.md)
 * [Firewall rules](security-and-legal/firewall-rules.md)
+* [Authentication](security-and-legal/authentication.md)
 
 ## Solution briefs
 
