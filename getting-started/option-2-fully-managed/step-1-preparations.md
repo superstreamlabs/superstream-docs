@@ -207,7 +207,7 @@ Log in to the AWS Console and navigate to the **IAM** section to **create a new 
 
 {% tabs %}
 {% tab title="If you are using an IAM Role" %}
-Create a new role with a trusted entity type: `Custom trust policy`
+1. Create a new role with a trusted entity type: `Custom trust policy`
 
 <figure><img src="https://docs.superstream.ai/~gitbook/image?url=https%3A%2F%2F2184988900-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252Fv2riflmHwiTSB6UVhN6P%252Fuploads%252FMLENY4Xrg4wvqq3NZKgt%252Fimage-20240906-122035.png%3Falt%3Dmedia%26token%3D6469e22e-977f-4e88-85c8-f1030f0b15fb&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=8c1f352e&#x26;sv=1" alt=""><figcaption></figcaption></figure>
 
@@ -231,26 +231,21 @@ The "Principal" value will be provided by the Superstream team
 ```
 {% endcode %}
 
-#### Step 3: Attach the policy created above to the role.
-
-#### Step 4: Add the following AWS-managed policy to the IAM Role: `AWSBillingReadOnlyAccess`
+2. Attach the policy created above to the role.
+3. Add the following AWS-managed policy to the IAM Role: `AWSBillingReadOnlyAccess`
 {% endtab %}
 
 {% tab title="If you are using an IAM User" %}
-Attach the policy created above to the AWS IAM User and use ACCESS KEY to create the API Key
+1. Attach the policy created above to the AWS IAM User and use ACCESS KEY to create the API Key
 
 <figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+
+2. Add the following AWS-managed policy to the IAM  User: `AWSBillingReadOnlyAccess`
 {% endtab %}
 {% endtabs %}
 
-#### Step 2: If you are using an IAM User <a href="#create-api-key-using-iam-user" id="create-api-key-using-iam-user"></a>
+### Confluent Cloud
 
-#### Step 3: Add the following AWS-managed policy to the IAM  User:&#x20;
-
-`AWSBillingReadOnlyAccess`
-
-{% tabs %}
-{% tab title="Confluent Cloud" %}
 For connecting Confluent Cloud clusters to Superstream, two types of API keys are required to be created:&#x20;
 
 #### Step 1: Create a new Confluent service account
@@ -258,6 +253,28 @@ For connecting Confluent Cloud clusters to Superstream, two types of API keys ar
 In Confluent Console: Top-right menu -> Accounts & access -> Accounts -> Service Accounts -> **"Add service account"**
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-01-14 at 10.02.26.png" alt=""><figcaption></figcaption></figure>
+
+In the "Add service account" wizard:
+
+1. **Name** the service account "`Superstream`"
+2. Permissions ("+ Add role assignment"):
+   1. For each **organization**: `BillingAdmin` and `MetricsViewer`
+   2. For each **environment:** `MetricsViewer` ,`DataDiscovery`, `Operator`&#x20;
+      1. For **environment** -> **Schema Registry**
+         1. Select resource: `All schema subjects`&#x20;
+         2. Select role: `ResourceOwner`&#x20;
+   3. For each **cluster:** `CloudClusterAdmin` , `MetricsViewer`
+      1. For each designated **cluster** -> **Topics**
+         1. `DeveloperRead`: All topics
+         2. `DeveloperManage`: All topics
+      2. For each designated **cluster** -> **Consumer Groups**
+         1. Read all `Consumer group`
+
+{% tabs %}
+{% tab title="Confluent Cloud" %}
+
+
+
 
 In the "Add service account" wizard:
 
