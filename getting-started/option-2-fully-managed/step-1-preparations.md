@@ -1,3 +1,22 @@
+---
+cover: ../../.gitbook/assets/Fully managed.jpg
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Step 1: Create a Kafka user
 
 Superstream requires a Kafka user with the below configuration to be able to communicate and analyze connected clusters.
