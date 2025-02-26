@@ -42,6 +42,7 @@
 * [Authentication](security-and-legal/authentication.md)
 * [Legal](security-and-legal/legal/README.md)
   * [Terms and Conditions](security-and-legal/legal/terms-and-conditions.md)
+  * [Privacy Policy](security-and-legal/legal/privacy-policy.md)
 
 ## Solution briefs
 
