@@ -1,26 +1,26 @@
 ---
-description: Improve And Optimize Your Kafka In Literally Minutes
+description: Agnetic Data Engineering Platform
 ---
 
 # Superstream
 
 ## Welcome aboard!
 
-Superstream is an autonomous platform designed to optimize data infrastructure for cost reduction and reduced operations.
+Superstream AI-Workforce helps companies of all sizes boost data engineering productivity and offloads three main infrastructure challenges in the modern streaming stack: Workload optimization, control, and security, starting with Kafka of all flavors.
 
 ### Superstream for Kafka
 
-Kafka needs to be cheaper, faster, and more reliable to process a greater volume of data in the near future.
+* Costs: Reduce usage costs by up to 80%. That includes the storage, computing, reading, and writing.
+* Control: Resolve issues faster than ever. Superstream agents will cross inputs and metadata from various locations to identify current or potential risks and anomalies and ensure you pay attention to what matters now or in the near future.
+* Security: Data masking, BYOK, and temp visibility.
 
-Achieving these benefits usually requires replacing the existing Kafka with a managed one or a different vendor, which is a time-consuming, expensive, and painful process.
+#### Common use cases:
 
-Superstream effortlessly integrates with any given Kafka of any provider through its API, continuously fetches and analyzes various metadata from the connected Kafka clusters and their clients with a proprietary library, and surfaces and applies enhancements to improve performance, minimize expenses, and reduce operational complexities.
-
-Immediate outcome with zero efforts:
-
-* Maintain cost efficiency while your data increases
-* Improve reliability
-* Decrease end-to-end latency by 6X, and improve throughput by 10X
-* Enforce client-level governance and policies
+* Reduce Kafka Usage Costs: Optimizing your cluster resources to align with your workload can cut costs by up to 80%.
+* Increase Control: Enforce best practices and get valuable insights to ensure your Kafka runs at peak health.
+* Detect Issues Faster: Superstream automatically identifies the root cause by analyzing multiple factors and signals.
+* Avoid Migrating To A Different Kafka: Migration is often driven by cost or visibility—now, you can have both with your current vendor.
+* Reduce Transfer Costs: By sampling your payload, Superstream can analyze and benchmark it to recommend ways to reduce the transfer footprint.
+* Tiered Storage Enabler: Reduce storage costs by using Superstream to enable and manage your tiered storage policy.
 
 <figure><img src=".gitbook/assets/Screenshot 2025-01-15 at 8.56.51.png" alt=""><figcaption></figcaption></figure>
