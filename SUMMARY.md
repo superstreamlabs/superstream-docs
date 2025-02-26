@@ -40,6 +40,8 @@
 * [Compliance](security-and-legal/compliance.md)
 * [Firewall rules](security-and-legal/firewall-rules.md)
 * [Authentication](security-and-legal/authentication.md)
+* [Legal](security-and-legal/legal/README.md)
+  * [Terms and Conditions](security-and-legal/legal/terms-and-conditions.md)
 
 ## Solution briefs
 
