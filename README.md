@@ -1,5 +1,21 @@
 ---
 description: Agnetic Data Engineering Platform
+cover: .gitbook/assets/Gitbook (2).jpg
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # Superstream
