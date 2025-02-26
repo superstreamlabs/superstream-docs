@@ -10,6 +10,8 @@
 * [Option 1: BYOC](getting-started/option-1-byoc/README.md)
   * [Step 1: Engine Deployment](getting-started/option-1-byoc/step-1-engine-deployment.md)
   * [Step 2: Create a Kafka user](getting-started/option-1-byoc/step-1-preparations.md)
+  * [Step 3: Connect your Kafka cluster/s](getting-started/option-1-byoc/step-2-engine-deployment.md)
+  * [Step 4: Activate](getting-started/option-1-byoc/step-3-activate.md)
 * [Option 2: Fully managed](getting-started/option-2-fully-managed/README.md)
   * [Step 1: Create a Kafka user](getting-started/option-2-fully-managed/step-1-preparations.md)
   * [Step 2: Connect your Kafka cluster/s](getting-started/option-2-fully-managed/step-2-engine-deployment.md)

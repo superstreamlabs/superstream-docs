@@ -2,7 +2,7 @@
 description: This guide explaines how to connect Superstream to your Kafka cluster/s
 ---
 
-# Step 2: Connect your Kafka cluster/s
+# Step 3: Connect your Kafka cluster/s
 
 #### Login to [Superstream Console](https://app.superstream.ai)
 
