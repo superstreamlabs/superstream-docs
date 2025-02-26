@@ -4,13 +4,15 @@
 
 ## Getting started
 
-* [Step 0: High-level plan overview](getting-started/step-0-high-level-plan-overview.md)
-* [Step 1: Preparations](getting-started/step-1-preparations.md)
-* [Step 2: Connect your Kafka cluster/s](getting-started/step-2-engine-deployment.md)
-* [Step 3: Activate](getting-started/step-3-activate.md)
 * [Step 4: Connect Your Clients](getting-started/step-4-connect-your-clients/README.md)
   * [Java](getting-started/step-4-connect-your-clients/java.md)
   * [Python](getting-started/step-4-connect-your-clients/python.md)
+* [Option 1: BYOC](getting-started/option-1-byoc/README.md)
+  * [Step 1: Engine Deployment](getting-started/option-1-byoc/step-1-engine-deployment.md)
+* [Option 2: Fully managed](getting-started/option-2-fully-managed/README.md)
+  * [Step 1: Create a Kafka user](getting-started/option-2-fully-managed/step-1-preparations.md)
+  * [Step 2: Connect your Kafka cluster/s](getting-started/option-2-fully-managed/step-2-engine-deployment.md)
+  * [Step 3: Activate](getting-started/option-2-fully-managed/step-3-activate.md)
 
 ## Optimizations
 

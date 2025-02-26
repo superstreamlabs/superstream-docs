@@ -1,23 +1,39 @@
 ---
-description: This guide explaines how to connect Superstream to your Kafka cluster/s
+cover: ../../.gitbook/assets/BYOC.jpg
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
-# Step 2: Connect your Kafka cluster/s
+# Step 1: Engine Deployment
 
-**At this point, you should have:**
+Superstream "Bring Your Own Cloud" is the perfect solution for customers who prefer or can't have an external connection from outside their cloud to their Kafka clusters.
 
-1. Needed keys and/or users for your Kafka and vendor (If you are using a managed Kafka), as described in [Step 1: Preparations](step-1-preparations.md)
-2. An account invitation via email to you or to another account owner in the organization
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-**Next:**
+### Step 1: Check out our "Environment Readiness Checklist"
 
-<details>
+Review the [following checklist](https://docs.google.com/spreadsheets/d/1z-IRt6jBhMpL-T9XhL0k1hoPHgAZnlSoPh0ay2ymses/edit?usp=sharing) to ensure your environment is ready for deployment and to avoid potential issues.
 
-<summary>⚠️ Start here, if you are using a local engine</summary>
+### Step 2: Deploy
 
-## Overview
+Superstream is using a Helm chart to deploy its engine.
 
-### The Superstream chart will deploy the following pods:
+You can deploy as many engines as needed and spread your clusters between them based on your environmental preferences.
+
+#### The Superstream chart will deploy the following pods:
 
 * 2 Superstream engines
 * 2 Superstream auto-scaler instances
@@ -25,20 +41,13 @@ description: This guide explaines how to connect Superstream to your Kafka clust
 * 1 Superstream syslog adapter
 * 1 Telegraf agent for monitoring
 
-\*It is highly recommended to deploy one engine per environment (dev, staging, prod)\*
+#### 1. Configure the `custom_values.yaml` file
 
-### Engine deployment without TLS (Default)
+Create a `custom_values.yaml` file and edit the relevant values (An example can be found [here](https://github.com/superstreamlabs/superstream-engine/blob/master/charts/superstream/custom_values.yaml)).
 
-#### 1. Configure Environment Tokens
+You can always get your `superstreamAccountId` and `superstreamActivationToken` through the console or within the automatic email you received when you signed up.
 
-Create a `custom_values.yaml` file and edit the relevant values (An example can be found [here](https://github.com/superstreamlabs/superstream-engine/blob/master/charts/superstream/custom_values.yaml))
-
-`superstreamAccountId`: Access it via the SSM Console by selecting your profile icon in the top-right corner.
-
-`superstreamActivationToken`: Access it via the SSM Console by selecting your profile icon in the top-right corner.
-
-Example `custom_values.yaml` file:
-
+{% code title="custom_values.yaml" lineNumbers="true" %}
 ```yaml
 ############################################################
 # GLOBAL configuration for Superstream Engine
@@ -77,10 +86,11 @@ nats:
 autoScaler:
   enabled: true
 ```
+{% endcode %}
 
 #### 2. Deploy
 
-1. Go to the `custom_values.yaml` directory and run:
+Head over to the `custom_values.yaml` file location and run:
 
 {% code overflow="wrap" lineNumbers="true" %}
 ```bash
@@ -124,99 +134,6 @@ spec:
     app.kubernetes.io/name: nats
   type: LoadBalancer
 ```
-
-### Engine deployment with TLS
-
-This guide provides step-by-step instructions for deploying the Superstream Engine with TLS-enabled NATS. The setup includes creating necessary secrets, configuring trust for CA certificates, and aligning Helm chart values for deployment.
-
-**Prerequisites**
-
-1. **TLS Certificate Files**: Ensure you have the `tls.crt` and `tls.key` files for securing NATS communication.
-2. **Trusted CA Certificates**: Prepare a `ca-certificates.crt` file that includes the trusted CA certificates for the data plane applications.
-
-### **1. Create the TLS Secret for NATS**
-
-Create a Kubernetes TLS secret in the `superstream` namespace using the provided `tls.crt` and `tls.key` files:
-
-{% code overflow="wrap" %}
-```bash
-kubectl create secret tls superstream-nats-tls --cert=tls.crt --key=tls.key -n superstream
-```
-{% endcode %}
-
-This secret secures NATS communication with TLS.
-
-### **2. Create the Trusted CA Secret**
-
-Create a generic Kubernetes secret to store the trusted CA certificates for data plane applications:
-
-{% code overflow="wrap" %}
-```bash
-kubectl create secret generic nats-ca --from-file=ca-certificates.crt=./ca-certificates.crt -n superstream
-```
-{% endcode %}
-
-This secret ensures that the applications trust the required CA.
-
-### **3. Update the Helm Chart**
-
-To integrate the secrets into the Superstream Engine deployment, update the Helm chart’s `custom_values.yaml` file. Here is an example configuration:
-
-{% code lineNumbers="true" %}
-```yaml
-############################################################
-# GLOBAL configuration for Superstream Engine
-############################################################
-global:
-  engineName: ""               # Define the superstream engine name (max 32 characters, lowercase, numbers, '-', '_').
-  superstreamAccountId: ""     # Account ID associated with the deployment.
-  superstreamActivationToken: "" # Initial token for activation or authentication.
-  skipLocalAuthentication: true
-
-############################################################
-# NATS config
-############################################################
-nats:
-  config:
-    cluster:
-      enabled: true
-    jetstream:
-      fileStore:
-        pvc:
-          storageClassName: "" # Specify the storage class name for JetStream persistence.
-    nats:
-      port: 4222
-      tls:
-        enabled: true
-        # Set the TLS secret name
-        secretName: "superstream-nats-tls"
-        localCa:
-          enabled: true
-          secretName: "nats-ca"
-
-############################################################
-# Kafka Autoscaler config
-############################################################
-autoScaler:
-  enabled: true
-```
-{% endcode %}
-
-**4. Deploy the Helm Chart**
-
-Go to the `custom_values.yaml` directory and run:
-
-{% code overflow="wrap" %}
-```bash
-helm repo add superstream https://k8s.superstream.ai/ --force-update && helm upgrade --install superstream superstream/superstream -f custom_values.yaml --create-namespace --namespace superstream --wait
-```
-{% endcode %}
-
-#### **Notes** <a href="#notes" id="notes"></a>
-
-* Ensure the `tls.crt` and `tls.key` files are valid and signed by a trusted CA.
-* The `ca-certificates.crt` file should include all necessary trusted CA certificates for the data plane applications.
-* Align the secret names in `custom_values.yaml` with the names created in the Kubernetes namespace.
 
 ## Appendixes
 
@@ -361,16 +278,101 @@ nats:
             operator: Exists
 ```
 
+## Appendix G - Engine deployment with TLS
+
+This guide provides step-by-step instructions for deploying the Superstream Engine with TLS-enabled NATS. The setup includes creating necessary secrets, configuring trust for CA certificates, and aligning Helm chart values for deployment.
+
+**Prerequisites**
+
+1. **TLS Certificate Files**: Ensure you have the `tls.crt` and `tls.key` files for securing NATS communication.
+2. **Trusted CA Certificates**: Prepare a `ca-certificates.crt` file that includes the trusted CA certificates for the data plane applications.
+
+### **1. Create the TLS Secret for NATS**
+
+Create a Kubernetes TLS secret in the `superstream` namespace using the provided `tls.crt` and `tls.key` files:
+
+{% code overflow="wrap" %}
+```bash
+kubectl create secret tls superstream-nats-tls --cert=tls.crt --key=tls.key -n superstream
+```
+{% endcode %}
+
+This secret secures NATS communication with TLS.
+
+### **2. Create the Trusted CA Secret**
+
+Create a generic Kubernetes secret to store the trusted CA certificates for data plane applications:
+
+{% code overflow="wrap" %}
+```bash
+kubectl create secret generic nats-ca --from-file=ca-certificates.crt=./ca-certificates.crt -n superstream
+```
+{% endcode %}
+
+This secret ensures that the applications trust the required CA.
+
+### **3. Update the Helm Chart**
+
+To integrate the secrets into the Superstream Engine deployment, update the Helm chart’s `custom_values.yaml` file. Here is an example configuration:
+
+{% code lineNumbers="true" %}
+```yaml
+############################################################
+# GLOBAL configuration for Superstream Engine
+############################################################
+global:
+  engineName: ""               # Define the superstream engine name (max 32 characters, lowercase, numbers, '-', '_').
+  superstreamAccountId: ""     # Account ID associated with the deployment.
+  superstreamActivationToken: "" # Initial token for activation or authentication.
+  skipLocalAuthentication: true
+
+############################################################
+# NATS config
+############################################################
+nats:
+  config:
+    cluster:
+      enabled: true
+    jetstream:
+      fileStore:
+        pvc:
+          storageClassName: "" # Specify the storage class name for JetStream persistence.
+    nats:
+      port: 4222
+      tls:
+        enabled: true
+        # Set the TLS secret name
+        secretName: "superstream-nats-tls"
+        localCa:
+          enabled: true
+          secretName: "nats-ca"
+
+############################################################
+# Kafka Autoscaler config
+############################################################
+autoScaler:
+  enabled: true
+```
+{% endcode %}
+
+**4. Deploy the Helm Chart**
+
+Go to the `custom_values.yaml` directory and run:
+
+{% code overflow="wrap" %}
+```bash
+helm repo add superstream https://k8s.superstream.ai/ --force-update && helm upgrade --install superstream superstream/superstream -f custom_values.yaml --create-namespace --namespace superstream --wait
+```
+{% endcode %}
+
+#### **Notes** <a href="#notes" id="notes"></a>
+
+* Ensure the `tls.crt` and `tls.key` files are valid and signed by a trusted CA.
+* The `ca-certificates.crt` file should include all necessary trusted CA certificates for the data plane applications.
+* Align the secret names in `custom_values.yaml` with the names created in the Kubernetes namespace.
+
 ## Best practices
 
 ### Dev / Staging environments
 
 Connecting your Development/Staging Kafka Clusters to Superstream is recommended. This can be done using either one or more dedicated Superstream engines (data planes) for each environment or the same engine connected to the production clusters.
-
-</details>
-
-#### Login to [Superstream Console](https://app.superstream.ai)
-
-<figure><img src="../.gitbook/assets/Screenshot 2025-01-14 at 11.45.21.png" alt=""><figcaption></figcaption></figure>
-
-#### Start your journey by clicking on the centered button "Start here"
