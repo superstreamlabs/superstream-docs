@@ -12,6 +12,15 @@
   * [Step 2: Create a Kafka user](getting-started/option-1-byoc/step-1-preparations.md)
   * [Step 3: Connect your Kafka cluster/s](getting-started/option-1-byoc/step-2-engine-deployment.md)
   * [Step 4: Activate](getting-started/option-1-byoc/step-3-activate.md)
+  * [Additional resources](getting-started/option-1-byoc/additional-resources/README.md)
+    * [Engine deployment](getting-started/option-1-byoc/additional-resources/engine-deployment-related/README.md)
+      * [Supertstream Engine Deployment using existing secrets](getting-started/option-1-byoc/additional-resources/engine-deployment-related/supertstream-engine-deployment-using-existing-secrets.md)
+      * [How to deploy and manage Superstream using ArgoCD](getting-started/option-1-byoc/additional-resources/engine-deployment-related/how-to-deploy-and-manage-superstream-using-argocd.md)
+      * [Superstream Engine deployment for environments with a local container registry](getting-started/option-1-byoc/additional-resources/engine-deployment-related/superstream-engine-deployment-for-environments-with-a-local-container-registry.md)
+      * [Supertstream Engine Deployment using custom resource limits](getting-started/option-1-byoc/additional-resources/engine-deployment-related/supertstream-engine-deployment-using-custom-resource-limits.md)
+      * [Superstream Platform deployment for Air-Gapped environments](getting-started/option-1-byoc/additional-resources/engine-deployment-related/superstream-platform-deployment-for-air-gapped-environments.md)
+    * [Engine upgrade](getting-started/option-1-byoc/additional-resources/engine-upgrade-related/README.md)
+      * [Upgrading From Helmfile based Deployment to Superstream Helm Chart](getting-started/option-1-byoc/additional-resources/engine-upgrade-related/upgrading-from-helmfile-based-deployment-to-superstream-helm-chart.md)
 * [Option 2: Fully managed](getting-started/option-2-fully-managed/README.md)
   * [Step 1: Create a Kafka user](getting-started/option-2-fully-managed/step-1-preparations.md)
   * [Step 2: Connect your Kafka cluster/s](getting-started/option-2-fully-managed/step-2-engine-deployment.md)
@@ -21,23 +30,15 @@
 
 * [Autoscaler for AWS MSK Provision](optimizations/autoscaler-for-aws-msk-provision.md)
 
-## Clients configuration management
+## For Kafka Clients
 
-* [Overview](clients-configuration-management/overview.md)
-* [Enforce client configuration](clients-configuration-management/enforce-client-configuration.md)
-* [Change client configuration](clients-configuration-management/change-client-configuration.md)
+* [Overview](for-kafka-clients/overview.md)
+* [Enforce client configuration](for-kafka-clients/enforce-client-configuration.md)
+* [Change client configuration](for-kafka-clients/change-client-configuration.md)
 
-## Procedures
+## Settings
 
-* [Engine deployment-related](procedures/engine-deployment-related/README.md)
-  * [Supertstream Engine Deployment using existing secrets](procedures/engine-deployment-related/supertstream-engine-deployment-using-existing-secrets.md)
-  * [How to deploy and manage Superstream using ArgoCD](procedures/engine-deployment-related/how-to-deploy-and-manage-superstream-using-argocd.md)
-  * [Superstream Engine deployment for environments with a local container registry](procedures/engine-deployment-related/superstream-engine-deployment-for-environments-with-a-local-container-registry.md)
-  * [Supertstream Engine Deployment using custom resource limits](procedures/engine-deployment-related/supertstream-engine-deployment-using-custom-resource-limits.md)
-  * [Superstream Platform deployment for Air-Gapped environments](procedures/engine-deployment-related/superstream-platform-deployment-for-air-gapped-environments.md)
-* [Engine upgrade-related](procedures/engine-upgrade-related/README.md)
-  * [Upgrading From Helmfile based Deployment to Superstream Helm Chart](procedures/engine-upgrade-related/upgrading-from-helmfile-based-deployment-to-superstream-helm-chart.md)
-* [Notifications Configuration](procedures/notifications-configuration.md)
+* [Notifications Configuration](settings/notifications-configuration.md)
 
 ## Security & Legal
 

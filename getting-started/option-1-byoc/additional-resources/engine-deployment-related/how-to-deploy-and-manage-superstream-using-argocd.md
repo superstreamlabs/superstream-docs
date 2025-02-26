@@ -4,7 +4,7 @@
 
 #### **Create Values YAML Files**
 
-* For easiness create `custom_values.yaml` file and edit relevant values, an example can be found [here](https://github.com/superstreamlabs/superstream-engine/blob/master/charts/superstream/custom\_values.yaml):
+* For easiness create `custom_values.yaml` file and edit relevant values, an example can be found [here](https://github.com/superstreamlabs/superstream-engine/blob/master/charts/superstream/custom_values.yaml):
 
 {% hint style="info" %}
 Edit `global.image` the section in case it's an air-gapped environment.
@@ -91,7 +91,7 @@ spec:
 * Find the application you just deployed and click the 'Sync' button to initiate the deployment process.
 * Monitor the deployment status to ensure all components are successfully deployed and running.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-06-06 at 13.25.57.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Screenshot 2024-06-06 at 13.25.57.png" alt=""><figcaption></figcaption></figure>
 
 
 
