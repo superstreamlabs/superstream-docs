@@ -1,8 +1,8 @@
 # Superstream for Confluent Cloud
 
-Superstream enhances the experience of Confluent Cloud users in numerous ways, including significant cost reduction, improved performance, increased reliability, and robust governance.&#x20;
+Superstream enhances the experience of Confluent Cloud users in numerous ways, including significant cost reduction and improved reliability.
 
-By optimizing resource usage and streamlining operations, Superstream ensures that users not only save money but also achieve smoother, more efficient, and more secure data management. This comprehensive support helps Confluent Cloud users maximize their investment and maintain a high standard of operational excellence.
+By optimizing resource usage and streamlining operations, Superstream ensures that users save money and achieve smoother, more efficient, and more secure streaming infrastructure. This comprehensive support helps Confluent Cloud users maximize their investment and maintain a high standard of operational excellence.
 
 ### Reducing costs
 
