@@ -1,21 +1,24 @@
 # Python
 
-- Superstream Python package is a replacement for [confluent-kafka](https://github.com/confluentinc/confluent-kafka-python) package.
-- Your app can only use one of the packages at a time. Adding both to the same app will cause the Superstream package to be ignored.
-- To use the Superstream package in your app, it must be the sole package in use.
-- Always use the [latest release](https://github.com/superstreamlabs/confluent-kafka-python/releases/).
+* Superstream Python package is a replacement for [confluent-kafka](https://github.com/confluentinc/confluent-kafka-python) package.
+* Your app can only use one of the packages at a time. Adding both to the same app will cause the Superstream package to be ignored.
+* To use the Superstream package in your app, it must be the sole package in use.
+* Always use the [latest release](https://github.com/superstreamlabs/confluent-kafka-python/releases/).
 
 ## Installation
+
 ### Step 1: Package installation
 
 **Using pip**
 
-    $ pip install superstream-confluent-kafka
+```
+$ pip install superstream-confluent-kafka
+```
 
-**NOTE:** You must install `librdkafka` and its dependencies using
-          the repositories below.
+**NOTE:** You must install `librdkafka` and its dependencies using the repositories below.
 
 **Install `librdkafka` on Mac OS**
+
 ```bash
 # Install librdkafka from homebrew
 brew install librdkafka
@@ -26,6 +29,7 @@ export LIBRARY_PATH="/opt/homebrew/lib"
 ```
 
 **Install `librdkafka` on RedHat, CentOS, Fedora, etc**
+
 ```bash
 #
 # Perform these steps as the root user (e.g., in a 'sudo bash' shell)
@@ -49,6 +53,7 @@ yum install -y librdkafka-devel
 ```
 
 **Install `librdkafka` on Debian or Ubuntu**
+
 ```bash
 #
 # Perform these steps as the root user (e.g., in a 'sudo bash' shell)
@@ -71,28 +76,30 @@ apt install -y librdkafka-dev
 
 ### Step 2: Configuration
 
-To fully utilize the Superstream package's capabilities, it is essential to set the environment variables provided in the table below before initializing the package. 
-The Superstream package will function as a standard confluent-kafka package in the following scenarios:
-- When a required environment variable is not configured
-- If Superstream becomes unresponsive
+To fully utilize the Superstream package's capabilities, it is essential to set the environment variables provided in the table below before initializing the package. The Superstream package will function as a standard confluent-kafka package in the following scenarios:
+
+* When a required environment variable is not configured
+* If Superstream becomes unresponsive
 
 **A required env var/s to set**
-| Environment Variable                | Default          | Example  | Required  | Description                                                                                           |
-|-------------------------------------|------------------|-----------|-----------|-------------------------------------------------------------------------------------------------------|
-| `SUPERSTREAM_HOST`                  | -                | engine.superstream.org.com       | Yes       | Specify the host URL of the Superstream service to connect to the appropriate Superstream environment. |
+
+| Environment Variable | Default | Example                    | Required | Description                                                                                            |
+| -------------------- | ------- | -------------------------- | -------- | ------------------------------------------------------------------------------------------------------ |
+| `SUPERSTREAM_HOST`   | -       | engine.superstream.org.com | Yes      | Specify the host URL of the Superstream service to connect to the appropriate Superstream environment. |
 
 **Optional env var/s for enhanced capabilities**
 
-| Environment Variable                | Default          | Example  | Required  | Description                                                                                           |
-|-------------------------------------|------------------|-----------|-----------|-------------------------------------------------------------------------------------------------------|
-| `SUPERSTREAM_TOKEN`                 | -                | 096cc4891d91034272fbc3dae2a53ad4       | No        | This authentication token is required when the engine is configured to work with local authentication, to securely access the Superstream services. |
-| `SUPERSTREAM_TAGS`                  | -     | {"config":"dev","owner":"bi_app"}       | No        | Set this variable to tag the client. This value of this variable should be a valid JSON string.            |
-| `SUPERSTREAM_DEBUG`                 | False            | True       | No        | Set this variable to true to enable Superstream logs. By default, there will not be any Superstream related logs. |
-| `SUPERSTREAM_RESPONSE_TIMEOUT`       | 3000            | Yes       | No        | Set this variable to specify a timeout in milliseconds to wait for the Superstream service response.         |
+| Environment Variable           | Default | Example                            | Required | Description                                                                                                                                         |
+| ------------------------------ | ------- | ---------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `SUPERSTREAM_TOKEN`            | -       | 096cc4891d91034272fbc3dae2a53ad4   | No       | This authentication token is required when the engine is configured to work with local authentication, to securely access the Superstream services. |
+| `SUPERSTREAM_TAGS`             | -       | {"config":"dev","owner":"bi\_app"} | No       | Set this variable to tag the client. This value of this variable should be a valid JSON string.                                                     |
+| `SUPERSTREAM_DEBUG`            | False   | True                               | No       | Set this variable to true to enable Superstream logs. By default, there will not be any Superstream related logs.                                   |
+| `SUPERSTREAM_RESPONSE_TIMEOUT` | 3000    | Yes                                | No       | Set this variable to specify a timeout in milliseconds to wait for the Superstream service response.                                                |
 
 ### Step 3: Validation
-- Option 1: Through Superstream console. Go to Connected clusters -> Cluster X -> Clients
-- Option 2: Turn on DEBUG MODE.
+
+* Option 1: Through Superstream console. Go to Connected clusters -> Cluster X -> Clients
+* Option 2: Turn on DEBUG MODE.
 
 ### Basic Producer Example
 
@@ -123,10 +130,7 @@ for data in some_data_source:
 p.flush()
 ```
 
-For a discussion on the poll based producer API, refer to the
-[Integrating Apache Kafka With Python Asyncio Web Applications](https://www.confluent.io/blog/kafka-python-asyncio-integration/)
-blog post.
-
+For a discussion on the poll based producer API, refer to the [Integrating Apache Kafka With Python Asyncio Web Applications](https://www.confluent.io/blog/kafka-python-asyncio-integration/) blog post.
 
 ### Basic Consumer Example
 
