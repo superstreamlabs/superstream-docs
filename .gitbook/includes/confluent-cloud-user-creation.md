@@ -16,7 +16,7 @@ In the "Add service account" wizard:
 
 1. **Name** the service account "`Superstream`"
 2. Permissions ("+ Add role assignment"):
-   1. For each **organization**: `BillingAdmin` and `MetricsViewer`
+   1. For each **organization**: `BillingAdmin` , `ResourceKeyAdmin`, and `MetricsViewer`
    2. For each **environment:** `MetricsViewer` ,`DataDiscovery`, `Operator`&#x20;
       1. For **environment** -> **Schema Registry**
          1. Select resource: `All schema subjects`&#x20;
