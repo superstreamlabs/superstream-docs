@@ -1,6 +1,6 @@
 ---
 description: Agnetic Data Engineering Platform
-cover: .gitbook/assets/Gitbook.jpg
+cover: .gitbook/assets/Gitbook (3).jpg
 coverY: 0
 layout:
   cover:
