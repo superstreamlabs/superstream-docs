@@ -1,8 +1,6 @@
 # Autoscaler for AWS MSK Provision
 
-## Superstream Autoscaler for AWS MSK Provision
-
-Superstream achieves cost efficiency, enhanced performance, and greater reliability through continuous optimization of both application and infrastructure layers.
+uperstream achieves cost efficiency, enhanced performance, and greater reliability through continuous optimization of both application and infrastructure layers.
 
 * Application layer: Identify and eliminate inactive resources, reduce traffic, apply improved configurations, enforce standardization, identify storage reduction opportunities, and more.
 * Infrastructure layer: Clusters are often sized for peak times, but Superstream dynamically identifies the exact resources needed at any given moment and automatically scales accordingly.
@@ -49,7 +47,11 @@ Superstream will now initiate and monitor the cluster, evaluating whether any de
 
 ***
 
-## How to manually scale an MSK cluster in case Superstream is down
+### Ref: Scale-in a cluster (reduce the number of brokers)
+
+{% embed url="https://www.loom.com/share/711010a49b9c4bf596e357a688bac422?sid=d3223723-8d5f-46ee-9fef-854f9047df01" %}
+
+### Ref: How to manually scale an MSK cluster in case Superstream is down
 
 ### Overview
 
