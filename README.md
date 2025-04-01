@@ -26,7 +26,7 @@ Engineering teams often lack the time, expertise, or tooling to optimize Kafka c
 
 ## Introducing Superstream
 
-Superstream AI Platform Helps Kafka Users Easily, Safely, and Automatically Improve Their Very Own Apache Kafka Cost Efficiency by up to 90%! Reduce usage costs by up to 80%. That includes the storage, computing, reading, and writing.
+Superstream AI Platform Helps Kafka Users Easily, Safely, and Automatically Improve Their Very Own Apache Kafka Cost Efficiency by up to 90%.
 
 #### Common use cases:
 
