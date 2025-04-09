@@ -2,8 +2,6 @@
 title: Confluent Cloud user creation
 ---
 
-## Confluent Cloud
-
 For connecting Confluent Cloud clusters to Superstream, two types of API keys are required to be created:&#x20;
 
 ### Step 1: Create a new Confluent service account
