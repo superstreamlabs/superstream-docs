@@ -33,7 +33,7 @@
 
 ## Settings
 
-* [Notifications Configuration](settings/notifications-configuration.md)
+* [Notifications](settings/notifications.md)
 
 ## Security & Legal
 
