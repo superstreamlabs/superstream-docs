@@ -63,7 +63,7 @@ Head over to the `custom_values.yaml` file location and run:
 
 {% code overflow="wrap" lineNumbers="true" %}
 ```bash
-helm repo add superstream https://superstream-agent.k8s.superstream.ai/ --force-update && helm upgrade --install superstream superstream/superstream-agent -f custom_values.yaml --create-namespace --namespace superstream --wait
+helm repo add superstream-agent https://superstream-agent.k8s.superstream.ai/ --force-update && helm upgrade --install superstream superstream-agent/superstream-agent -f custom_values.yaml --create-namespace --namespace superstream --wait
 ```
 {% endcode %}
 
@@ -82,7 +82,7 @@ helm list
 1. Retrieve the Most Recent Version of the Superstream Helm Chart
 
 ```yaml
- helm repo add superstream https://superstream-agent.k8s.superstream.ai/ --force-update
+ helm repo add superstream-agent https://superstream-agent.k8s.superstream.ai/ --force-update
 ```
 
 2. Make sure to use the same values:
@@ -94,7 +94,7 @@ helm get values superstream --namespace superstream
 3. Run the Upgrade command:&#x20;
 
 ```yaml
-helm upgrade --install superstream superstream/superstream-agent -f custom_values.yaml --namespace superstream --wait
+helm upgrade --install superstream superstream-agent/superstream-agent -f custom_values.yaml --namespace superstream --wait
 ```
 
 ### Appendix B - Uninstall
@@ -105,14 +105,6 @@ helm upgrade --install superstream superstream/superstream-agent -f custom_value
 
 ```
 helm delete superstream -n <NAMESPACE>
-```
-
-2. Remove Persistent Storage Bound to the Agent:
-
-It's crucial to delete the stateful storage linked to the Agent. Ensure you carefully specify the namespace in the command below before executing it:
-
-```
-kubectl delete pvc -l app.kubernetes.io/instance=superstream -n <NAMESPACE>
 ```
 
 ### Appendix C - Deploy Superstream Agent using labels, tolerations, nodeSelector and etc'
