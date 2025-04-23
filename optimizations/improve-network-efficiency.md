@@ -56,7 +56,25 @@ Always use the [latest version](https://central.sonatype.com/artifact/ai.superst
 implementation group: 'ai.superstream', name: 'superstream-clients', version: '1.0.0-beta'
 ```
 
-#### Step 2: Run
+#### Step 2: Add Environment Variables
+
+Required Environment Variables
+
+* `SUPERSTREAM_TOPICS_LIST`: Comma-separated list of topics your application produces to
+
+Optional Environment Variables
+
+* `SUPERSTREAM_LATENCY_SENSITIVE`: Set to "true" to prevent any modification to linger.ms values
+* `SUPERSTREAM_DISABLED`: Set to "true" to disable optimization
+
+Example:
+
+```
+export SUPERSTREAM_TOPICS_LIST=orders,payments,user-events
+export SUPERSTREAM_LATENCY_SENSITIVE=true
+```
+
+#### Step 3: Run
 
 Add the Java agent to your application's startup command:
 
@@ -114,22 +132,6 @@ COPY target/your-application.jar /app/your-application.jar
 
 # Copy the agent from the build stage
 COPY --from=build /tmp/superstream-clients-1.0.0.jar /app/lib/superstream-clients-1.0.0.jar
-```
-
-#### Required Environment Variables
-
-* `SUPERSTREAM_TOPICS_LIST`: Comma-separated list of topics your application produces to
-
-#### Optional Environment Variables
-
-* `SUPERSTREAM_LATENCY_SENSITIVE`: Set to "true" to prevent any modification to linger.ms values
-* `SUPERSTREAM_DISABLED`: Set to "true" to disable optimization
-
-Example:
-
-```
-export SUPERSTREAM_TOPICS_LIST=orders,payments,user-events
-export SUPERSTREAM_LATENCY_SENSITIVE=true
 ```
 
 #### SUPERSTREAM\_LATENCY\_SENSITIVE Explained
