@@ -21,7 +21,7 @@ layout:
 
 Superstream "Bring Your Own Cloud" is the perfect solution for customers who prefer or can't have an external connection from outside their cloud to their Kafka clusters.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Superstream architecture.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 1: Check out our "Environment Readiness Checklist"
 
@@ -35,9 +35,9 @@ You can deploy as many agents as needed and spread your clusters between them ba
 
 #### The Superstream chart will deploy the following pods:
 
-* 2 Superstream engines
-* 2 Superstream auto-scaler instances
-* 1 Telegraf agent for monitoring
+* Superstream Agent
+* Superstream auto-scaler
+* Telegraf agent for monitoring
 
 #### 1. Configure the `custom_values.yaml` file
 
@@ -99,23 +99,23 @@ helm upgrade --install superstream superstream/superstream-agent -f custom_value
 
 ### Appendix B - Uninstall
 
-**Steps to Uninstall Superstream Engine.**
+**Steps to Uninstall Superstream Agent:**
 
-1. Delete Superstream Engine Helm Releases:
+1. Delete Superstream Agent Helm Releases:
 
 ```
 helm delete superstream -n <NAMESPACE>
 ```
 
-2. Remove Persistent Storage Bound to the Engine:
+2. Remove Persistent Storage Bound to the Agent:
 
-It's crucial to delete the stateful storage linked to the Engine. Ensure you carefully specify the namespace in the command below before executing it:
+It's crucial to delete the stateful storage linked to the Agent. Ensure you carefully specify the namespace in the command below before executing it:
 
 ```
 kubectl delete pvc -l app.kubernetes.io/instance=superstream -n <NAMESPACE>
 ```
 
-### Appendix C - Deploy Superstream Engine using labels, tolerations, nodeSelector and etc'
+### Appendix C - Deploy Superstream Agent using labels, tolerations, nodeSelector and etc'
 
 * To inject custom labels into all services deployed by Superstream, utilize the `global.labels` variable.&#x20;
 
@@ -192,4 +192,4 @@ global:
 
 ### Dev / Staging environments
 
-Connecting your Development/Staging Kafka Clusters to Superstream is recommended. This can be done using either one or more dedicated Superstream engines (data planes) for each environment or the same engine connected to the production clusters.
+Connecting your Development/Staging Kafka Clusters to Superstream is recommended. This can be done using either one or more dedicated Superstream Agents (data planes) for each environment or the same Agent connected to the production clusters.

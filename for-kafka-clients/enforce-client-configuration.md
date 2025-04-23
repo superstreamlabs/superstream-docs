@@ -1,2 +1,0 @@
-# Enforce client configuration
-

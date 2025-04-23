@@ -28,13 +28,8 @@
 
 ## Optimizations
 
-* [Autoscaler for AWS MSK Provision](optimizations/autoscaler-for-aws-msk-provision.md)
-
-## For Kafka Clients
-
-* [Overview](for-kafka-clients/overview.md)
-* [Enforce client configuration](for-kafka-clients/enforce-client-configuration.md)
-* [Change client configuration](for-kafka-clients/change-client-configuration.md)
+* [Improve Network Efficiency](optimizations/improve-network-efficiency.md)
+* [Resize AWS MSK Size](optimizations/autoscaler-for-aws-msk-provision.md)
 
 ## Settings
 

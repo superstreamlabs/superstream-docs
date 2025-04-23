@@ -19,7 +19,7 @@ layout:
 
 # Step 2: Create a Kafka user
 
-Superstream requires a Kafka user with the below configuration to be able to communicate and analyze connected clusters.
+Superstream requires a Kafka user with the following configuration to communicate and analyze connected clusters.
 
 ## By Kafka flavor/vendor:
 

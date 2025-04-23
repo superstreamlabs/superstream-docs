@@ -28,9 +28,9 @@ Here is what we are going to do next:
 2. Optimize Superstream automation for each cluster to align with its specific business logic.
 3. Activate Superstream automation
 
-### **Let's start:**
+### **Final tunings:**
 
-#### 1. Configure Superstream notifications
+#### 1. Configure notifications
 
 In Superstream Console -> Settings -> System Settings
 
@@ -38,7 +38,7 @@ Select the notifications, channels, and recipients that Superstream should notif
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-01-14 at 11.58.05.png" alt=""><figcaption></figcaption></figure>
 
-#### 2. Optimize Superstream automation
+#### 2. Optimize automations
 
 In Superstream Console -> Kafka Clusters -> choose a cluster to start with
 
