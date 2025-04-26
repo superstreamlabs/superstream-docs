@@ -1,6 +1,6 @@
 ---
 description: Autonomous Data Infrastructure. Powered By AI Agents
-cover: .gitbook/assets/Gitbook (3).jpg
+cover: .gitbook/assets/Gitbook (4).jpg
 coverY: 0
 layout:
   cover:
