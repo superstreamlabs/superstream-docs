@@ -41,7 +41,7 @@ You can deploy as many agents as needed and spread your clusters between them ba
 
 #### 1. Configure the `custom_values.yaml` file
 
-Create a `custom_values.yaml` file and edit the relevant values (An example can be found [here](https://github.com/superstreamlabs/superstream-engine/blob/master/charts/superstream/custom_values.yaml)).
+Create a `custom_values.yaml` file and edit the relevant values (An example can be found [here](https://github.com/superstreamlabs/helm-charts/blob/master/charts/superstream-agent/custom_values.yaml)).
 
 You can always get your `superstreamAccountId` and `superstreamActivationToken` through the console or within the automatic email you received when you signed up.
 
