@@ -34,11 +34,11 @@ Works with any Java library that depends on `kafka-clients`, including:
 
 ### Installation
 
-#### Step 1: Add Superstream package
+#### Step 1: Add the Superstream package
 
 **Maven**
 
-Always use the [latest version](https://central.sonatype.com/artifact/ai.superstream/superstream-clients-java/overview)
+Always use the [latest version](https://central.sonatype.com/artifact/ai.superstream/superstream-clients)
 
 ```groovy
 <dependency>
@@ -50,7 +50,7 @@ Always use the [latest version](https://central.sonatype.com/artifact/ai.superst
 
 **Gradle**
 
-Always use the [latest version](https://central.sonatype.com/artifact/ai.superstream/superstream-clients-java/overview)
+Always use the [latest version](https://central.sonatype.com/artifact/ai.superstream/superstream-clients)
 
 ```groovy
 implementation group: 'ai.superstream', name: 'superstream-clients', version: '1.0.0-beta'
@@ -149,7 +149,3 @@ The linger.ms parameter follows these rules:
 * Java 11 or higher
 * Kafka cluster that is connected to the Superstream's console
 * Read and write permissions to the `superstream.*` topics
-
-### License
-
-This project is licensed under the Apache License 2.0.
