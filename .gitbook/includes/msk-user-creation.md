@@ -2,7 +2,7 @@
 title: MSK user creation
 ---
 
-### Step 1: Create or Update Superstream Role
+### Option 1: Create or Update Superstream Role
 
 Be sure you’re signed in to the AWS Console with your default browser, then [**click here**](https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-central-1#/stacks/create/review?templateURL=https://superstream-aws-cloudformation.s3.eu-central-1.amazonaws.com/iam-role-policy.yaml\&stackName=SuperstreamRoleSetup) to:
 
@@ -14,7 +14,7 @@ Be sure you’re signed in to the AWS Console with your default browser, then [*
 
 <figure><img src="../assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
-### Step 2: Create or Update Superstream User
+### Option 2: Create or Update Superstream User
 
 Be sure you’re signed in to the AWS Console with your default browser, then [**click here**](https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-central-1#/stacks/create/review?templateURL=https://superstream-aws-cloudformation.s3.eu-central-1.amazonaws.com/iam-user-policy.yaml\&stackName=SuperstreamUserSetup) to:
 
