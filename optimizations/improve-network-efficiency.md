@@ -136,49 +136,16 @@ The Superstream library needs to modify your producer's configuration to apply o
 
 ### Installation
 
-#### Step 1: Add the Superstream package
+#### Step 1: Add Environment Variables
 
-**Maven**
+<table data-full-width="true"><thead><tr><th width="341.51953125">ENV</th><th width="107.9453125">Required?</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>SUPERSTREAM_TOPICS_LIST</code></td><td>Yes</td><td>Comma-separated list of topics your application produces to</td><td><pre data-overflow="wrap"><code>SUPERSTREAM_TOPICS_LIST=orders,payments,user-events
+</code></pre></td></tr><tr><td><code>SUPERSTREAM_LATENCY_SENSITIVE=false</code></td><td>No</td><td>Set to <code>true</code> to prevent any modification to linger.ms values</td><td><pre data-overflow="wrap"><code>SUPERSTREAM_LATENCY_SENSITIVE=true
+</code></pre></td></tr><tr><td><code>SUPERSTREAM_DISABLED=false</code></td><td>No</td><td>Set to <code>true</code> to disable optimization</td><td><pre data-overflow="wrap"><code>SUPERSTREAM_DISABLED=true
+</code></pre></td></tr></tbody></table>
 
-Always use the [latest version](https://central.sonatype.com/artifact/ai.superstream/superstream-clients)
+#### Step 2: Instrument
 
-```groovy
-<dependency>
-    <groupId>ai.superstream</groupId>
-    <artifactId>superstream-clients</artifactId>
-    <version>1.0.0</version>
-</dependency>
-```
-
-**Gradle**
-
-Always use the [latest version](https://central.sonatype.com/artifact/ai.superstream/superstream-clients)
-
-```groovy
-implementation group: 'ai.superstream', name: 'superstream-clients', version: '1.0.0-beta'
-```
-
-#### Step 2: Add Environment Variables
-
-Required Environment Variables
-
-* `SUPERSTREAM_TOPICS_LIST`: Comma-separated list of topics your application produces to
-
-Optional Environment Variables
-
-* `SUPERSTREAM_LATENCY_SENSITIVE`: Set to "true" to prevent any modification to linger.ms values
-* `SUPERSTREAM_DISABLED`: Set to "true" to disable optimization
-
-Example:
-
-```
-export SUPERSTREAM_TOPICS_LIST=orders,payments,user-events
-export SUPERSTREAM_LATENCY_SENSITIVE=true
-```
-
-#### Step 3: Run
-
-Add the Java agent to your application's startup command:
+Add Superstream Java agent to your application's startup command:
 
 ```bash
 java -javaagent:/path/to/superstream-clients-1.0.0.jar -jar your-application.jar
