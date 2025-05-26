@@ -136,14 +136,24 @@ The Superstream library needs to modify your producer's configuration to apply o
 
 ### Installation
 
-#### Step 1: Add Environment Variables
+_Superstream package_: [https://central.sonatype.com/artifact/ai.superstream/superstream-clients-java/overview](https://central.sonatype.com/artifact/ai.superstream/superstream-clients-java/overview)
+
+#### Step 1: Add Superstream Jar to your application
+
+Download from GitHub\
+[https://github.com/superstreamlabs/superstream-clients-java/releases](https://github.com/superstreamlabs/superstream-clients-java/releases)
+
+Available also in Maven Central\
+[https://central.sonatype.com/artifact/ai.superstream/superstream-clients](https://central.sonatype.com/artifact/ai.superstream/superstream-clients)
+
+#### Step 2: Add Environment Variables
 
 <table data-full-width="true"><thead><tr><th width="341.51953125">ENV</th><th width="107.9453125">Required?</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>SUPERSTREAM_TOPICS_LIST</code></td><td>Yes</td><td>Comma-separated list of topics your application produces to</td><td><pre data-overflow="wrap"><code>SUPERSTREAM_TOPICS_LIST=orders,payments,user-events
 </code></pre></td></tr><tr><td><code>SUPERSTREAM_LATENCY_SENSITIVE=false</code></td><td>No</td><td>Set to <code>true</code> to prevent any modification to linger.ms values</td><td><pre data-overflow="wrap"><code>SUPERSTREAM_LATENCY_SENSITIVE=true
 </code></pre></td></tr><tr><td><code>SUPERSTREAM_DISABLED=false</code></td><td>No</td><td>Set to <code>true</code> to disable optimization</td><td><pre data-overflow="wrap"><code>SUPERSTREAM_DISABLED=true
 </code></pre></td></tr></tbody></table>
 
-#### Step 2: Instrument
+#### Step 3: Instrument
 
 Add Superstream Java agent to your application's startup command:
 
@@ -164,17 +174,16 @@ When using Superstream Clients with containerized applications, include the agen
 ```docker
 FROM openjdk:11-jre
 
+WORKDIR /app
+
 # Copy your application
-COPY target/your-application.jar /app/your-application.jar
+COPY target/your-application.jar app.jar
 
 # Copy the Superstream agent
-COPY path/to/superstream-clients-1.0.0.jar /app/lib/superstream-clients-1.0.0.jar
-
-# Set environment variables
-ENV SUPERSTREAM_TOPICS_LIST=your-topics
+COPY path/to/superstream-clients-1.0.16.jar superstream-agent.jar
 
 # Run with the Java agent
-ENTRYPOINT ["java", "-javaagent:/app/lib/superstream-clients-1.0.0.jar", "-jar", "/app/your-application.jar"]
+ENTRYPOINT ["java", "-javaagent:/app/superstream-agent.jar", "-jar", "/app/app.jar"]
 ```
 
 Alternatively, you can use a multi-stage build to download the agent from Maven Central:
