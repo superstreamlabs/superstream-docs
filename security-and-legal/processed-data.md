@@ -17,7 +17,7 @@ Topic Metadata:
 * Topic Configuration: Access detailed configuration settings for each topic, such as retention policies, partition count, replication factor, activity events, connected CGs, and segment file settings.
 * Partition Information: Details about each topic's partitions, including partition IDs and their current leaders.
 * Replicas placements
-* Data samples
+* Payload samples: The component that consumes the payload is the deployed local agent, which runs within your premises and, after analyzing the payload structure (regardless of its contents), immediately dumps it.
 
 Consumer Group Metadata:
 
