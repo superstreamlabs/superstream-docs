@@ -15,16 +15,6 @@ In the "Add service account" wizard:
 1. **Name** the service account "`Superstream`"
 2. Permissions ("+ Add role assignment"):
    1. For each **organization**: `BillingAdmin` , `ResourceKeyAdmin`, and `MetricsViewer`
-   2. For each **environment:** `MetricsViewer` ,`DataDiscovery`, `Operator`&#x20;
-      1. For **environment** -> **Schema Registry**
-         1. Select resource: `All schema subjects`&#x20;
-         2. Select role: `ResourceOwner`&#x20;
-   3. For each **cluster:** `CloudClusterAdmin` , `MetricsViewer`
-      1. For each designated **cluster** -> **Topics**
-         1. `DeveloperRead`: All topics
-         2. `DeveloperManage`: All topics
-      2. For each designated **cluster** -> **Consumer Groups**
-         1. Read all `Consumer group`
 
 ### Step 2: Create a Confluent Cloud Resource Management Key
 
