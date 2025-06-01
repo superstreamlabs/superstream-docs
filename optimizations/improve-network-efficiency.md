@@ -134,6 +134,10 @@ The Superstream library needs to modify your producer's configuration to apply o
 
 _Superstream package_: [https://central.sonatype.com/artifact/ai.superstream/superstream-clients-java/overview](https://central.sonatype.com/artifact/ai.superstream/superstream-clients-java/overview)
 
+#### Step 0: Add permissions
+
+Any app that runs Superstream lib should be able to `READ/WRITE/DESCRIBE` from all topics with the prefix `superstream.*`
+
 #### Step 1: Add Superstream Jar to your application
 
 Download from GitHub\
