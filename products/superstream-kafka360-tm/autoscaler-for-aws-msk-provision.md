@@ -1,4 +1,4 @@
-# Autoscaler for AWS MSK Provision
+# Right-size AWS MSK cluster size
 
 uperstream achieves cost efficiency, enhanced performance, and greater reliability through continuous optimization of both application and infrastructure layers.
 
@@ -35,11 +35,11 @@ Although certain environments may not support all actions, implementing even a s
 
 #### Step 1: Access your MSK cluster through the Superstream Console
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-12-16 at 13.07.36.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-12-16 at 13.07.36.png" alt=""><figcaption></figcaption></figure>
 
 #### Step 2: Scroll down to "Autoscaler" and define its rules
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-12-16 at 13.08.54.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-12-16 at 13.08.54.png" alt=""><figcaption></figcaption></figure>
 
 #### Step 3: Activate
 

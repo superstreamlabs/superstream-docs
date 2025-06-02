@@ -28,10 +28,10 @@
 
 ## Products
 
-* [Resize AWS MSK Size](products/autoscaler-for-aws-msk-provision.md)
 * [Superclient for Kafka™](products/superclient-for-kafka-tm/README.md)
   * [Getting started](products/superclient-for-kafka-tm/getting-started.md)
-* [Superstream Kafka360° ™](products/superstream-kafka360-tm.md)
+* [Superstream Kafka360° ™](products/superstream-kafka360-tm/README.md)
+  * [Right-size AWS MSK cluster size](products/superstream-kafka360-tm/autoscaler-for-aws-msk-provision.md)
 
 ## Settings
 
