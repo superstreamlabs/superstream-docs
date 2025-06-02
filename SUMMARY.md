@@ -26,10 +26,12 @@
   * [Step 2: Connect your Kafka cluster/s](getting-started/option-2-fully-managed/step-2-engine-deployment.md)
   * [Step 3: Activate](getting-started/option-2-fully-managed/step-3-activate.md)
 
-## Optimizations
+## Products
 
-* [Improve Network Efficiency](optimizations/improve-network-efficiency.md)
-* [Resize AWS MSK Size](optimizations/autoscaler-for-aws-msk-provision.md)
+* [Resize AWS MSK Size](products/autoscaler-for-aws-msk-provision.md)
+* [Superclient for Kafka™](products/superclient-for-kafka-tm/README.md)
+  * [Getting started](products/superclient-for-kafka-tm/getting-started.md)
+* [Superstream Kafka360° ™](products/superstream-kafka360-tm.md)
 
 ## Settings
 
