@@ -2,9 +2,7 @@
 title: Confluent Cloud user creation
 ---
 
-For connecting Confluent Cloud clusters to Superstream, two types of API keys are required to be created:&#x20;
-
-### Step 1: Create a new Confluent service account
+Step 1: Create a new Confluent service account
 
 In Confluent Console: Top-right menu -> Accounts & access -> Accounts -> Service Accounts -> **"Add service account"**
 
@@ -13,8 +11,13 @@ In Confluent Console: Top-right menu -> Accounts & access -> Accounts -> Service
 In the "Add service account" wizard:
 
 1. **Name** the service account "`Superstream`"
-2. Permissions ("+ Add role assignment"):
-   1. For each **organization**: `BillingAdmin` , `ResourceKeyAdmin`, and `MetricsViewer`
+2. Set account type to "None"
+3. Click on each **organization ->**  Add role assignment(top right) and add the following permissions:
+   1. `BillingAdmin`
+   2. `ResourceKeyAdmin`
+   3. `MetricsViewer`
+   4. `Operator`
+   5. `DataDiscovery`
 
 ### Step 2: Create a Confluent Cloud Resource Management Key
 
@@ -28,4 +31,4 @@ Follow the following steps:
 
 <div align="left"><figure><img src="../assets/Screenshot 2024-10-06 at 20.39.28.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
-Create <mark style="color:red;">**and save the newly created credentials using the cluster name**</mark><mark style="color:red;">.</mark>
+Create <mark style="color:red;">**and save the newly created credentials.**</mark>
