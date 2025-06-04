@@ -49,6 +49,7 @@
 
 ## Solution briefs
 
+* [Executive Summary](solution-briefs/executive-summary.md)
 * [Superstream for Confluent Platform](solution-briefs/superstream-for-confluent-platform.md)
 * [Superstream for Confluent Cloud](solution-briefs/superstream-for-confluent-cloud.md)
 * [Superstream for Redpanda](solution-briefs/superstream-for-redpanda.md)
