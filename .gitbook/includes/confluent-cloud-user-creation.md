@@ -10,14 +10,13 @@ In Confluent Console: Top-right menu -> Accounts & access -> Accounts -> Service
 
 In the "Add service account" wizard:
 
-1. **Name** the service account "`Superstream`"
+1. **Name** the service account "`Superstream`" (The Service account name must include the word "Superstream".)
 2. Set account type to "None"
 3. Click on each **organization ->**  Add role assignment(top right) and add the following permissions:
-   1. `BillingAdmin`
-   2. `ResourceKeyAdmin`
-   3. `MetricsViewer`
-   4. `Operator`
-   5. `DataDiscovery`
+   1. `BillingAdmin` - on the organization level
+   2. `ResourceKeyAdmin` - on the organization level
+   3. `EnvironmentAdmin` - for each environment you want to connect with Superstream
+   4. **Optional:** In case you want Superstream to connect only with specific clusters, please grant `CloudClusterAdmin` for each such cluster
 
 ### Step 2: Create a Confluent Cloud Resource Management Key
 
