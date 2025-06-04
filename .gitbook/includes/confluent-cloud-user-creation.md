@@ -15,7 +15,7 @@ In the "Add service account" wizard:
 3. Click on each **organization ->**  Add role assignment(top right) and add the following permissions:
    1. `BillingAdmin` - on the organization level
    2. `ResourceKeyAdmin` - on the organization level
-4. **Optional**: In case you want Superstream to connect only with specific clusters in a specific environment, please grant:
+4. **Optional**: In case you want Superstream to connect only with clusters in a specific environment, please grant:
    1. `EnvironmentAdmin` - for each environment you want to connect with Superstream
 5. **Optional:** In case you want Superstream to connect only with specific clusters, please grant `CloudClusterAdmin` for each such cluster
 
