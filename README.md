@@ -24,8 +24,6 @@ layout:
 
 Superstream Automates Your Kafka Cost Efficiency, Configuration, Clients, And Traffic—so You Don’t Have To.
 
-### Unlock Your Kafka's Full Potential—Automatically
-
 #### Reduce network size and cost
 
 Automatically apply the most cost-efficient compression strategy for each client based on workload characteristics.
