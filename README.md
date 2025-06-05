@@ -22,7 +22,7 @@ layout:
 
 ## Auto-Optimize Your Kafka Clusters & Clients
 
-Superstream Automates Your Kafka Cost Efficiency, Configuration, Clients, And Traffic—so You Don’t Have To.
+Superstream Automates Any Kafka Cost Efficiency, Configuration, Clients, And Traffic—so The Operators Won't Have To.
 
 #### Reduce network size and cost
 
