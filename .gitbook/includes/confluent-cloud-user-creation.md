@@ -18,6 +18,37 @@ In the "Add service account" wizard:
 4. **Optional**: In case you want Superstream to connect only with clusters in a specific environment, please grant:
    1. `EnvironmentAdmin` - for each environment you want to connect with Superstream
 5. **Optional:** In case you want Superstream to connect only with specific clusters, please grant `CloudClusterAdmin` for each such cluster
+   1.  A dedicated Cluster API KEY would be required to add directly to the cluster with these specific ACLs:
+
+       ```
+       {"CLUSTER", "kafka-cluster", "LITERAL", "ALTER_CONFIGS", "ALLOW"},
+       {"CLUSTER", "kafka-cluster", "LITERAL", "DESCRIBE", "ALLOW"},
+       {"CLUSTER", "kafka-cluster", "LITERAL", "DESCRIBE_CONFIGS", "ALLOW"},
+       {"CLUSTER", "kafka-cluster", "LITERAL", "CREATE", "ALLOW"},
+
+       // Consumer Group ACLs
+       {"GROUP", "*", "LITERAL", "DELETE", "ALLOW"},
+       {"GROUP", "*", "LITERAL", "DESCRIBE", "ALLOW"},
+       {"GROUP", "*", "LITERAL", "READ", "ALLOW"},
+
+       // Topic ACLs
+       {"TOPIC", "*", "LITERAL", "ALTER", "ALLOW"},
+       {"TOPIC", "*", "LITERAL", "ALTER_CONFIGS", "ALLOW"},
+       {"TOPIC", "*", "LITERAL", "DELETE", "ALLOW"},
+       {"TOPIC", "*", "LITERAL", "DESCRIBE", "ALLOW"},
+       {"TOPIC", "*", "LITERAL", "DESCRIBE_CONFIGS", "ALLOW"},
+       {"TOPIC", "*", "LITERAL", "READ", "ALLOW"},
+       {"TOPIC", "superstream", "LITERAL", "CREATE", "ALLOW"},
+
+       // Superstream topic ACLs
+       {"TOPIC", "superstream.", "PREFIXED", "READ", "ALLOW"},
+       {"TOPIC", "superstream.", "PREFIXED", "WRITE", "ALLOW"},
+       {"TOPIC", "superstream.", "PREFIXED", "DELETE", "ALLOW"},
+       {"TOPIC", "superstream.", "PREFIXED", "DESCRIBE", "ALLOW"},
+       {"TOPIC", "superstream.", "PREFIXED", "DESCRIBE_CONFIGS", "ALLOW"},
+       {"TOPIC", "superstream.", "PREFIXED", "ALTER", "ALLOW"},
+       {"TOPIC", "superstream.", "PREFIXED", "ALTER_CONFIGS", "ALLOW"}
+       ```
 
 ### Step 2: Create a Confluent Cloud Resource Management Key
 
