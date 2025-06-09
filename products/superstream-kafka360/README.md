@@ -1,4 +1,4 @@
-# Supercluster for Kafka
+# SuperCluster for Kafka
 
 ## Keep Your Kafka Clusters Lean & Mean
 
