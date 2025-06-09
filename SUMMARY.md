@@ -4,9 +4,6 @@
 
 ## Getting started
 
-* [Step 4: Connect Your Clients](getting-started/step-4-connect-your-clients/README.md)
-  * [Java](getting-started/step-4-connect-your-clients/java.md)
-  * [Python](getting-started/step-4-connect-your-clients/python.md)
 * [Option 1: BYOC](getting-started/option-1-byoc/README.md)
   * [Step 1: Agent Deployment](getting-started/option-1-byoc/step-1-agent-deployment.md)
   * [Step 2: Create a Kafka user](getting-started/option-1-byoc/step-1-preparations.md)

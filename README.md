@@ -78,4 +78,4 @@ Continuously analyze workloads to scale your brokers up or down, avoiding waste 
 
 SuperCluster for Kafka runs in the background—constantly monitoring, optimizing, and enforcing best practices without manual intervention.
 
-<figure><img src=".gitbook/assets/Superstream deployment arch (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Superstream deployment arch (2).png" alt=""><figcaption></figcaption></figure>

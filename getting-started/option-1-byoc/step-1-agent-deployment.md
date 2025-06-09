@@ -39,7 +39,7 @@ You can deploy as many agents as needed and spread your clusters between them ba
 * `superstream-auto-scaler` : Optional. Responsible for automatically scaling AWS MSK and Aiven Kafka clusters."
 * `superstream-syslog` : Responsible for monitoring Superstream-deployed pods.
 
-<figure><img src="../../.gitbook/assets/Superstream deployment arch (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Superstream deployment arch (2).png" alt=""><figcaption></figcaption></figure>
 
 #### 1. Configure the `custom_values.yaml` file
 
