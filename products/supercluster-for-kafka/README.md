@@ -1,8 +1,8 @@
-# Superstream Kafka360° ™
+# Supercluster for Kafka
 
-## Keeps Your Kafka Clusters Lean & Mean
+## Keep Your Kafka Clusters Lean & Mean
 
-Superstream Kafka360° ™ continuously cleans up and optimizes your cluster-level resources, making sure you pay and store what you actually use and need.
+Supercluster for Kafka continuously cleans up and optimizes your cluster-level resources, making sure you pay and store what you actually use and need.
 
 ![Icon](https://cdn.prod.website-files.com/6834bf545aa0a8461c3bc7e7/6834bf545aa0a8461c3bcad0_Vector%20\(52\).svg) Clean unused resources
 

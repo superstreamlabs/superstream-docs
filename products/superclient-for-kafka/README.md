@@ -1,8 +1,8 @@
-# Superclient for Kafka™
+# Superclient for Kafka
 
 ## Auto-Tune Your Kafka Clients For Efficiency & Governance
 
-Superclient for Kafka™ eliminates guesswork by tuning each client’s config to its unique workload—driving performance gains, cost savings, and reduced network usage.
+Superclient for Kafka eliminates guesswork by tuning each client’s config to its unique workload—driving performance gains, cost savings, and reduced network usage.
 
 ![Icon](https://cdn.prod.website-files.com/6834bf545aa0a8461c3bc7e7/6834bf545aa0a8461c3bcad0_Vector%20\(52\).svg) No Code Changes
 

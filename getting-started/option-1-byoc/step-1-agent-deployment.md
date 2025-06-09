@@ -33,11 +33,13 @@ Superstream is using a Helm chart to deploy its agent.
 
 You can deploy as many agents as needed and spread your clusters between them based on your environmental preferences.
 
-#### The Superstream chart will deploy the following pods:
+#### The Superstream local agent chart deploys the following pods:
 
-* Superstream Agent
-* Superstream auto-scaler
-* Telegraf agent for monitoring
+* `superstream-data-plane` : Responsible for communicating with connected Kafka clusters, collecting required metadata, and processing it to surface insights that serve both SuperClient and SuperCluster.
+* `superstream-auto-scaler` : Optional. Responsible for automatically scaling AWS MSK and Aiven Kafka clusters."
+* `superstream-syslog` : Responsible for monitoring Superstream-deployed pods.
+
+<figure><img src="../../.gitbook/assets/Superstream deployment arch (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 1. Configure the `custom_values.yaml` file
 
