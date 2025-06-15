@@ -56,7 +56,7 @@ When initializing your Kafka producers, please ensure you pass the configuration
 
 ✅ **Supported (Recommended)**:
 
-{% code overflow="wrap" lineNumbers="true" %}
+{% code overflow="wrap" %}
 ```java
 // Using Properties (recommended)
 Properties props = new Properties();
@@ -90,7 +90,6 @@ public class KafkaConfig {
 
 ❌ **Not Supported**:
 
-{% code lineNumbers="true" %}
 ```java
 // Using Collections.unmodifiableMap
 Map<String, Object> config = Collections.unmodifiableMap(new HashMap<>());
@@ -108,7 +107,6 @@ KafkaProducer<String, String> producer = new KafkaProducer<>(
     template.getProducerFactory().getConfigurationProperties()
 );
 ```
-{% endcode %}
 
 #### Spring Applications
 
