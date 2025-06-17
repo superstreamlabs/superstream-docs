@@ -33,6 +33,21 @@ Ensure your clients run with your defined policies and best practices.
 
 <figure><img src="../../.gitbook/assets/SuperClient sequence diagram.png" alt=""><figcaption></figcaption></figure>
 
+### FAQ
+
+**Q:** How dynamic are the config changes? I.e., How often are the optimizations re-evaluated and potentially changed?
+
+**A:** There are two ongoing processes involved:
+
+1. Daily Workload Analysis\
+   Every day, the system performs a workload analysis that may identify more optimal configuration properties. This means new recommendations could, in theory, be available on a daily basis.
+2. Application Restart Required for Changes\
+   However, for any new properties to take effect, the application must be restarted. Once the application starts with a particular set of optimized properties, it will continue operating with those settings until the next manual restart, rebuild, or redeployment.
+
+**Q:** We have some producers in Kafka clusters that we didn’t previously connect. Do we need to do anything for these clusters to work with SuperClient?
+
+**A:** First, ensure the new cluster is connected, and the Superstream local agent has permission to analyze it. Then, install the Superclient package — and that’s it.
+
 {% content-ref url="getting-started.md" %}
 [getting-started.md](getting-started.md)
 {% endcontent-ref %}
