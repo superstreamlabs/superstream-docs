@@ -4,24 +4,17 @@
 
 ## Getting started
 
-* [Option 1: BYOC](getting-started/option-1-byoc/README.md)
-  * [Step 1: Agent Deployment](getting-started/option-1-byoc/step-1-agent-deployment.md)
-  * [Step 2: Create a Kafka user](getting-started/option-1-byoc/step-1-preparations.md)
-  * [Step 3: Connect your Kafka cluster/s](getting-started/option-1-byoc/step-2-engine-deployment.md)
-  * [Step 4: Activate](getting-started/option-1-byoc/step-3-activate.md)
-  * [Additional resources](getting-started/option-1-byoc/additional-resources/README.md)
-    * [Engine deployment](getting-started/option-1-byoc/additional-resources/engine-deployment-related/README.md)
-      * [Supertstream Engine Deployment using existing secrets](getting-started/option-1-byoc/additional-resources/engine-deployment-related/supertstream-engine-deployment-using-existing-secrets.md)
-      * [How to deploy and manage Superstream using ArgoCD](getting-started/option-1-byoc/additional-resources/engine-deployment-related/how-to-deploy-and-manage-superstream-using-argocd.md)
-      * [Superstream Engine deployment for environments with a local container registry](getting-started/option-1-byoc/additional-resources/engine-deployment-related/superstream-engine-deployment-for-environments-with-a-local-container-registry.md)
-      * [Supertstream Engine Deployment using custom resource limits](getting-started/option-1-byoc/additional-resources/engine-deployment-related/supertstream-engine-deployment-using-custom-resource-limits.md)
-      * [Superstream Platform deployment for Air-Gapped environments](getting-started/option-1-byoc/additional-resources/engine-deployment-related/superstream-platform-deployment-for-air-gapped-environments.md)
-    * [Engine upgrade](getting-started/option-1-byoc/additional-resources/engine-upgrade-related/README.md)
-      * [Upgrading From Helmfile based Deployment to Superstream Helm Chart](getting-started/option-1-byoc/additional-resources/engine-upgrade-related/upgrading-from-helmfile-based-deployment-to-superstream-helm-chart.md)
-* [Option 2: Fully managed](getting-started/option-2-fully-managed/README.md)
-  * [Step 1: Create a Kafka user](getting-started/option-2-fully-managed/step-1-preparations.md)
-  * [Step 2: Connect your Kafka cluster/s](getting-started/option-2-fully-managed/step-2-engine-deployment.md)
-  * [Step 3: Activate](getting-started/option-2-fully-managed/step-3-activate.md)
+* [Step 1: Agent Deployment](getting-started/step-1-agent-deployment.md)
+* [Step 2: Create a Kafka user](getting-started/step-1-preparations.md)
+* [Additional resources](getting-started/additional-resources/README.md)
+  * [Engine deployment](getting-started/additional-resources/engine-deployment-related/README.md)
+    * [Supertstream Engine Deployment using existing secrets](getting-started/additional-resources/engine-deployment-related/supertstream-engine-deployment-using-existing-secrets.md)
+    * [How to deploy and manage Superstream using ArgoCD](getting-started/additional-resources/engine-deployment-related/how-to-deploy-and-manage-superstream-using-argocd.md)
+    * [Superstream Engine deployment for environments with a local container registry](getting-started/additional-resources/engine-deployment-related/superstream-engine-deployment-for-environments-with-a-local-container-registry.md)
+    * [Supertstream Engine Deployment using custom resource limits](getting-started/additional-resources/engine-deployment-related/supertstream-engine-deployment-using-custom-resource-limits.md)
+    * [Superstream Platform deployment for Air-Gapped environments](getting-started/additional-resources/engine-deployment-related/superstream-platform-deployment-for-air-gapped-environments.md)
+  * [Engine upgrade](getting-started/additional-resources/engine-upgrade-related/README.md)
+    * [Upgrading From Helmfile based Deployment to Superstream Helm Chart](getting-started/additional-resources/engine-upgrade-related/upgrading-from-helmfile-based-deployment-to-superstream-helm-chart.md)
 
 ## Products
 
