@@ -236,16 +236,6 @@ COPY path/to/superstream-clients-1.0.17.jar superstream-agent.jar
 ENTRYPOINT ["java", "-javaagent:/app/superstream-agent.jar", "-jar", "/app/app.jar"]
 ```
 
-#### SUPERSTREAM\_LATENCY\_SENSITIVE Explained
-
-The linger.ms parameter follows these rules:
-
-1. If SUPERSTREAM\_LATENCY\_SENSITIVE is set to true:
-   * Linger value will never be modified, regardless of other settings
-2. If SUPERSTREAM\_LATENCY\_SENSITIVE is set to false or not set:
-   * If no explicit linger exists in original configuration: Use Superstream's optimized value
-   * If explicit linger exists: Use the maximum of original value and Superstream's optimized value
-
 ### Prerequisites
 
 * Java 11 or higher
