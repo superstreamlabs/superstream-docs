@@ -15,7 +15,7 @@
     * [Superstream Engine deployment for environments with a local container registry](getting-started/additional-resources/engine-deployment-related/superstream-engine-deployment-for-environments-with-a-local-container-registry.md)
     * [Supertstream Engine Deployment using custom resource limits](getting-started/additional-resources/engine-deployment-related/supertstream-engine-deployment-using-custom-resource-limits.md)
     * [Superstream Platform deployment for Air-Gapped environments](getting-started/additional-resources/engine-deployment-related/superstream-platform-deployment-for-air-gapped-environments.md)
-  * [Engine upgrade](getting-started/additional-resources/engine-upgrade-related/README.md)
+  * [Agent (Engine) upgrade](getting-started/additional-resources/engine-upgrade-related/README.md)
     * [Upgrading From Helmfile based Deployment to Superstream Helm Chart](getting-started/additional-resources/engine-upgrade-related/upgrading-from-helmfile-based-deployment-to-superstream-helm-chart.md)
 
 ## Products
