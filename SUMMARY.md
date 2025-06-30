@@ -5,7 +5,9 @@
 ## Getting started
 
 * [Step 1: Agent Deployment](getting-started/step-1-agent-deployment.md)
-* [Step 2: Create a Kafka user](getting-started/step-1-preparations.md)
+* [Step 2: Create a Kafka User](getting-started/step-2-create-a-kafka-user.md)
+* [Step 3: Connect a Cluster](getting-started/step-3-connect-a-cluster.md)
+* [Step 4: What's next](getting-started/step-4-whats-next.md)
 * [Additional resources](getting-started/additional-resources/README.md)
   * [Engine deployment](getting-started/additional-resources/engine-deployment-related/README.md)
     * [Supertstream Engine Deployment using existing secrets](getting-started/additional-resources/engine-deployment-related/supertstream-engine-deployment-using-existing-secrets.md)
