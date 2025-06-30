@@ -1,6 +1,6 @@
-# Supertstream Engine Deployment using existing secrets
+# Supertstream Agent (Engine) Deployment using existing secrets
 
-When the `ACTIVATION_TOKEN` cannot be exposed in the `values.yaml` file, it is possible to provide it to the Engine using a pre-created Kubernetes secret containing the relevant data. Follow these steps to create and configure the secret:
+When the `ACTIVATION_TOKEN` cannot be exposed in the `values.yaml` file, it is possible to provide it to the Agent using a pre-created Kubernetes secret containing the relevant data. Follow these steps to create and configure the secret:
 
 #### **Create Kubernetes Secret**
 
@@ -18,12 +18,12 @@ To create the `ENCRYPTION_SECRET_KEY`, run the following command:
 openssl rand -hex 16
 ```
 
-#### **Specify Existing Secret in `custom_values.yaml`**
+#### **Specify the existing secret in `custom_values.yaml`**
 
 Indicate that you are using an existing secret by adding the following lines to your `custom_values.yaml` file:
 
 ```yaml
-superstreamEngine:  
+superstreamAgent:  
   secret:
     useExisting: true
 ```
