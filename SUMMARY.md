@@ -17,6 +17,8 @@
     * [Superstream Platform deployment for Air-Gapped environments](getting-started/additional-resources/engine-deployment-related/superstream-platform-deployment-for-air-gapped-environments.md)
   * [Agent (Engine) upgrade](getting-started/additional-resources/engine-upgrade-related/README.md)
     * [Upgrading From Helmfile based Deployment to Superstream Helm Chart](getting-started/additional-resources/engine-upgrade-related/upgrading-from-helmfile-based-deployment-to-superstream-helm-chart.md)
+  * [Kafka-related](getting-started/additional-resources/kafka-related/README.md)
+    * [Required JMX rules](getting-started/additional-resources/kafka-related/required-jmx-rules.md)
 
 ## Products
 
