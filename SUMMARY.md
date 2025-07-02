@@ -53,6 +53,7 @@
 ## Release notes
 
 * [Changelog](release-notes/changelog/README.md)
+  * [Jun 26, 2025](release-notes/changelog/jun-26-2025.md)
   * [Feb 2, 2025](release-notes/changelog/feb-2-2025.md)
   * [Jan 11, 2025](release-notes/changelog/jan-11-2025.md)
   * [Dec 5, 2024](release-notes/changelog/dec-5-2024.md)
