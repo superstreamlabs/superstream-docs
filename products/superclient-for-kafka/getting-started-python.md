@@ -48,7 +48,7 @@ When initializing your Kafka producers, please ensure you pass the configuration
 ✅ **Supported (Recommended)**:
 
 {% code overflow="wrap" %}
-```java
+```python
 # Using kafka-python
 from kafka import KafkaProducer
 producer = KafkaProducer(
@@ -77,7 +77,7 @@ producer = Producer({
 
 ❌ **Not Supported**:
 
-```java
+```python
 // Using Collections.unmodifiableMap
 # Using frozen dictionaries or immutable configurations
 from types import MappingProxyType
