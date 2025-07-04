@@ -1,27 +1,13 @@
 ---
-cover: ../../.gitbook/assets/BYOC.jpg
+cover: ../.gitbook/assets/BYOC.jpg
 coverY: 0
-layout:
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Step 1: Agent Deployment
 
 Superstream "Bring Your Own Cloud" is the perfect solution for customers who prefer or can't have an external connection from outside their cloud to their Kafka clusters.
 
-<figure><img src="../../.gitbook/assets/Superstream architecture.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Superstream architecture.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 1: Check out our "Environment Readiness Checklist"
 
@@ -39,7 +25,7 @@ You can deploy as many agents as needed and spread your clusters between them ba
 * `superstream-auto-scaler` : Optional. Responsible for automatically scaling AWS MSK and Aiven Kafka clusters."
 * `superstream-syslog` : Responsible for monitoring Superstream-deployed pods.
 
-<figure><img src="../../.gitbook/assets/Superstream deployment arch (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Superstream deployment arch (2).png" alt=""><figcaption></figcaption></figure>
 
 #### 1. Configure the `custom_values.yaml` file
 

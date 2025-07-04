@@ -2,20 +2,6 @@
 description: "Your Kafka, But Optimized. \L97% Less Traffic. 50% Less Cost."
 cover: .gitbook/assets/Gitbook (5).jpg
 coverY: 0
-layout:
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Superstream

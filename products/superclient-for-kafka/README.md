@@ -48,6 +48,6 @@ Ensure your clients run with your defined policies and best practices.
 
 **A:** First, ensure the new cluster is connected, and the Superstream local agent has permission to analyze it. Then, install the Superclient package — and that’s it.
 
-{% content-ref url="getting-started.md" %}
-[getting-started.md](getting-started.md)
+{% content-ref url="getting-started-java.md" %}
+[getting-started-java.md](getting-started-java.md)
 {% endcontent-ref %}

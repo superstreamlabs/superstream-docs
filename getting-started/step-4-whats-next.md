@@ -1,20 +1,6 @@
 ---
 cover: ../.gitbook/assets/Gitbook (6).jpg
 coverY: 1.4666666666666666
-layout:
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Step 4: What's next

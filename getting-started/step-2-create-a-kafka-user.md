@@ -1,23 +1,9 @@
 ---
 cover: ../.gitbook/assets/BYOC.jpg
 coverY: 0
-layout:
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
-# Step 2: Create a Kafka user
+# Step 2: Create a Kafka User
 
 Superstream requires a Kafka user with the following configuration to communicate and analyze connected clusters.
 
