@@ -37,11 +37,7 @@ Works with any Java library that depends on `kafka-clients`, including:
 * **Intelligent optimization**: Identifies the most impactful topics to optimize
 * **Graceful fallback**: Falls back to default settings if optimization fails
 
-### Java Version Compatibility
-
-The library fully supports Java versions 11 through 21.
-
-### Important: Producer Configuration Requirements
+### Important! Producer Configuration Requirements
 
 When initializing your Kafka producers, please ensure you pass the configuration as a mutable object. The Superstream library needs to modify the producer configuration to apply optimizations. The following initialization patterns are supported:
 
@@ -118,9 +114,9 @@ pip install superstream-clients && python -m superclient install_pth
 
 That's it! Superclient will now automatically load and optimize all Kafka producers in your Python environment.
 
-After installation, superclient works automatically. Just use your Kafka clients as usual
+After installation, SuperClient works automatically. Just use your Kafka clients as usual.
 
-#### Docker Integration
+#### Optional. Docker Integration
 
 When using Superstream Clients with containerized applications, include the package in your Dockerfile:
 
