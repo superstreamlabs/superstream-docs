@@ -12,13 +12,12 @@ Edit `global.image` the section in case it's an air-gapped environment.
 
 ```yaml
 ############################################################
-# GLOBAL configuration for Superstream Engine
+# GLOBAL configuration for Superstream Agent
 ############################################################
 global:
-  engineName: ""                 # Define the superstream engine name within 32 characters, excluding '.', and using only lowercase letters, numbers, '-', and '_'.
-  superstreamAccountId: ""       # Provide the account ID associated with the deployment, which could be used for identifying resources or configurations tied to a specific account.
-  superstreamActivationToken: "" # Enter the activation token required for services or resources that need an initial token for activation or authentication.
-  skipLocalAuthentication: true
+  agentName: ""                    # Define the superstream engine name within 32 characters, excluding '.', and using only lowercase letters, numbers, '-', and '_'.
+  superstreamAccountId: ""         # Provide the account ID associated with the deployment, which could be used for identifying resources or configurations tied to a specific account.
+  superstreamActivationToken: ""   # Enter the activation token required for services or resources that need an initial token for activation or authentication.
   
   image:
     # global image pull policy to use for all container images in the chart
@@ -31,19 +30,6 @@ global:
     # global registry to use for all container images in the chart
     # can be overridden by individual image registry
     registry:
-############################################################
-# NATS config
-############################################################
-# NATS HA Deployment. Default "true"
-nats:
-  config:
-    cluster:
-      enabled: true
-      # NATS storageClass configuration. Default blank "".
-    jetstream:
-      fileStore:
-        pvc:
-          storageClassName: ""
 ```
 
 * Official `values.file` with all abilities can be found [here](https://github.com/superstreamlabs/superstream-engine/blob/master/charts/superstream/values.yaml).
@@ -77,8 +63,8 @@ spec:
       valueFiles:
       # Path to the values files in your ArgoCD repository.
       - $values/kubernetes-values/superstream/custom-values.yaml
-    repoURL: https://k8s.superstream.ai/
-    targetRevision: 0.4.5 # Adjust chart version from helmfile
+    repoURL: https://superstream-agent.k8s.superstream.ai/
+    targetRevision: 0.4.5 # Adjust chart version
   - ref: values
     # Your ArgoCD repository  
     repoURL: git@github.com:superstreamlabs/argocd-yamls.git
@@ -91,8 +77,8 @@ spec:
 * Find the application you just deployed and click the 'Sync' button to initiate the deployment process.
 * Monitor the deployment status to ensure all components are successfully deployed and running.
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2024-06-06 at 13.25.57.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-06-06 at 13.25.57.png" alt=""><figcaption></figcaption></figure>
 
 
 
-By following these steps, you should be able to deploy and upgrade the Superstream Engine using ArgoCD successfully. If you have any questions or need further assistance, refer to the documentation or reach out to the support team.
+By following these steps, you should be able to deploy and upgrade the Superstream Agent using ArgoCD successfully. If you have any questions or need further assistance, refer to the documentation or reach out to the support team.
