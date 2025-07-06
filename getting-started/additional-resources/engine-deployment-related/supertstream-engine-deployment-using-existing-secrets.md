@@ -34,27 +34,15 @@ After configuring the secret, your overall configuration should look like this:
 
 ```yaml
 ############################################################
-# GLOBAL configuration for Superstream Engine
+# GLOBAL configuration for Superstream Agent
 ############################################################
 global:
-  engineName: ""                    # Define the superstream engine name within 32 characters, excluding '.', and using only lowercase letters, numbers, '-', and '_'.
-  superstreamAccountId: ""          # Provide the account ID associated with the deployment, which could be used for identifying resources or configurations tied to a specific account.
-  superstreamActivationToken: ""    # Enter the activation token required for services or resources that need an initial token for activation or authentication.
-  skipLocalAuthentication: true
+  agentName: ""                       # Define the superstream agent name within 32 characters, excluding '.', and using only lowercase letters, numbers, '-', and '_'.
+  superstreamAccountId: ""            # Provide the account ID associated with the deployment, which could be used for identifying resources or configurations tied to a specific account.
+  superstreamActivationToken: ""      # Enter the activation token required for services or resources that need an initial token for activation or authentication.
 ############################################################
-# NATS config
-############################################################
-# NATS HA Deployment. Default "true"
-nats:
-  config:
-    cluster:
-      enabled: true
-# NATS storageClass configuration. Default is blank "".
-    jetstream:
-      fileStore:
-        pvc:
-          storageClassName: ""
-superstreamEngine:  
+
+superstreamAgent:  
   secret:
     useExisting: true
 ```
@@ -63,6 +51,6 @@ superstreamEngine:
 
 {% code overflow="wrap" lineNumbers="true" %}
 ```bash
-helm repo add superstream https://k8s.superstream.ai/ --force-update && helm install superstream superstream/superstream -f custom_values.yaml --create-namespace --namespace superstream --wait
+helm repo add superstream-agent https://superstream-agent.k8s.superstream.ai/ --force-update && helm upgrade --install superstream superstream-agent/superstream-agent -f custom_values.yaml --create-namespace --namespace superstream --wait
 ```
 {% endcode %}
