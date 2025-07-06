@@ -12,7 +12,7 @@
   * [Agent (Engine) deployment](getting-started/additional-resources/engine-deployment-related/README.md)
     * [Supertstream Agent (Engine) Deployment using existing secrets](getting-started/additional-resources/engine-deployment-related/supertstream-engine-deployment-using-existing-secrets.md)
     * [How to deploy and manage Superstream using ArgoCD](getting-started/additional-resources/engine-deployment-related/how-to-deploy-and-manage-superstream-using-argocd.md)
-    * [Superstream Engine deployment for environments with a local container registry](getting-started/additional-resources/engine-deployment-related/superstream-engine-deployment-for-environments-with-a-local-container-registry.md)
+    * [Superstream Agent deployment for environments with a local container registry](getting-started/additional-resources/engine-deployment-related/superstream-engine-deployment-for-environments-with-a-local-container-registry.md)
     * [Supertstream Engine Deployment using custom resource limits](getting-started/additional-resources/engine-deployment-related/supertstream-engine-deployment-using-custom-resource-limits.md)
     * [Superstream Platform deployment for Air-Gapped environments](getting-started/additional-resources/engine-deployment-related/superstream-platform-deployment-for-air-gapped-environments.md)
   * [Agent (Engine) upgrade](getting-started/additional-resources/engine-upgrade-related/README.md)
