@@ -2,6 +2,7 @@
 description: >-
   This guide provides instructions for deploying the Superstream Platform for
   air-gapped environments.
+hidden: true
 ---
 
 # Superstream Platform deployment for Air-Gapped environments
