@@ -19,6 +19,6 @@ Superstream requires a Kafka user with the following configuration to communicat
 
 {% include "../.gitbook/includes/confluent-cloud-user-creation.md" %}
 
-### Apache Kafka (Self-hosted)
+### Other (Apache Kafka (Self-hosted) / Aiven / Redpanda)
 
 {% include "../.gitbook/includes/apache-kafka-user-creation.md" %}
