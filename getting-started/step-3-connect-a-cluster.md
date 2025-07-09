@@ -25,7 +25,9 @@ To enable metric collection in Superstream, a JMX connection must also be config
 
 To get Apache Kafka JMX port and token information, here are the key approaches:
 
-### Getting JMX Port
+<details>
+
+<summary>Getting JMX Port</summary>
 
 **1. Check Kafka Server Configuration**
 
@@ -60,7 +62,13 @@ netstat -tlnp | grep java
 * Look in `kafka-server-start.sh` or similar startup scripts
 * Check for JMX\_PORT or KAFKA\_JMX\_OPTS variables
 
-### Getting JMX Token/Authentication
+
+
+</details>
+
+<details>
+
+<summary>Getting JMX Token/Authentication</summary>
 
 **1. Check JMX Security Configuration**
 
@@ -83,23 +91,36 @@ netstat -tlnp | grep java
 * Default filename: `jmxremote.access`
 * Format: `username readonly|readwrite`
 
-### Testing JMX Connection
+</details>
 
-```bash
-# Test connection with JConsole
-jconsole localhost:9999
+<details>
+
+<summary>Testing JMX Connection</summary>
+
+<pre class="language-bash"><code class="lang-bash"><strong># Test connection with JConsole
+</strong>jconsole localhost:9999
 
 # Or use command line tools
 jmxterm -l localhost:9999
-```
+</code></pre>
 
-### Common Default Locations
+#### Common Default Locations
 
 * **Confluent Platform**: JMX typically on port 9581-9585
 * **Standard Kafka**: Often port 9999
 * **Docker/Kubernetes**: Check container environment variables
 
 If JMX isn't enabled, you'll need to configure it by adding the appropriate JMX options to your Kafka startup configuration.
+
+</details>
+
+<details>
+
+<summary>Required JMX Rules/metrics</summary>
+
+{% include "../.gitbook/includes/jmx-rules.md" %}
+
+</details>
 
 ### Step 3: Verify that all discovered or added clusters are in a healthy state
 
