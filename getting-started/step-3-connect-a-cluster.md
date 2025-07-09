@@ -1,9 +1,11 @@
 # Step 3: Connect a Cluster
 
-### Checklist
+{% hint style="success" %}
+**Prerequisites Checklist**
 
 * [ ] The agent has been successfully deployed, and all pods are running in a healthy state.
 * [ ] The user has been successfully created with all required permissions.
+{% endhint %}
 
 ### Step 1: Connect a new cluster
 
@@ -22,6 +24,10 @@ Metrics will be collected via the vendor API.
 
 No automatic cluster discovery. Each cluster should be added manually. \
 To enable metric collection in Superstream, a JMX connection must also be configured.
+
+{% hint style="info" %}
+Superstream will ingest metrics from the `/metrics` endpoint, regardless of whether they are exposed by **Prometheus** exporters or directly from **JMX** sources.
+{% endhint %}
 
 To get Apache Kafka JMX port and token information, here are the key approaches:
 
