@@ -4,7 +4,7 @@
 **Prerequisites Checklist**
 
 * [ ] The agent has been successfully deployed, and all pods are running in a healthy state.
-* [ ] The user has been successfully created with all required permissions.
+* [ ] The required Kafka user has been successfully created with all required permissions.
 {% endhint %}
 
 ### Step 1: Connect a new cluster
