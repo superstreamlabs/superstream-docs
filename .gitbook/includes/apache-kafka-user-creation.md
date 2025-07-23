@@ -4,43 +4,28 @@ title: Apache Kafka User Creation
 
 ### Step 1: Create a dedicated Kafka user for Superstream
 
-For effective functioning, a user or token requires the following permissions:
+```
+// cluster ACLs
+{"CLUSTER", "kafka-cluster", "LITERAL", "ALTER_CONFIGS", "ALLOW"}
+{"CLUSTER", "kafka-cluster", "LITERAL", "DESCRIBE", "ALLOW"}
+{"CLUSTER", "kafka-cluster", "LITERAL", "DESCRIBE_CONFIGS", "ALLOW"}
+{"CLUSTER", "kafka-cluster", "LITERAL", "CREATE", "ALLOW"}
 
-* Cluster-level:
-  * Describe all `topics`, List all topics, Describe configs, Describe cluster
-* Topic-level:
-  * `Read: All topics`
-  * `Alter: All topics`
-  * `Delete: All topics`
-  * `Describe: All topics`
-  * `Alter: All topics`
-  * `AlterConfigs: All topics`
-  * `DescribeConfigs: All topics`
-* Consumer group-level:
-  * `Describe`
-  * `List Consumer Groups`
-  * `Delete`
+// consumers groups ACLs
+{"GROUP", "*", "LITERAL", "DELETE", "ALLOW"}
+{"GROUP", "*", "LITERAL", "DESCRIBE", "ALLOW"}
+{"GROUP", "*", "LITERAL", "READ", "ALLOW"}
 
-ACL statement examples:
-
-<pre><code><strong># Cluster-level permissions
-</strong>kafka-acls --authorizer-properties zookeeper.connect=&#x3C;ZK_HOST:PORT> --add --allow-principal User:&#x3C;USER> --operation Describe --cluster
-kafka-acls --authorizer-properties zookeeper.connect=&#x3C;ZK_HOST:PORT> --add --allow-principal User:&#x3C;USER> --operation DescribeConfigs --cluster
-kafka-acls --authorizer-properties zookeeper.connect=&#x3C;ZK_HOST:PORT> --add --allow-principal User:&#x3C;USER> --operation Describe --topic '*'
-kafka-acls --authorizer-properties zookeeper.connect=&#x3C;ZK_HOST:PORT> --add --allow-principal User:&#x3C;USER> --operation List --topic '*'
-
-# Topic-level permissions
-kafka-acls --authorizer-properties zookeeper.connect=&#x3C;ZK_HOST:PORT> --add --allow-principal User:&#x3C;USER> --operation Read --topic '*'
-kafka-acls --authorizer-properties zookeeper.connect=&#x3C;ZK_HOST:PORT> --add --allow-principal User:&#x3C;USER> --operation Alter --topic '*'
-kafka-acls --authorizer-properties zookeeper.connect=&#x3C;ZK_HOST:PORT> --add --allow-principal User:&#x3C;USER> --operation Delete --topic '*'
-kafka-acls --authorizer-properties zookeeper.connect=&#x3C;ZK_HOST:PORT> --add --allow-principal User:&#x3C;USER> --operation Describe --topic '*'
-kafka-acls --authorizer-properties zookeeper.connect=&#x3C;ZK_HOST:PORT> --add --allow-principal User:&#x3C;USER> --operation AlterConfigs --topic '*'
-kafka-acls --authorizer-properties zookeeper.connect=&#x3C;ZK_HOST:PORT> --add --allow-principal User:&#x3C;USER> --operation DescribeConfigs --topic '*'
-
-# Consumer group-level permissions
-kafka-acls --authorizer-properties zookeeper.connect=&#x3C;ZK_HOST:PORT> --add --allow-principal User:&#x3C;USER> --operation Describe --group '*'
-kafka-acls --authorizer-properties zookeeper.connect=&#x3C;ZK_HOST:PORT> --add --allow-principal User:&#x3C;USER> --operation List --group '*'
-</code></pre>
+// topics ACLs
+{"TOPIC", "*", "LITERAL", "ALTER", "ALLOW"}
+{"TOPIC", "*", "LITERAL", "ALTER_CONFIGS", "ALLOW"}
+{"TOPIC", "*", "LITERAL", "DELETE", "ALLOW"}
+{"TOPIC", "*", "LITERAL", "DESCRIBE", "ALLOW"}
+{"TOPIC", "*", "LITERAL", "DESCRIBE_CONFIGS", "ALLOW"}
+{"TOPIC", "*", "LITERAL", "READ", "ALLOW"}
+{"TOPIC", "*", "LITERAL", "WRITE", "ALLOW"}
+{"TOPIC", "*", "LITERAL", "CREATE", "ALLOW"}
+```
 
 ### Step 2: Connection information per cluster
 
@@ -49,4 +34,4 @@ The following information will be required for each cluster:
 * Bootstrap servers (Kafka URL)
 * Authentication security protocol (No auth / SSL / SASL\_SSL)
   * SSL with validation "on" would require a `key.pem`,`cert.pem`, and `ca.pem`&#x20;
-* JMX port and token
+* JMX port (and token if needed)
