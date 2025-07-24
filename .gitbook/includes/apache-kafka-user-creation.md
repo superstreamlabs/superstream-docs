@@ -25,7 +25,7 @@ title: Apache Kafka User Creation
 {"TOPIC", "*", "LITERAL", "CREATE", "ALLOW"}
 ```
 
-### Step 2: Connection information per cluster
+###
 
 The following information will be required for each cluster:
 
