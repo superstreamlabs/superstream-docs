@@ -22,10 +22,10 @@
 
 ## Products
 
-* [SuperCluster for Kafka](products/supercluster-for-kafka.md)
-* [SuperClient for Kafka](products/superclient-for-kafka/README.md)
-  * [Getting started - Java](products/superclient-for-kafka/getting-started-java.md)
-  * [Getting started - Python](products/superclient-for-kafka/getting-started-python.md)
+* [SuperCluster](products/supercluster.md)
+* [SuperClient](products/superclient/README.md)
+  * [Getting started - Java](products/superclient/getting-started-java.md)
+  * [Getting started - Python](products/superclient/getting-started-python.md)
 
 ## Settings
 
