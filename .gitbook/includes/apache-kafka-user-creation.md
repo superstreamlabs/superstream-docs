@@ -2,8 +2,6 @@
 title: Apache Kafka User Creation
 ---
 
-### Step 1: Create a dedicated Kafka user for Superstream
-
 ```
 // cluster ACLs
 {"CLUSTER", "kafka-cluster", "LITERAL", "ALTER_CONFIGS", "ALLOW"}
