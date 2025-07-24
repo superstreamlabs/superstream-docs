@@ -24,12 +24,3 @@ title: Apache Kafka User Creation
 {"TOPIC", "*", "LITERAL", "WRITE", "ALLOW"}
 {"TOPIC", "*", "LITERAL", "CREATE", "ALLOW"}
 ```
-
-###
-
-The following information will be required for each cluster:
-
-* Bootstrap servers (Kafka URL)
-* Authentication security protocol (No auth / SSL / SASL\_SSL)
-  * SSL with validation "on" would require a `key.pem`,`cert.pem`, and `ca.pem`&#x20;
-* JMX port (and token if needed)

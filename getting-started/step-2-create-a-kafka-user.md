@@ -21,6 +21,6 @@ Superstream requires a Kafka user with the following configuration to communicat
 
 ### Other (Apache Kafka (Self-hosted) / Aiven / Redpanda)
 
-**Step 1:** Create a dedicated Kafka user for Superstream with the following ACLs
+Create a dedicated Kafka user for Superstream with the following ACLs
 
 {% include "../.gitbook/includes/apache-kafka-user-creation.md" %}
