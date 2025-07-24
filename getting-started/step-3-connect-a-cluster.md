@@ -7,18 +7,18 @@
 * [ ] The required Kafka user has been successfully created with all required permissions.
 {% endhint %}
 
-### Step 1: Connect a new cluster
-
-<div align="left"><figure><img src="../.gitbook/assets/screenshot-with-background (1).png" alt=""><figcaption></figcaption></figure></div>
-
-### Step 2: Fill in cluster details
+### Step 1: Fill in cluster details
 
 Each vendor has a slightly different connection approach
 
-#### Confluent Cloud / AWS MSK / Aiven
+#### Confluent Cloud / AWS MSK
 
 Automatic cluster discovery will initiate once an API key is provided.\
 Metrics will be collected via the vendor API.
+
+#### Aiven
+
+You'll need an API token, Kafka cluster connection details, and the project and service names.
 
 #### Redpanda / Apache (Self-hosted)
 

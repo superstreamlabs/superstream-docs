@@ -7,7 +7,7 @@ coverY: 0
 
 Superstream "Bring Your Own Cloud" is the perfect solution for customers who prefer or can't have an external connection from outside their cloud to their Kafka clusters.
 
-<figure><img src="../.gitbook/assets/Superstream architecture.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/684688b1346415bfcb95b278_superstream architecture.svg" alt=""><figcaption></figcaption></figure>
 
 ### Step 1: Check out our "Environment Readiness Checklist"
 
@@ -24,8 +24,6 @@ You can deploy as many agents as needed and spread your clusters between them ba
 * `superstream-data-plane` : Responsible for communicating with connected Kafka clusters, collecting required metadata, and processing it to surface insights that serve both SuperClient and SuperCluster.
 * `superstream-auto-scaler` : Optional. Responsible for automatically scaling AWS MSK and Aiven Kafka clusters."
 * `superstream-syslog` : Responsible for monitoring Superstream-deployed pods.
-
-<figure><img src="../.gitbook/assets/Superstream deployment arch (2).png" alt=""><figcaption></figcaption></figure>
 
 #### 1. Configure the `custom_values.yaml` file
 
@@ -165,11 +163,3 @@ global:
     # can be overridden by individual image registry
     registry: 
 ```
-
-
-
-## Best practices
-
-### Dev / Staging environments
-
-Connecting your Development/Staging Kafka Clusters to Superstream is recommended. This can be done using either one or more dedicated Superstream Agents (data planes) for each environment or the same Agent connected to the production clusters.

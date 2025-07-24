@@ -1,67 +1,29 @@
 ---
-description: "Your Kafka, But Optimized. \L97% Less Traffic. 50% Less Cost."
+description: >-
+  Superstream automates Kafka optimization so you can focus on building, not
+  babysitting brokers and clients.
 cover: .gitbook/assets/Gitbook (5).jpg
 coverY: 0
 ---
 
 # Superstream
 
-## Auto-Optimize Your Kafka Clusters & Clients
+### Kafka Optimization. Automated. End-to-End.
 
-Superstream Automates Any Kafka Cost Efficiency, Configuration, Clients, And Traffic—so The Operators Won't Have To.
+Superstream is a fully automated optimization platform for Apache Kafka that continuously analyzes and tunes both your clusters and clients. It helps engineering teams reduce cloud costs, improve reliability, and eliminate Kafka configuration drift—without needing deep expertise or manual intervention.
 
-#### Reduce network size and cost
+### ⚙️ Cluster Optimization with SuperCluster
 
-Automatically apply the most cost-efficient compression strategy for each client based on workload characteristics.
+Superstream inspects your cluster daily to detect misconfigurations, inactive topics, idle consumer groups, and inefficient resource usage. It then applies right-sized recommendations or automatically remediates issues like over-provisioned brokers or misaligned topic settings.
 
-#### Enforce configuration and avoid drifts
+### 🚀 Client Optimization with SuperClient
 
-Aligns clusters and clients' configuration to best practices or a custom one.
+Zero-Code Client Tuning for Maximum Efficiency.\
+By observing Kafka producer behavior in real time, Superstream suggests and applies optimized client-side settings—such as batching, compression type, and linger. This can reduce compute and data transfer costs by up to 60%, without requiring any code changes
 
-#### Clean up wasted resources
+### 🔒 Reliable, Automated, and Fully Controllable
 
-Finds & removes zombie topics, partitions, idle CGs, and connections.
-
-#### Auto-tune clients for max efficiency
-
-Automatically finds the optimal producer properties per workload.
+Observability-First with Optional Automation.\
+Whether you prefer to review changes manually or turn on full auto-remediation, Superstream offers flexible automation settings, audit logs, and detailed reports—giving you complete control and confidence in every optimization.
 
 ***
-
-### SuperClient for Kafka: Auto-Tune Your Kafka Clients For Efficiency & Governance
-
-SuperClient for Kafka eliminates guesswork by tuning each client’s config to its unique workload—driving performance gains, cost savings, and reduced network usage.
-
-✅ No Code Changes
-
-There is no way we will ask someone to change their code! You just need to add a package or instrument your app.
-
-✅ Deep Observability
-
-Perfect enhancement for easier, faster issue identification and resolution.
-
-✅ Dynamic Configuration
-
-No more static, one-size-fits-all configuration. Superclient will dynamically auto-tune your client's config to match the current workload.
-
-✅ Client Governance
-
-Ensure your clients run with your defined policies and best practices.
-
-### SuperCluster for Kafka: Keep Your Kafka Clusters Lean & Mean
-
-SuperCluster for Kafka continuously cleans up and optimizes your cluster-level resources, making sure you pay and store what you actually use and need.
-
-✅ Clean unused resources
-
-Automatically detect and clean inactive topics, idle consumer groups, and more.
-
-✅ Right-size your cluster
-
-Continuously analyze workloads to scale your brokers up or down, avoiding waste without risking performance.
-
-✅ Continuous and automatic
-
-SuperCluster for Kafka runs in the background—constantly monitoring, optimizing, and enforcing best practices without manual intervention.
-
-<figure><img src=".gitbook/assets/Superstream deployment arch (2).png" alt=""><figcaption></figcaption></figure>
