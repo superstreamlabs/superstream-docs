@@ -1,10 +1,10 @@
-# Notifications Configuration
+# Setting up Slack Notifications
 
 Superstream is designed to deliver a seamless experience, using lightweight notifications to keep you and your team informed about actions across your clusters.
 
-To configure notifications, please head to the [**System** **Settings**](https://app.superstream.ai/system-settings) page.
+To configure notifications, please head to the [**System** **Settings**](https://app.superstream.ai/notifications) page.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-12-16 at 20.46.49.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-07-25 at 18.39.31.png" alt=""><figcaption></figcaption></figure>
 
 ### For Slack notifications
 

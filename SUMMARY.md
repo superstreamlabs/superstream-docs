@@ -29,7 +29,7 @@
 
 ## Settings
 
-* [Notifications](settings/notifications.md)
+* [Setting up Slack Notifications](settings/notifications.md)
 
 ## Security & Legal
 
@@ -44,13 +44,6 @@
 ## Solution briefs
 
 * [Executive Summary](solution-briefs/executive-summary.md)
-* [Superstream for Confluent Platform](solution-briefs/superstream-for-confluent-platform.md)
-* [Superstream for Confluent Cloud](solution-briefs/superstream-for-confluent-cloud.md)
-* [Superstream for Redpanda](solution-briefs/superstream-for-redpanda.md)
-* [Superstream for Apache Kafka](solution-briefs/superstream-for-apache-kafka.md)
-* [Superstream for AWS MSK](solution-briefs/superstream-for-aws-msk.md)
-* [Superstream for AWS MSK Serverless](solution-briefs/superstream-for-aws-msk-serverless.md)
-* [Superstream for Aiven](solution-briefs/superstream-for-aiven.md)
 
 ## Release notes
 

@@ -1,5 +1,7 @@
 ---
-description: "Your Kafka, But Optimized. \L97% Less Traffic. 50% Less Cost."
+description: >-
+  Superstream automates Kafka optimization so you can focus on building, not
+  babysitting brokers and clients.
 ---
 
 # Executive Summary
@@ -12,29 +14,34 @@ sales@superstream.ai
 
 ## Overview
 
-### Auto-Optimize Your Kafka Clusters & Clients
+### Kafka Optimization. Automated. End-to-End.
 
-Superstream Automates Your Kafka Cost Efficiency, Configuration, Clients, And Traffic—so You Don’t Have To.
+Superstream is a fully automated optimization platform for Apache Kafka that continuously analyzes and tunes both your clusters and clients. It helps engineering teams reduce cloud costs, improve reliability, and eliminate Kafka configuration drift—without needing deep expertise or manual intervention.
 
 ### Key Features & Benefits
 
-1. Substantial Cost and Traffic Reduction: Superstream optimizes Kafka clusters to achieve up to 97% reduction in network traffic and up to 50% cost savings by aligning cluster resources with workload demands.&#x20;
-2. AI-Driven Automation: The platform autonomously manages Kafka operations, including configuration tuning and client optimization, minimizing the need for manual intervention.
-3. Enhanced Visibility and Control: Superstream provides comprehensive insights into Kafka cluster health and performance, enabling teams to enforce best practices and make informed decisions without requiring infrastructure migration.&#x20;
-4. Flexible Deployment Options:&#x20;
-   1. Bring Your Own Cloud (BYOC): Deploy Superstream agents within your existing cloud infrastructure using Helm charts, ensuring data remains within your environment.
-   2. Fully Managed Service: Utilize Superstream's managed solution for seamless integration with platforms like AWS MSK, Confluent Cloud, and self-hosted Kafka clusters.&#x20;
-5. Client Optimization Tools: The open-source superstream library dynamically adjusts producer configurations based on topic-specific recommendations, requiring no code changes.
-6. Customizable Notifications: Configure lightweight notifications through various channels, including Slack, to stay informed about actions and changes across your Kafka clusters.&#x20;
-7. Robust Security and Compliance: Superstream supports multiple authentication methods, including API keys, OAuth, and role-based access control (RBAC), ensuring secure integration with enterprise systems.&#x20;
+#### 🔧 SuperCluster – Intelligent Cluster Optimization
+
+* **Daily Health Scans**: Automatically inspects topic configs, consumer groups, partition distribution, and usage patterns to identify inefficiencies.
+* **Auto-Remediation**: Safely fixes misaligned topic configurations, replication factor issues, and skewed partitions—with full audit logging and optional manual review.
+* **Cluster Right-Sizing**: Evaluates actual broker resource consumption to recommend optimized MSK or Aiven plans, including automated safe rebalancing.
+* **Inactive Resource Cleanup**: Identifies and optionally removes idle topics and consumer groups, reducing clutter and resource waste.
+* **Topic Configuration Policies**: Enforce standardized settings for critical configs like `retention.ms`, `cleanup.policy`, and `replication.factor` to prevent drift.
+
+#### 🚀 SuperClient – Kafka Client Tuning Without Code Changes
+
+* **Real-Time Observability**: Monitors producer behavior, including batching, compression, and throughput per topic and environment.
+* **Smart Configuration Suggestions**: Recommends optimal settings like `batch.size`, `linger.ms`, and `compression.type` based on actual workload characteristics.
+* **Broker Load Reduction**: Minimizes CPU and memory pressure on Kafka brokers by making clients more efficient at the source.
+* **Instrumentation-Based Delivery**: Requires no application code changes—SuperClient acts as a sidecar to inject optimizations securely and transparently.
+* **Daily Analysis Cycle**: Workload tuning happens daily; changes are applied on next application startup or redeploy.
 
 ### Getting Started
 
-1. Select Deployment Mode:
-   1. BYOC: Deploy Superstream agents within your infrastructure using a Helm chart.
-   2. Fully Managed: Leverage Superstream's managed service for streamlined integration.&#x20;
+1. Deploy Superstream agents within your infrastructure using a Helm chart.
 2. Connect Kafka Clusters: Establish secure connections between Superstream and your Kafka clusters, ensuring proper authentication and permissions.&#x20;
-3. Activate Automation: Configure optimization settings tailored to your business logic and activate Superstream's automation features to begin optimizing your Kafka infrastructure.&#x20;
+3. SuperCluster analyzes and remediates cluster inefficiencies daily.
+4. SuperClient observes producer workloads and delivers tailored configuration sets.
 
 ### Specifications
 
@@ -43,13 +50,6 @@ Required permissions can be found here: [https://docs.superstream.ai/getting-sta
 Prerequisites for local agent deployment can be found here: [https://docs.superstream.ai/getting-started/option-1-byoc/step-1-agent-deployment](https://docs.superstream.ai/getting-started/option-1-byoc/step-1-agent-deployment)
 
 Security & legal hub can be found here: [https://docs.superstream.ai/security-and-legal/processed-data](https://docs.superstream.ai/security-and-legal/processed-data)
-
-### Products
-
-* Superclient for kafka™: Auto-Tunes Your Kafka Clients For Efficiency & Governance.\
-  It eliminates guesswork by tuning each client’s config to its unique workload, driving performance gains, cost savings, and reduced network usage.
-* Superstream kafka360° ™: Keeps Your Kafka Clusters Lean & Mean.\
-  It continuously cleans up and optimizes your cluster-level resources, making sure you pay for and store only what you use and need.
 
 ### Compliance
 
