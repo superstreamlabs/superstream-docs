@@ -5,49 +5,52 @@ coverY: 0
 
 # Step 1: Agent Deployment
 
-Superstream "Bring Your Own Cloud" is the perfect solution for customers who prefer or can't have an external connection from outside their cloud to their Kafka clusters.
+Superstream BYOC lets you run agents inside your own cloud—ideal when Kafka clusters can’t be exposed externally.
+
+* Deploy one or more agents, distributing clusters however you prefer.
+* Ensure your Docker or Kubernetes environment has network access to the target Kafka clusters.
+* Once the agent is running, you're ready for the next step.
 
 <figure><img src="../.gitbook/assets/684688b1346415bfcb95b278_superstream architecture.svg" alt=""><figcaption></figcaption></figure>
 
-### Step 1: Check out our "Environment Readiness Checklist"
+### 🔑 Retrieve required info
 
-Review the [following checklist](https://docs.google.com/spreadsheets/d/1z-IRt6jBhMpL-T9XhL0k1hoPHgAZnlSoPh0ay2ymses/edit?usp=sharing) to ensure your environment is ready for deployment and to avoid potential issues.
+In the Superstream [console](https://app.superstream.ai/) (under your user profile):
 
-### Step 2: Deploy
+* **Account ID** – copy from console
+* **Activation Token** – copy from console
+* **Agent Name** – choose a unique name (max 32 chars, lowercase only).\
+  Allowed: `a-z`, `0-9`, `-`, `_`\
+  Not allowed: `.`
 
-Superstream is using a Helm chart to deploy its agent.
+<figure><img src="../.gitbook/assets/Screenshot 2025-08-05 at 10.19.12.png" alt=""><figcaption></figcaption></figure>
 
-You can deploy as many agents as needed and spread your clusters between them based on your environmental preferences.
+### 🐳 Deploy via Docker
 
-#### The Superstream local agent chart deploys the following pods:
+Run the following command to download and start the Superstream agent via Docker Compose:
 
-* `superstream-data-plane` : Responsible for communicating with connected Kafka clusters, collecting required metadata, and processing it to surface insights that serve both SuperClient and SuperCluster.
-* `superstream-auto-scaler` : Optional. Responsible for automatically scaling AWS MSK and Aiven Kafka clusters."
-* `superstream-syslog` : Responsible for monitoring Superstream-deployed pods.
+```
+AccountId=<account id> ENV_NAME=<name> ACTIVATION_TOKEN=<token> bash -c 'curl -o docker-compose.yaml https://raw.githubusercontent.com/superstreamlabs/helm-charts/master/docker/docker-compose.yaml && docker compose up -d'
+```
 
-#### 1. Configure the `custom_values.yaml` file
+### ☸️ Deploy via Kubernetes
 
-Create a `custom_values.yaml` file and edit the relevant values (An example can be found [here](https://github.com/superstreamlabs/helm-charts/blob/master/charts/superstream-agent/custom_values.yaml)).
+Superstream provides a Helm chart to deploy the agent.
 
-You can always get your `superstreamAccountId` and `superstreamActivationToken` through the console or within the automatic email you received when you signed up.
+1\. Create and configure `custom_values.yaml` . Define required values like account ID, activation token, and agent name → View [example](https://github.com/superstreamlabs/helm-charts/blob/master/charts/superstream-agent/custom_values.yaml).
 
-{% code title="custom_values.yaml" lineNumbers="true" %}
+{% code title="custom_values.yaml" %}
 ```yaml
-############################################################
-# GLOBAL configuration for Superstream Agent
-############################################################
 global:
-  agentName: ""                       # Define the superstream agent name within 32 characters, excluding '.', and using only lowercase letters, numbers, '-', and '_'.
-  superstreamAccountId: ""            # Provide the account ID associated with the deployment, which could be used for identifying resources or configurations tied to a specific account.
-  superstreamActivationToken: ""      # Enter the activation token required for services or resources that need an initial token for activation or authentication.
+  agentName: ""               # Define the superstream agent name within 32 characters, excluding '.', and using only lowercase letters, numbers, '-', and '_'.
+  superstreamAccountId: ""
+  superstreamActivationToken: ""
 ```
 {% endcode %}
 
-#### 2. Deploy
+2\. Navigate to the directory containing your `custom_values.yaml` file and run:
 
-Head over to the `custom_values.yaml` file location and run:
-
-{% code overflow="wrap" lineNumbers="true" %}
+{% code overflow="wrap" %}
 ```bash
 helm repo add superstream-agent https://superstream-agent.k8s.superstream.ai/ --force-update && helm upgrade --install superstream superstream-agent/superstream-agent -f custom_values.yaml --create-namespace --namespace superstream --wait
 ```
@@ -55,17 +58,26 @@ helm repo add superstream-agent https://superstream-agent.k8s.superstream.ai/ --
 
 Deployment verification:
 
-{% code lineNumbers="true" %}
 ```bash
 helm list
 ```
-{% endcode %}
+
+### 📦 What Gets Deployed
+
+Whether using Docker or Kubernetes, the Superstream agent setup includes the following components:
+
+* **`superstream-data-plane`**\
+  Core service that connects to your Kafka clusters, collects metadata, and generates insights.
+* **`superstream-auto-scaler`** _(optional)_\
+  Automatically scales **AWS MSK** and **Aiven Kafka** clusters when enabled.
+* **`superstream-telegraf`**\
+  Monitors internal agent components for health and metrics.
 
 ## Appendixes
 
 ### Appendix A - Superstream Update
 
-1. Retrieve the Most Recent Version of the Superstream Helm Chart
+1. Retrieve the most recent version of the Superstream Helm chart
 
 ```yaml
  helm repo add superstream-agent https://superstream-agent.k8s.superstream.ai/ --force-update
@@ -77,17 +89,13 @@ helm list
 helm get values superstream --namespace superstream
 ```
 
-3. Run the Upgrade command:&#x20;
+3. Run the upgrade command:&#x20;
 
 ```yaml
 helm upgrade --install superstream superstream-agent/superstream-agent -f custom_values.yaml --namespace superstream --wait
 ```
 
 ### Appendix B - Uninstall
-
-**Steps to Uninstall Superstream Agent:**
-
-1. Delete Superstream Agent Helm Releases:
 
 ```
 helm delete superstream -n <NAMESPACE>
@@ -98,9 +106,6 @@ helm delete superstream -n <NAMESPACE>
 * To inject custom labels into all services deployed by Superstream, utilize the `global.labels` variable.&#x20;
 
 ```yaml
-############################################################
-# GLOBAL configuration for Superstream Agent
-############################################################
 global:
   agentName: ""                    # Define the superstream agent name within 32 characters, excluding '.', and using only lowercase letters, numbers, '-', and '_'.
   superstreamAccountId: ""         # Provide the account ID associated with the deployment, which could be used for identifying resources or configurations tied to a specific account.
@@ -113,9 +118,6 @@ global:
 * To configure tolerations, nodeSelector, and affinity settings for each deployed service, the adjustments in the following example need to be done:
 
 ```yaml
-############################################################
-# GLOBAL configuration for Superstream Agent
-############################################################
 global:
   agentName: ""                    # Define the superstream agent name within 32 characters, excluding '.', and using only lowercase letters, numbers, '-', and '_'.
   superstreamAccountId: ""         # Provide the account ID associated with the deployment, which could be used for identifying resources or configurations tied to a specific account.
@@ -143,9 +145,6 @@ telegraf:
 * To deploy Superstream from local registry, override default values using `global.image` variable in  `custom.values`file:
 
 ```yaml
-############################################################
-# GLOBAL configuration for Superstream Agent
-############################################################
 global:
   agentName: ""                    # Define the superstream agent name within 32 characters, excluding '.', and using only lowercase letters, numbers, '-', and '_'.
   superstreamAccountId: ""         # Provide the account ID associated with the deployment, which could be used for identifying resources or configurations tied to a specific account.
