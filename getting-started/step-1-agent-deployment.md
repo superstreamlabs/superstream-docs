@@ -30,7 +30,7 @@ In the Superstream [console](https://app.superstream.ai/) (under your user profi
 Run the following command to download and start the Superstream agent via Docker Compose:
 
 ```
-AccountId=<account id> ENV_NAME=<name> ACTIVATION_TOKEN=<token> bash -c 'curl -o docker-compose.yaml https://raw.githubusercontent.com/superstreamlabs/helm-charts/master/docker/docker-compose.yaml && docker compose up -d'
+ACCOUNT_ID=<account id> AGENT_NAME=<name> ACTIVATION_TOKEN=<token> bash -c 'curl -o docker-compose.yaml https://raw.githubusercontent.com/superstreamlabs/helm-charts/master/docker/docker-compose.yaml && docker compose up -d'
 ```
 
 ### ☸️ Deploy via Kubernetes
