@@ -1,4 +1,4 @@
-# SuperCluster for Kafka
+# SuperCluster
 
 SuperCluster is Superstream’s engine for automatically analyzing, optimizing, and remediating inefficiencies in Apache Kafka clusters. It helps platform teams keep their infrastructure lean, reliable, and cost-effective—without the manual grind of tuning broker configs or hunting down stale topics. This page breaks down all the key features of SuperCluster in detail.
 
@@ -33,7 +33,7 @@ SuperCluster evaluates broker resource usage (CPU, memory, disk, throughput) and
 
 This helps you reduce cloud costs without compromising performance.
 
-#### 🧹 Inactive Topic & Idle Consumer Cleanup
+#### 🧹 Idle Topics & Consumer Groups Cleanup
 
 Clusters often accumulate unused topics and consumer groups over time. SuperCluster identifies those and can clean them up automatically (with protection rules, if needed).
 
