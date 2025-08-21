@@ -26,7 +26,7 @@ No automatic cluster discovery. Each cluster should be added manually. \
 To enable metric collection in Superstream, a JMX connection must also be configured.
 
 {% hint style="info" %}
-Superstream will ingest metrics from the `/metrics` endpoint, regardless of whether they are exposed by **Prometheus** exporters or directly from **JMX** sources.
+Superstream will fetch metrics from the `/metrics` endpoint, regardless of whether they are exposed by **Prometheus** exporters or directly from **JMX** sources.
 {% endhint %}
 
 To get Apache Kafka JMX port and token information, here are the key approaches:
