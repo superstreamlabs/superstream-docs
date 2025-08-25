@@ -1,31 +1,71 @@
 # Terms and Conditions
 
-These terms of service (the "Terms") together with any other agreements or terms incorporated by reference, govern the use of the Services. These Terms constitute a binding and enforceable legal contract between Company and any party (the "Customer") entering into an order form incorporating these Terms by reference (an "Order") or otherwise using the Services.&#x20;
+These Terms govern your use of Superstream’s services (“Services”). By signing up or using the Services, you agree to these Terms.
 
-1. Services; License&#x20;
-   1. Subject to the terms and conditions of these Terms, and any applicable Order, Company shall provide Customer with services detailed in the Order ("Services") through its proprietary technology as hosted on a third party cloud service (the "Platform"), in accordance with the service level agreement available at https://superstream.ai/legal/service-level-agreement.&#x20;
-   2. During the Term and subject to Customer’s compliance with the terms and conditions of this Agreement, Company grants Customer a non-exclusive, non-transferable, royalty-free, non-sublicensable, limited, revocable right (i) for Customer employees, agents, representatives and contractors who are permitted access to the Services by Customer ("Authorized Users") to access the Platform, for Customer’s internal business use, and up to such number of licenses set forth in the Order; provided by Company to enable the Services according to Company’s instructions and technical documentation provided by Company from time to time ("Documentation").&#x20;
-2. Customer’s Obligations. Customer hereby undertakes to:
-   1. implement the software provided by Company according to the Documentation;
-   2. provide Company with complete and accurate information necessary to implement the Service. Customer acknowledges and agrees that the accuracy of the Services depends on the quality, completeness and timeliness of the data provided to Company, and on Customer providing Company with prompt notice upon any changes in required information;
-   3. use the Platform, the Services, and all related software and Documentation in compliance with all applicable laws and regulations, including but not limited to applicable data security and privacy laws;
-   4. manage and secure all login credentials used by Authorized Users in connection with their use of the Platform and protect the same against unauthorized use or disclosure using reasonable standard in the industry. Customer shall be liable for all actions taken on the Platform through use of the login credentials of its Authorized Users.
-3. Fees. In consideration for the Services, Customer shall pay Company the Fees, as described in the Order.  Fees shall be payable within 30 days of issuance of the applicable invoice. All payments not made when due, shall be subject to a late charge of 1.5% per month compounded annually. Payment of Fees shall be made by wire transfer to the account designated by Company. The Fees are exclusive of VAT. In the event that Customer is required by law to deduct and/or withhold any amounts from any payments due hereunder, it shall gross-up and increase the amounts to be paid to Company so that the actual net amount to be paid to Company shall equal the fees that would have been due to Company without such deduction or withholding.
-4. Intellectual Property Rights; Confidentiality&#x20;
-   1. All intellectual property rights in the Platform, Services, Documentation, all related software and any part thereof, including any and all derivatives, changes and improvements thereof lie exclusively with Company. Customer shall (i) not attempt to infiltrate, hack, reverse engineer, decompile, or disassemble the Platform, Services, any related software or any part thereof for any purpose or use it to build a competitive service or product; (ii) not represent that it possesses any proprietary interest in Platform, Service, Documentation, any related software or any part or derivative thereof; (iii) not directly or indirectly, take any action to contest Company's intellectual property rights or infringe them in any way; (iv) except as specifically permitted in writing by Company, not use the name, trademarks, trade-names, and logos of Company; (v) except as specifically permitted herein, not copy any part or content of the Platform, reports or documentation other than for Customer’s own internal business purposes; (vi) not copy any features, functions or graphics of the Platform or use it to build a competitive product or service; and (vii) not remove the copyright, trademark and other proprietary notices contained on or in Company's Platform, products, services or documentation. Customer shall take no action, directly or indirectly, to register Company trademarks (or their variation), domain names, or copyrights in its own name and shall provide commercially reasonable assistance to Company to prevent the occurrence of such activity by any third parties. All intellectual property rights, as well as any data, materials or Confidential Information, including any modifications, enhancements and derivatives thereof (collectively, “Customer IPR”) lie exclusively with Customer or its licensors.&#x20;
-   2. Customer hereby grants to Company: (a) a non-exclusive, non-sublicensable, revocable, non-transferable, royalty-free, worldwide license during the Term to use, reproduce, and prepare derivative works of all data provided to Company by Customer in connection with this Agreement solely to permit Company to perform the Services to Customer as set forth in this Agreement, and (b) a perpetual, non-exclusive, non-sublicensable, revocable, non-transferable, royalty-free, worldwide license to analyze anonymized data obtained through Services in order to provide Customer with analytics and reports, and improve the Services, all subject to Company’s compliance with applicable law and privacy regulations.    &#x20;
-   3. The receiving party agrees (i) not to disclose the disclosing party’s Confidential Information to any third parties other than to its directors, employees, advisors, or consultants (collectively, its “Representatives”) on a “need to know” basis and provided that such Representatives are bound by confidentiality obligations not less restrictive than those contained herein; (ii) not to use or reproduce any of the disclosing party’s Confidential Information for any purposes except to carry out its rights and responsibilities under this Agreement; (iii) to keep the disclosing party’s Confidential Information confidential using at least the same degree of care it uses to protect its own confidential information, which shall in any event not be less than a reasonable degree of care. Notwithstanding the foregoing, if the receiving party is required by legal process or applicable law, rule, or regulation to disclose any of the disclosing party’s Confidential Information, then prior to such disclosure, if legally allowed, receiving party will give prompt notice to the disclosing party so that it may seek a protective order or other appropriate relief.  The confidentiality obligations hereunder shall expire five years from the date of termination or expiration of this Agreement (and with respect to trade secrets- in perpetuity) and shall supersede any previous confidentiality undertakings between the parties. &#x20;
-   4. For the purposes hereof, "Confidential Information" means any proprietary or trade secret information disclosed by one party to the other which can be reasonably understood under the circumstances to be confidential, but excluding any information that: (i) is now or subsequently becomes generally available in the public domain through no fault or breach on the part of receiving party; (ii) the receiving party can demonstrate in its records to have had rightfully in its possession prior to disclosure of the Confidential Information by the disclosing party; (iii) the receiving party rightfully obtains from a third party who has the right to transfer or disclose it, without default or breach of this Agreement; (iv) the receiving party can demonstrate in its records to have independently developed, without breach of this Agreement and/or any use of or reference to the Confidential Information.  For avoidance of doubt, Customer IPR shall be deemed Customer Confidential Information.&#x20;
-5. Warranties; Disclaimer; Limitation of Liability
-   1. EXCEPT AS EXPLICITLY SET FORTH IN THIS AGREEMENT, COMPANY PROVIDES THE PLATFORM, SERVICES, ANY RELATED SOFTWARE AND DOCUMENTATION TO CUSTOMER ON AN “AS IS” BASIS, WITHOUT WARRANTIES OR REPRESENTATION OF ANY KIND, AND COMPANY EXPRESSLY DISCLAIMS ALL WARRANTIES - STATUTORY, EXPRESS, IMPLIED OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF MERCHENTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR ACCURACY. COMPANY FURTHER DISCLAIMS ANY WARRANTY THAT THE OPERATION OF THE PLATFORM OR ANY RELATED SERVICES WILL BE UNINTERRUPTED OR ERROR-FREE.
-   2. Customer acknowledges that the quality and accuracy of the Services are dependent on the accuracy and completeness of the information provided. CUSTOMER ACKNOWLEDGES THAT COMPANY SHALL NOT BEAR ANY LIABILITY OR RESPONSIBILITY FOR FAULTS, ERRORS OR ERRONEOUS OUTPUT PROVIDED ON THE BASIS OF UNTIMELY, INCOMPLETE, INACCURATE, FALSE OR MISLEADING INFORMATION PROVIDED BY CUSTOMER OR THE AUTHORIZED USERS.
-   3. EXCEPT FOR WILLFUL MISCONDUCT, FRAUD OR BREACH OF CONFIDENTIALITY OBLIGATIONS HEREUNDER, AND TO THE MAXIMUM EXTENT PERMITTED BY LAW, EACH PARTY'S MAXIMUM AGGREGATE LIABILITY UNDER, ARISING OUT OF OR RELATING TO THIS AGREEMENT SHALL NOT EXCEED THE TOTAL AMOUNT OF FEES PAID BY CUSTOMER TO COMPANY DURING THE 12 MONTHS PRECEDING THE DATE THE LIABILITY FIRST ARISES. TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL EITHER PARTY BE LIABLE FOR LOST PROFITS, LOSS OF USE, LOSS OF DATA (INCLUDING END-USER INFORMATION), COST OF PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES, OR FOR SPECIAL, PUNITIVE, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES, HOWEVER CAUSED, WHETHER FOR BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE AND STRICT LIABILITY), OR OTHERWISE, WHETHER OR NOT SUCH PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.&#x20;
-   4. Company shall defend or settle, at its option and expense, any action brought by a third party against Customer, only to the extent such action arises from any third party claim brought against Customer alleging that the Platform, Services and/or Documentation infringes any patent, copyright, trademark, trade secret, or other intellectual property right of such third party, and shall pay all costs, liabilities, damages and reasonable legal fees finally awarded against Customer in, or paid in settlement of, such action. Indemnification hereunder shall be conditioned upon: (a) Customer notifying Company of the claim immediately upon becoming aware thereof, (b) Customer allowing Company to assume full control of the defense and settlement of such claim, and (c) Customer reasonably cooperating with Company in the defense and settlement of the claim.&#x20;
-6. Term; Termination
-   1. This Agreement shall commence on the Effective Date and will continue for the Term set forth in the Order.&#x20;
-   2. Either party may terminate this Agreement immediately by giving written notice to the other party if: (i) the other party breaches a material provision of this Agreement and fails to cure the breach within seven days after being given written notice thereof; (ii) the other party is judged bankrupt or insolvent, makes a general assignment for the benefit of its creditors, a trustee or receiver is appointed for such party; or any petition by or on behalf of such party is filed under any bankruptcy or similar laws.&#x20;
-   3. Upon termination of this Agreement, Customer will immediately cease use of the Platform and any Services, each party shall return to the other party or destroy (at disclosing party’s option) all of the other party's Confidential Information in its possession and any outstanding undisputed Fees shall become due and payable. Sections ‎4, ‎5, ‎6.3, ‎7, and ‎9 shall survive any expiration or termination of this Agreement.
-   4. Notices. All notices or other communications hereunder shall be in writing and given in person, by registered mail, by an overnight courier service which obtains a receipt to evidence delivery, or by facsimile or email transmission with written confirmation of receipt, addressed to the address set forth in the Order or to such other address as any party hereto may designate to the other in accordance with the aforesaid procedure. All notices and other communications delivered in person or by courier service shall be deemed to have been given upon delivery, those given by facsimile or email transmission shall be deemed given on the business day following transmission, and those sent by registered mail shall be deemed given three calendar days after posting.
-7. Publicity. Company may issue publicity or general marketing communications concerning its involvement with the Customer, including a case study, and Customer agrees to reasonably cooperate with and contribute to such case study.
+***
 
-General. This Agreement constitutes the entire agreement between Company and Customer and supersedes any previous agreements or representations, either oral or written, with respect to the subject matter of this Agreement. All amendments will be made only in written agreement by both parties. Customer shall not transfer or assign its rights or obligations under this Agreement to any third party, except to an affiliate or in the case of merger or sale of all or substantially all of the assigning party's assets. Any purported assignment contrary to this section shall be void. If any part of this Agreement is declared invalid or unenforceable for any reason, such part shall be deemed modified to the extent necessary to make it valid and operative and in a manner most closely representing the intention of the parties, or if it cannot be so modified, then eliminated, and such elimination shall not affect the validity of any remaining portion, which shall remain in force and effect. Any failure by a party to insist upon or enforce performance by the other of any of the provisions of this Agreement or to exercise any rights or remedies under this Agreement or otherwise by law will not be construed as a waiver or relinquishment of any right to assert or rely upon the provision, right or remedy in that or any other instance. This Agreement is governed by the laws of the State of New York, without regards to its conflict of laws principles, and any dispute arising from this Agreement shall be brought exclusively before the courts of NYC, New York.
+### 1. Services & Access
+
+* We provide access to our hosted platform and related tools.
+* You may use the Services for your company’s internal business purposes.
+* You are responsible for keeping login credentials secure and ensuring your team uses the Services properly.
+
+***
+
+### 2. Customer Responsibilities
+
+* You’ll provide accurate information needed to set up and run the Services.
+* You’ll comply with all applicable laws, including data privacy rules.
+* You are responsible for the actions of your users within the Services.
+
+***
+
+### 3. Fees & Payment
+
+* Fees are shown at checkout or in your order form.
+* Payments can be made by credit card or other supported methods.
+* All fees are exclusive of applicable taxes, which are your responsibility.
+
+***
+
+### 4. Intellectual Property
+
+* Superstream owns all rights to the platform, technology, and related materials.
+* You own your data. We may use anonymized and aggregated data to provide analytics and improve our services.
+* You may not copy, resell, or use the Services to build a competing product.
+
+***
+
+### 5. Confidentiality
+
+* Each party will keep the other’s confidential information safe and use it only as needed to provide or use the Services.
+* These confidentiality obligations last during the term of this Agreement and for 2 years after termination.
+
+***
+
+### 6. Warranties & Liability
+
+* We provide the Services “as is,” but will make reasonable efforts to keep them available and reliable.
+* Our total liability to you is limited to the fees you paid in the 12 months before a claim.
+* Neither party is liable for indirect damages such as lost profits, revenue, or data.
+
+***
+
+### 7. Term & Termination
+
+* You may cancel at any time by stopping use of the Services.
+* We may suspend or terminate your use if you violate these Terms, after giving reasonable notice and an opportunity to fix the issue.
+* Sections on confidentiality, IP, liability, and publicity will survive termination.
+
+***
+
+### 8. Publicity & Logo Use
+
+* By signing up with a company email domain, you consent to Superstream displaying your company’s name and logo on our website and marketing materials as part of our customer list.
+* You may withdraw this consent at any time by contacting us at **idan@superstream.ai**.
+
+***
+
+### 9. Governing Law
+
+These Terms, and any dispute arising from them, will be governed by and interpreted under the laws of the State of New York, without regard to conflict of law principles. Any legal action or proceeding relating to these Terms shall be brought exclusively in the courts located in New York, New York, and both parties consent to the personal jurisdiction of those courts.
