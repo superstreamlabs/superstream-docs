@@ -19,7 +19,18 @@ Superstream requires a Kafka user with the following configuration to communicat
 
 {% include "../.gitbook/includes/confluent-cloud-user-creation.md" %}
 
-### Other (Apache Kafka (Self-hosted) / Aiven / Redpanda)
+### Aiven
+
+**Step 1: Create a Token**
+
+1. In Aiven console: Click on user information (top right) -> Tokens -> Generate token
+2. Use the created credentials in the Superstream console.
+
+**Step 2: Creating a Kafka User**
+
+1. Make sure the Kafka user you are giving to Superstream has the ACLs appear below.
+
+### Other
 
 Create a dedicated Kafka user for Superstream with the following ACLs
 
