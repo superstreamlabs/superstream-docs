@@ -2,7 +2,7 @@
 description: >-
   Superstream automates Kafka optimization so you can focus on building, not
   babysitting brokers and clients.
-cover: .gitbook/assets/Gitbook (5).jpg
+cover: .gitbook/assets/banner-1.png
 coverY: 0
 ---
 
