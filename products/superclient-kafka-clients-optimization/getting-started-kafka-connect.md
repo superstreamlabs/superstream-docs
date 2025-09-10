@@ -11,12 +11,12 @@ description: >-
 * Kafka Connect with the **superstream-client** Java agent
 * Required environment variables for the agent
 
-### Artifact & Version
+#### Artifact & Version
 
-Use the latest Superstream client artifact available from your artifact repository or distribution point. Always ensure you are using the most up‑to‑date version for security and compatibility.
+Use the latest **Superstream client** artifact. Always ensure you are using the most up-to-date version from **Maven Central**, **GitHub Releases**, or your internal artifact repository.
 
-* **Install path suggestion:** `/opt/kafka/plugins/superstream-clients/`
-* **Agent JAR:** `superstream-clients-<latest>.jar`
+* **Maven Central** – add the dependency in your build system and include the JAR in your Kafka Connect image or plugin path.
+* **GitHub Releases** – download the JAR and place it in the Kafka Connect plugin path (for example `/opt/kafka/plugins/superstream-clients/`).
 
 ### Required Environment Variables
 
