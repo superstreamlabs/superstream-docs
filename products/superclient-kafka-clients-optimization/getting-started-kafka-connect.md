@@ -29,7 +29,7 @@ Add the following environment variables to the **Kafka Connect** process:
 <strong>  value: "-javaagent:/opt/kafka/plugins/superstream-clients/superstream-clients-&#x3C;latest>.jar"
 </strong>
 - name: SUPERSTREAM_TOPICS_LIST 
-  value: "superstream_accounts,superstream_agents"
+  value: "users,transactions,clicks"
 </code></pre>
 
 **Details**
