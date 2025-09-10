@@ -1,6 +1,6 @@
 # Getting started - Java
 
-Apache Kafka is a high-throughput distributed messaging system that powers many real-time applications. However, Kafka's performance can often be constrained by inefficient network usage—especially in high-throughput or multi-region deployments. Improving Kafka’s network efficiency means optimizing how data flows between clients and brokers, reducing bandwidth usage, minimizing latency, and ultimately ensuring cost-effective and reliable data pipelines.
+Kafka's performance can often be constrained by inefficient network usage—especially in high-throughput or multi-region deployments. Improving Kafka’s network efficiency means optimizing how data flows between clients and brokers, reducing bandwidth usage, minimizing latency, and ultimately ensuring cost-effective and reliable data pipelines.
 
 At Superstream, we can make it easier to manage and optimize Kafka networking, particularly through our open-source `superstream-clients` library. This guide walks through how to use the library to boost network efficiency when interacting with Kafka.
 
