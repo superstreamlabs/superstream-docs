@@ -11,11 +11,6 @@ description: >-
 * Kafka Connect with the **superstream-client** Java agent
 * Required environment variables for the agent
 
-### Prerequisites
-
-* Running Kafka Connect (standalone or distributed).
-* Access to the Superstream client JAR artifact.
-
 ### Artifact & Version
 
 Use the latest Superstream client artifact available from your artifact repository or distribution point. Always ensure you are using the most up‑to‑date version for security and compatibility.
