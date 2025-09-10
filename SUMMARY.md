@@ -26,6 +26,7 @@
 * [SuperClient - Kafka Clients Optimization](products/superclient-kafka-clients-optimization/README.md)
   * [Getting started - Java](products/superclient-kafka-clients-optimization/getting-started-java.md)
   * [Getting started - Python](products/superclient-kafka-clients-optimization/getting-started-python.md)
+  * [Getting started - Kafka Connect](products/superclient-kafka-clients-optimization/getting-started-kafka-connect.md)
 
 ## Settings
 
