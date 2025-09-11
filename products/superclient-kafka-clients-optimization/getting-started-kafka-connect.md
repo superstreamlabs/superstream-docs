@@ -35,6 +35,6 @@ Add the following environment variables to the **Kafka Connect** process:
 **Details**
 
 * `JAVA_TOOL_OPTIONS`: Attaches the Superstream Java agent to the Connect JVM. Ensure the path matches the actual location of the JAR inside the container/host.
-* `SUPERSTREAM_TOPICS_LIST`: Comma‑separated list of topics the client will use. Adjust as needed for your environment.
+* `SUPERSTREAM_TOPICS_LIST`: Comma‑separated list of topics the connector will use. Adjust as needed for your environment.
 
 > ⚠️ If your environment already uses `JAVA_TOOL_OPTIONS`, append the `-javaagent=...` flag without overwriting existing options.
