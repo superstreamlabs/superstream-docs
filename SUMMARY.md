@@ -27,6 +27,7 @@
   * [Getting started - Java](products/kafka-clients-optimization/getting-started-java.md)
   * [Getting started - Python](products/kafka-clients-optimization/getting-started-python.md)
   * [Getting started - Kafka Connect](products/kafka-clients-optimization/getting-started-kafka-connect.md)
+* [Schema Registry Optimization](products/schema-registry-optimization.md)
 
 ## Settings
 
