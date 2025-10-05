@@ -22,11 +22,11 @@
 
 ## Products
 
-* [SuperCluster - Kafka Cluster Optimization](products/supercluster-kafka-cluster-optimization.md)
-* [SuperClient - Kafka Clients Optimization](products/superclient-kafka-clients-optimization/README.md)
-  * [Getting started - Java](products/superclient-kafka-clients-optimization/getting-started-java.md)
-  * [Getting started - Python](products/superclient-kafka-clients-optimization/getting-started-python.md)
-  * [Getting started - Kafka Connect](products/superclient-kafka-clients-optimization/getting-started-kafka-connect.md)
+* [Kafka Cluster Optimization](products/kafka-cluster-optimization.md)
+* [Kafka Clients Optimization](products/kafka-clients-optimization/README.md)
+  * [Getting started - Java](products/kafka-clients-optimization/getting-started-java.md)
+  * [Getting started - Python](products/kafka-clients-optimization/getting-started-python.md)
+  * [Getting started - Kafka Connect](products/kafka-clients-optimization/getting-started-kafka-connect.md)
 
 ## Settings
 
