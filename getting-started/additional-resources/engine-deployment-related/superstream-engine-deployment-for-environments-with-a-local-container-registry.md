@@ -16,9 +16,16 @@ Please store the following images in your container registry:
 
 **Telegraf**: As a versatile agent for collecting, processing, and writing metrics, Telegraf is pivotal in monitoring and observability.
 
-* Helm version: 1.8.57
+* Helm version: 1.8.62
 * Container:
-  * [docker.io/library/telegraf:1.34-alpine](http://docker.io/library/telegraf:1.34-alpine)
+  * [docker.io/library/telegraf:1.36-alpine](http://docker.io/library/telegraf:1.36-alpine)
+
+**Datadog**: A powerful monitoring platform for collecting, and alerting on Kafka JMX metrics in real time.
+
+* Helm version: 1.0.0
+* Containers:
+  * grc.io/datadoghq/agent:7.71.1-jmx
+  * superstreamlabs/superstream-connection-config:latest
 
 **Superstream**: The agent itself.
 
@@ -33,12 +40,12 @@ Please store the following images in your container registry:
 
 To ensure that your private repositories use the correct Docker images, follow these steps to pull images from public repositories and tag them for your private repository. Below are command examples for the related Docker images you might use:
 
-Telegraf (docker.io/library/telegraf:1.34-alpine):
+Telegraf (docker.io/library/telegraf:1.36-alpine):
 
 ```bash
-docker pull library/telegraf:1.34-alpine
-docker tag library/telegraf:1.34-alpine YOURREPOSITORY/library/telegraf:1.34-alpine
-docker push YOURREPOSITORY/library/telegraf:1.34-alpine
+docker pull library/telegraf:1.36-alpine
+docker tag library/telegraf:1.36-alpine YOURREPOSITORY/library/telegraf:1.36-alpine
+docker push YOURREPOSITORY/library/telegraf:1.36-alpine
 ```
 
 Superstream Agent (superstreamlabs/superstream-data-plane-be:latest):
@@ -57,7 +64,13 @@ docker tag superstreamlabs/superstream-kafka-auto-scaler:latest YOURREPOSITORY/s
 docker push YOURREPOSITORY/superstreamlabs/superstream-kafka-auto-scaler:latest
 ```
 
+Superstream Connection Config (superstreamlabs/superstream-connection-config:latest):
 
+```bash
+docker pull superstreamlabs/superstream-connection-config:latest
+docker tag superstreamlabs/superstream-connection-config:latest YOURREPOSITORY/superstreamlabs/superstream-connection-config:latest
+docker push YOURREPOSITORY/superstreamlabs/superstream-connection-config:latest
+```
 
 ## Getting started
 

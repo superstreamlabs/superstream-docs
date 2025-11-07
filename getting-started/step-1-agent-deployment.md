@@ -72,6 +72,8 @@ Whether using Docker or Kubernetes, the Superstream agent setup includes the fol
   Automatically scales **AWS MSK** and **Aiven Kafka** clusters when enabled.
 * **`superstream-telegraf`**\
   Monitors internal agent components for health and metrics.
+* **`superstream-datadog`** _(optional)_\
+  Collects and exports Kafka JMX metrics to Datadog, providing deep visibility into broker, topic, and consumer performance.
 
 ## Appendixes
 
@@ -138,6 +140,11 @@ telegraf:
   - key: "app"
     value: "connectors"
     effect: "NoExecute"
+datadog:
+  tolerations:
+  - key: "app"
+    value: "connectors"
+    effect: "NoExecute"    
 ```
 
 ### Appendix D - Deploy Superstream from local registry

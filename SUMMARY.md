@@ -19,6 +19,7 @@
     * [Upgrading From Helmfile based Deployment to Superstream Helm Chart](getting-started/additional-resources/engine-upgrade-related/upgrading-from-helmfile-based-deployment-to-superstream-helm-chart.md)
   * [Kafka-related](getting-started/additional-resources/kafka-related/README.md)
     * [Required JMX rules](getting-started/additional-resources/kafka-related/required-jmx-rules.md)
+    * [Datadog Integration: JMX Requirements for Kafka](getting-started/additional-resources/kafka-related/datadog-integration-jmx-requirements-for-kafka.md)
 
 ## Products
 
