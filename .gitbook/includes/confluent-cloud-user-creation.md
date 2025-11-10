@@ -2,7 +2,7 @@
 title: Confluent Cloud user creation
 ---
 
-**Step 1: Create a new Service Account**
+### **Step 1: Create a new Service Account**
 
 1. In Confluent Console: Top-right menu -> Accounts & access -> Accounts -> Service Accounts -> **"Add service account"**
 2. **Name** the service account "`Superstream`" (The Service account name must include the word "Superstream".)
@@ -14,11 +14,11 @@ title: Confluent Cloud user creation
 5.  In case you want Superstream to connect only with clusters in a specific environment, please grant
 
     `EnvironmentAdmin` - for each environment you want to connect with Superstream
-6. **Optional:** In case you want Superstream to connect only with specific clusters, please grant `CloudClusterAdmin` for each such cluster instead of granting `EnvironmentAdmin` for the entire environment
+6. **Optional:** In case you want Superstream to connect only with specific clusters, please grant `CloudClusterAdmin` for each such cluster, instead of granting `EnvironmentAdmin` for the entire environment
 
 ### Step 2: Create a Cloud Resource Management Key
 
 1. In Confluent Console: Top-right menu -> API Keys -> + Add API key
-2. Select Service account, search for the created service account from the previous step, and choose None for the account type
+2. Select the Service account
 3. Select Cloud Resource Management
-4. Use the created key in the Superstream console.
+4. Use the created key in the Superstream console
