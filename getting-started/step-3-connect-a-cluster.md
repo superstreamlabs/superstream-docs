@@ -74,33 +74,6 @@ netstat -tlnp | grep java
 
 <details>
 
-<summary>Getting JMX Token/Authentication</summary>
-
-**1. Check JMX Security Configuration**
-
-```bash
-# Look for these JVM options in your Kafka startup
--Dcom.sun.management.jmxremote.authenticate=true
--Dcom.sun.management.jmxremote.password.file=/path/to/jmxremote.password
--Dcom.sun.management.jmxremote.access.file=/path/to/jmxremote.access
-```
-
-**2. Password File Location**
-
-* Usually in `$KAFKA_HOME/config/` or `/etc/kafka/`
-* Default filename: `jmxremote.password`
-* Format: `username password`
-
-**3. Access File Location**
-
-* Usually alongside password file
-* Default filename: `jmxremote.access`
-* Format: `username readonly|readwrite`
-
-</details>
-
-<details>
-
 <summary>Testing JMX Connection</summary>
 
 <pre class="language-bash"><code class="lang-bash"><strong># Test connection with JConsole
