@@ -11,10 +11,11 @@ title: Confluent Cloud user creation
 3. Set account type to "None"
 4. Permissions:
    1. **Organization ->**  Add role assignment(top right) and add the following permissions:
-      1. `BillingAdmin` (\* Optional)
-      2. `ResourceKeyAdmin` (\* Optional)\
+      1. `MetricsViewer` (\* Required) - Allows Superstream to show metrics and cluster observability in the UI.
+      2. `EnvironmentAdmin` or `ClusterAdmin` (Required) - You must choose one of these. This defines whether Superstream can access an entire environment or only specific clusters.
+      3. `BillingAdmin` (\* Optional) - Enables billing data and savings insights.
+      4. `ResourceKeyAdmin` (\* Optional) - Lets Superstream auto-create API keys for the clusters it can access. Without it, you'll need to create keys manually and update each discovered cluster with its SASL credentials.\
          <mark style="color:red;">**You can limit**</mark> the scope of this permission by explicitly setting `EnvironmentAdmin` in a specific environment. Once that setting exists in one particular environment, the `ResourceKeyAdmin` permission will no longer control the entire organization.
-      3. `MetricsViewer` (\* Required)
 
 ### Step 2: Create a Cloud Resource Management Key
 
@@ -90,5 +91,7 @@ For READ only (Superstream to analyze only)
 {"TOPIC", "*", "LITERAL", "WRITE", "ALLOW"}
 {"TOPIC", "*", "LITERAL", "CREATE", "ALLOW"}
 ```
+
+3. Edit the cluster in the Superstream UI and enter the SASL credentials you created.
 {% endtab %}
 {% endtabs %}
