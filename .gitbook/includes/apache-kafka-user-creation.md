@@ -10,9 +10,14 @@ title: Apache Kafka User Creation
 {"CLUSTER", "kafka-cluster", "LITERAL", "CREATE", "ALLOW"}
 
 // consumers groups ACLs
-{"GROUP", "*", "LITERAL", "DELETE", "ALLOW"}
 {"GROUP", "*", "LITERAL", "DESCRIBE", "ALLOW"}
+{"GROUP", "*", "LITERAL", "DESCRIBE_CONFIGS", "ALLOW"}
 {"GROUP", "*", "LITERAL", "READ", "ALLOW"}
+{"GROUP", "*", "LITERAL", "WRITE", "ALLOW"}
+{"GROUP", "*", "LITERAL", "CREATE", "ALLOW"}
+{"GROUP", "*", "LITERAL", "ALTER", "ALLOW"}
+{"GROUP", "*", "LITERAL", "ALTER_CONFIGS", "ALLOW"}
+{"GROUP", "*", "LITERAL", "DELETE", "ALLOW"}
 
 // topics ACLs
 {"TOPIC", "*", "LITERAL", "ALTER", "ALLOW"}
