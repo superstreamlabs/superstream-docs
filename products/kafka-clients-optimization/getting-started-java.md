@@ -36,11 +36,11 @@ Works with any Java library that depends on `kafka-clients`, including:
 
 The library fully supports Java versions 11 through 21.
 
-### Important: Producer Configuration Requirements
+### Producer Configuration Suggestion
 
-When initializing your Kafka producers, please ensure you pass the configuration as a mutable object. The Superstream library needs to modify the producer configuration to apply optimizations. The following initialization patterns are supported:
+When initializing your Kafka producers, please ensure you pass the configuration as a mutable object. The Superstream library needs to modify the producer configuration to apply optimizations.&#x20;
 
-✅ **Supported (Recommended)**:
+✅ **Fully** **Supported (Recommended)**:
 
 {% code overflow="wrap" %}
 ```java
@@ -74,7 +74,7 @@ public class KafkaConfig {
 ```
 {% endcode %}
 
-❌ **Not Supported**:
+❌ **Not Fully Supported (Avoid if possible)**:
 
 ```java
 // Using Collections.unmodifiableMap
