@@ -11,12 +11,7 @@ title: Apache Kafka User Creation
 
 // consumers groups ACLs
 {"GROUP", "*", "LITERAL", "DESCRIBE", "ALLOW"}
-{"GROUP", "*", "LITERAL", "DESCRIBE_CONFIGS", "ALLOW"}
 {"GROUP", "*", "LITERAL", "READ", "ALLOW"}
-{"GROUP", "*", "LITERAL", "WRITE", "ALLOW"}
-{"GROUP", "*", "LITERAL", "CREATE", "ALLOW"}
-{"GROUP", "*", "LITERAL", "ALTER", "ALLOW"}
-{"GROUP", "*", "LITERAL", "ALTER_CONFIGS", "ALLOW"}
 {"GROUP", "*", "LITERAL", "DELETE", "ALLOW"}
 
 // topics ACLs
