@@ -20,6 +20,7 @@
   * [Kafka-related](getting-started/additional-resources/kafka-related/README.md)
     * [Required JMX rules](getting-started/additional-resources/kafka-related/required-jmx-rules.md)
     * [Datadog Integration: JMX Requirements for Kafka](getting-started/additional-resources/kafka-related/datadog-integration-jmx-requirements-for-kafka.md)
+* [Superstream MCP](getting-started/superstream-mcp.md)
 
 ## Products
 
